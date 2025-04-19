@@ -11,7 +11,7 @@ defineProps({
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      Your Assistant for Healthier Eating!
+      Your Assistant for Healthier Eating! <br> Visit <a href="https://app.juanutrisyon.info">app.juanutrisyon.info</a>
     </h3>
   </div>
 </template>
