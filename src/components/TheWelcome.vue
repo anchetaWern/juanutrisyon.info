@@ -15,7 +15,7 @@ import SupportIcon from './icons/IconSupport.vue'
     </template>
     <template #heading>View Nutrients</template>
 
-    Search for foods and explore their nutrient content.
+    <a href="https://app.juanutrisyon.info/categories" target="_blank">Search for foods</a> and explore their nutrient content.
   </WelcomeItem>
 
   <WelcomeItem>
