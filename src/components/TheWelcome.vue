@@ -5,7 +5,7 @@ import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
-
+import GlobeIcon from './icons/GlobeIcon.vue'
 </script>
 
 <template>
@@ -54,5 +54,14 @@ import SupportIcon from './icons/IconSupport.vue'
 
     Juan Nutrisyon is a community-driven project. We rely on contributions from the community to add new foods to the database.
     Be sure to visit <a href="https://contribute.juanutrisyon.info" target="_blank">contribute.juanutrisyon.info</a> if you're interested in contributing.
+  </WelcomeItem>
+
+  <WelcomeItem>
+    <template #icon>
+      <GlobeIcon />
+    </template>
+    <template #heading>Follow Us</template>
+
+    We're constantly putting out new features. We also post content on how to stay healthy. So if you want to stay in the loop, be sure to follow us on <a href="https://www.facebook.com/juanutrisyon/" target="_blank">Facebook.</a>
   </WelcomeItem>
 </template>
