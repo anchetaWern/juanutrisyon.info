@@ -6,7 +6,6 @@ import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
 
-const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
 </script>
 
 <template>
@@ -25,7 +24,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     </template>
     <template #heading>Create Recipes</template>
 
-    Build recipes and see the combined nutrient breakdown of all your ingredients.
+    <a href="https://app.juanutrisyon.info/recipe" target="_blank">Build recipes</a> and see the combined nutrient breakdown of all your ingredients.
   </WelcomeItem>
 
   <WelcomeItem>
@@ -34,7 +33,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     </template>
     <template #heading>Analyze your diet</template>
 
-    Track your daily intake and discover if you're meeting your nutritional needs, over-consuming, or falling short.
+    <a href="https://app.juanutrisyon.info/analyze" target="_blank">Track</a> your daily intake and discover if you're meeting your nutritional needs, over-consuming, or falling short.
   </WelcomeItem>
 
   <WelcomeItem>
@@ -43,8 +42,8 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     </template>
     <template #heading>Collaborate</template>
 
-    Whether you are a dietitian, nutritionist, food technologist, chef/baker/food entrepreneur, policymaker, research specialist, food blogger/vlogger, marketer, or a programmer/developer we need you.
-    Please<a href="mailto:ancheta.wern@gmail.com" target="_blank" rel="noopener">say hi.</a>
+    Whether you are a dietitian, nutritionist, food technologist, chef/baker/food entrepreneur/carinderia, LGU/policy maker, research specialist, food blogger/vlogger, marketer, or a programmer/developer we need you.
+    Please<a href="mailto:juanutrisyon@gmail.com" target="_blank" rel="noopener">say hi.</a>
   </WelcomeItem>
 
   <WelcomeItem>
