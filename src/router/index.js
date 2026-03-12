@@ -5,7 +5,7 @@ import ContactPage from '../pages/contact.vue';
 import TermsPage from '../pages/terms.vue';
 import PrivacyPage from '../pages/privacy.vue';
 
-const routes = [
+export const routes = [
   {
     path: '/',
     name: 'home',
@@ -34,9 +34,3 @@ const routes = [
  
 ];
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes
-});
-
-export default router;
