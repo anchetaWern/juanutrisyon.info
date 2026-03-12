@@ -1,49 +1,45 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-
-import logo from '@/assets/logo.png';
-</script>
-
 <template>
-  <header>
-    <img alt="Juan Nutrisyon logo" class="logo" :src="logo" />
+  <!-- Added a class 'container' to the parent div -->
+  <div class="container">
+
+    <TopNav />
 
     <div class="wrapper">
-      <HelloWorld msg="Juan Nutrisyon" />
+      <RouterView />
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script setup>
+import TopNav from "@/components/TopNav.vue";
+</script>
+
+<style>
+/* 1. The Parent Container */
+.container {
+  display: flex;
+  flex-direction: column; /* Stack nav and wrapper vertically */
+  align-items: center;    /* Center them horizontally */
+  width: 100%;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+/* 2. The Nav Section */
+.nav {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* Centers the logo and the nav links */
+  gap: 10px;              /* Adds space between logo and links */
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.nav a {
+  color: #333;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+/* 3. The Content Wrapper */
+.wrapper {
+  width: 100%;
+  max-width: 1200px;      /* Optional: Prevents content from getting too wide */
 }
 </style>
