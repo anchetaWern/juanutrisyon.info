@@ -4,6 +4,7 @@ import AboutPage from '../pages/about.vue';
 import ContactPage from '../pages/contact.vue';
 import TermsPage from '../pages/terms.vue';
 import PrivacyPage from '../pages/privacy.vue';
+import GuidePage from '../pages/guide.vue';
 
 export const routes = [
   {
@@ -30,6 +31,11 @@ export const routes = [
     path: '/privacy',
     name: 'privacy',
     component: PrivacyPage
+  },
+     {
+    path: '/guide',
+    name: 'guide',
+    component: GuidePage
   },
  
 ];
