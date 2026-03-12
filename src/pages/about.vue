@@ -47,12 +47,12 @@
 .content-box {
   background: #f9f9f9;
   padding: 20px;
-  border-left: 5px solid #007bff;
+  border-left: 5px solid #70B30B;
   margin-bottom: 30px;
 }
 .highlight-text { font-size: 1.1rem; }
 .source-item { margin-bottom: 20px; }
-.source-item h3 { color: #007bff; margin-bottom: 5px; }
+.source-item h3 { color: #70B30B; margin-bottom: 5px; }
 hr { border: 0; border-top: 1px solid #eee; margin: 40px 0; }
 h1 { font-size: 2.5rem; margin-bottom: 10px; }
 h2 { font-size: 1.5rem; margin-bottom: 15px; }

@@ -58,7 +58,7 @@ h2 { font-size: 1.5rem; margin-top: 10px; margin-bottom: 10px; }
 .back-link {
   display: inline-block;
   margin-top: 40px;
-  color: #007bff;
+  color: #70B30B;
   text-decoration: none;
 }
 </style>

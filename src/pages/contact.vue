@@ -65,13 +65,13 @@ h1 { font-size: 2.5rem; margin-bottom: 10px; }
   text-align: center;
 }
 
-.method-card h3 { color: #007bff; margin-bottom: 10px; }
+.method-card h3 { color: #70B30B; margin-bottom: 10px; }
 
 .contact-link {
   display: block;
   font-weight: bold;
   font-size: 1.1rem;
-  color: #007bff;
+  color: #70B30B;
   text-decoration: none;
   margin-top: 10px;
 }
@@ -96,11 +96,11 @@ h1 { font-size: 2.5rem; margin-bottom: 10px; }
 }
 
 .social-links a:hover {
-  background: #007bff;
+  background: #70B30B;
   color: white;
-  border-color: #007bff;
+  border-color: #70B30B;
 }
 
 .response-time { text-align: center; color: #777; font-size: 0.9rem; }
-.back-link { display: inline-block; margin-top: 40px; color: #007bff; text-decoration: none; }
+.back-link { display: inline-block; margin-top: 40px; color: #70B30B; text-decoration: none; }
 </style>
