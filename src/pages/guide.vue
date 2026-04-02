@@ -31,7 +31,7 @@ import FoodDiary from './guides/FoodDiary.vue';
   margin: 2rem auto;
   padding: 0 1rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #333;
+  color: var(--color-text);
   line-height: 1.6;
 }
 
@@ -47,7 +47,11 @@ import FoodDiary from './guides/FoodDiary.vue';
 .separator {
   border: 0;
   height: 1px;
-  background: #eee;
+  background: var(--color-divider);
   margin: 2rem 0;
+}
+
+.guide-header h1 {
+  color: var(--color-heading);
 }
 </style>

@@ -41,19 +41,20 @@
   padding: 40px 20px;
   font-family: sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: var(--color-text);
 }
 .legal-header { margin-bottom: 30px; text-align: center; }
 .content-box {
-  background: #f9f9f9;
+  background: var(--color-surface-2);
   padding: 20px;
-  border-left: 5px solid #70B30B;
+  border-left: 5px solid var(--color-link);
   margin-bottom: 30px;
 }
 .highlight-text { font-size: 1.1rem; }
 .source-item { margin-bottom: 20px; }
-.source-item h3 { color: #70B30B; margin-bottom: 5px; }
-hr { border: 0; border-top: 1px solid #eee; margin: 40px 0; }
+.source-item h3 { color: var(--color-link); margin-bottom: 5px; }
+hr { border: 0; border-top: 1px solid var(--color-divider); margin: 40px 0; }
 h1 { font-size: 2.5rem; margin-bottom: 10px; }
 h2 { font-size: 1.5rem; margin-bottom: 15px; }
+h1, h2 { color: var(--color-heading); }
 </style>

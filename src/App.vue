@@ -34,7 +34,7 @@ import TopNav from "@/components/TopNav.vue";
 }
 
 .nav a {
-  color: #333;
+  color: var(--color-text);
 }
 
 /* 3. The Content Wrapper */

@@ -1,6 +1,9 @@
 <template>
     <div class="nav">
-      <img src="/logo.png" />
+      <picture>
+        <source srcset="/logo-dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/logo.png" alt="Juan Nutrisyon" class="logo" />
+      </picture>
       <nav>
         <RouterLink to="/">Home</RouterLink> |
         <RouterLink to="/about">About</RouterLink> |
@@ -11,3 +14,11 @@
       </nav>
     </div>
 </template>
+
+<style scoped>
+.logo {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+}
+</style>

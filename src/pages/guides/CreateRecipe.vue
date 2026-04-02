@@ -87,14 +87,14 @@
 
 <style scoped>
 .workflow-section h2 {
-  color: #2e7d32;
+  color: var(--color-accent-green);
   margin-top: 0.5rem;
 }
 
 .workflow-badge {
   display: inline-block;
-  background: #e8f5e9;
-  color: #2e7d32;
+  background: var(--color-tint-green-bg);
+  color: var(--color-accent-green);
   padding: 4px 12px;
   border-radius: 16px;
   font-size: 0.8rem;
@@ -103,7 +103,7 @@
 
 .intro-text {
   font-style: italic;
-  color: #666;
+  color: var(--color-text-muted);
   margin-bottom: 2rem;
 }
 
@@ -113,19 +113,19 @@
   margin-bottom: 1.5rem;
   padding: 1.5rem;
   border-radius: 8px;
-  background: #fff;
-  border: 1px solid #e0e0e0;
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
 }
 
 .save-step {
-  background: #e3f2fd;
-  border-left: 4px solid #1976d2;
+  background: var(--color-tint-blue-bg);
+  border-left: 4px solid var(--color-accent-blue);
 }
 
 .step-number {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #2e7d32;
+  color: var(--color-accent-green);
   opacity: 0.4;
 }
 
@@ -138,17 +138,17 @@
   font-weight: bold;
 }
 
-.green { color: #2e7d32; }
+.green { color: var(--color-accent-green); }
 
 .red-trash {
-  color: #d32f2f;
+  color: var(--color-accent-red);
   font-weight: bold;
 }
 
 .guide-footer {
   margin-top: 3rem;
   padding: 2rem;
-  background: #f9f9f9;
+  background: var(--color-surface-2);
   text-align: center;
   border-radius: 8px;
 }
@@ -164,5 +164,5 @@
     margin: 20px 0;
 }
 
-.green-border { color: #2e7d32; border: 1px solid #2e7d32; padding: 2px 6px; border-radius: 4px; }
+.green-border { color: var(--color-accent-green); border: 1px solid var(--color-accent-green); padding: 2px 6px; border-radius: 4px; }
 </style>

@@ -4,7 +4,7 @@
 a,
 .green {
   text-decoration: none;
-  color: #75B513;
+  color: var(--color-link);
   transition: 0.4s;
   padding: 3px;
 }

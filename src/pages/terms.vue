@@ -41,24 +41,25 @@
   padding: 40px 20px;
   font-family: sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: var(--color-text);
 }
-.meta { color: #666; margin-bottom: 30px; }
+.meta { color: var(--color-text-muted); margin-bottom: 30px; }
 h1 { font-size: 2.5rem; margin-bottom: 10px; }
 h2 { font-size: 1.5rem; margin-top: 10px; margin-bottom: 10px; }
 
 .disclaimer-box {
-  background: #fff3cd;
+  background: var(--color-tint-amber-bg);
   padding: 10px 20px;
   border-radius: 8px;
-  border: 1px solid #ffeeba;
-  color: #856404;
+  border: 1px solid var(--color-tint-amber-border);
+  color: var(--color-tint-amber-text);
 }
 
 .back-link {
   display: inline-block;
   margin-top: 40px;
-  color: #70B30B;
+  color: var(--color-link);
   text-decoration: none;
 }
+h1, h2 { color: var(--color-heading); }
 </style>

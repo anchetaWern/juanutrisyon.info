@@ -84,14 +84,14 @@ export default {
 
 <style scoped>
 .workflow-section h2 {
-  color: #D3302F;
+  color: var(--color-accent-red);
   margin-top: 0.5rem;
 }
 
 .workflow-badge {
   display: inline-block;
-  background: #ffcece;
-  color: #D3302F;
+  background: var(--color-tint-red-bg);
+  color: var(--color-accent-red);
   padding: 4px 12px;
   border-radius: 16px;
   font-size: 0.8rem;
@@ -104,25 +104,25 @@ export default {
   margin-bottom: 1.5rem;
   padding: 1.5rem;
   border-radius: 12px;
-  background: #fff;
-  border: 1px solid #e0e0e0;
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
 }
 
 .highlight-analysis {
-  background: #fdf7e3;
-  border-left: 5px solid #fbc02d;
+  background: var(--color-tint-yellow-bg);
+  border-left: 5px solid var(--color-tint-yellow-border);
 }
 
 .step-number {
   font-size: 1.5rem;
   font-weight: 900;
-  color: #D3302F;
+  color: var(--color-accent-red);
   opacity: 0.3;
 }
 
 .action-text { font-weight: bold; }
-.green-border { color: #D3302F; border: 1px solid #D3302F; padding: 2px 6px; border-radius: 4px; }
-.blue { color: #1976d2; }
+.green-border { color: var(--color-accent-red); border: 1px solid var(--color-accent-red); padding: 2px 6px; border-radius: 4px; }
+.blue { color: var(--color-accent-blue); }
 
 .plus-btn {
   display: inline-block;
@@ -130,13 +130,14 @@ export default {
   height: 20px;
   line-height: 18px;
   text-align: center;
-  border: 1px solid #333;
+  border: 1px solid var(--color-border);
   border-radius: 50%;
   font-weight: bold;
+  color: var(--color-text);
 }
 
 .blue-btn {
-  background-color: #1976d2;
+  background-color: var(--color-accent-blue);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -148,7 +149,7 @@ export default {
 .guide-footer {
   margin-top: 4rem;
   padding: 2rem;
-  background: #f5f5f5;
+  background: var(--color-surface-2);
   text-align: center;
   border-radius: 12px;
 }
@@ -162,8 +163,8 @@ export default {
 }
 
 .blue-border {
-    color: #1B76D3;
-    border: 1px solid #1B76D3;
+    color: var(--color-accent-blue);
+    border: 1px solid var(--color-accent-blue);
     padding: 2px 6px;
     border-radius: 4px;
 }

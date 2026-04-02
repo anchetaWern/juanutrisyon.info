@@ -40,7 +40,7 @@
   padding: 40px 20px;
   font-family: sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: var(--color-text);
 }
 .contact-header { text-align: center; margin-bottom: 40px; }
 h1 { font-size: 2.5rem; margin-bottom: 10px; }
@@ -58,20 +58,20 @@ h1 { font-size: 2.5rem; margin-bottom: 10px; }
 }
 
 .method-card {
-  background: #f9f9f9;
+  background: var(--color-surface-2);
   padding: 25px;
   border-radius: 12px;
-  border: 1px solid #eee;
+  border: 1px solid var(--color-card-border);
   text-align: center;
 }
 
-.method-card h3 { color: #70B30B; margin-bottom: 10px; }
+.method-card h3 { color: var(--color-link); margin-bottom: 10px; }
 
 .contact-link {
   display: block;
   font-weight: bold;
   font-size: 1.1rem;
-  color: #70B30B;
+  color: var(--color-link);
   text-decoration: none;
   margin-top: 10px;
 }
@@ -86,21 +86,21 @@ h1 { font-size: 2.5rem; margin-bottom: 10px; }
 
 .social-links a {
   padding: 8px 16px;
-  background: #fff;
-  border: 1px solid #ddd;
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
   border-radius: 20px;
   text-decoration: none;
-  color: #555;
+  color: var(--color-text);
   font-size: 0.9rem;
   transition: all 0.2s;
 }
 
 .social-links a:hover {
-  background: #70B30B;
+  background: var(--color-link);
   color: white;
-  border-color: #70B30B;
+  border-color: var(--color-link);
 }
 
-.response-time { text-align: center; color: #777; font-size: 0.9rem; }
-.back-link { display: inline-block; margin-top: 40px; color: #70B30B; text-decoration: none; }
+.response-time { text-align: center; color: var(--color-text-muted); font-size: 0.9rem; }
+.back-link { display: inline-block; margin-top: 40px; color: var(--color-link); text-decoration: none; }
 </style>

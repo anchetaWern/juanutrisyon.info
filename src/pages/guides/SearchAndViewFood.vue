@@ -67,14 +67,14 @@
 
 <style>
 .workflow-section h2 {
-  color: #1976d2; /* Search blue */
+  color: var(--color-accent-blue); /* Search blue */
   margin-top: 0.5rem;
 }
 
 .workflow-badge {
   display: inline-block;
-  background: #e3f2fd;
-  color: #1976d2;
+  background: var(--color-tint-blue-bg);
+  color: var(--color-accent-blue);
   padding: 4px 12px;
   border-radius: 16px;
   font-size: 0.8rem;
@@ -84,7 +84,7 @@
 
 .intro-text {
   font-style: italic;
-  color: #666;
+  color: var(--color-text-muted);
   margin-bottom: 2rem;
 }
 
@@ -94,13 +94,14 @@
   margin-bottom: 2rem;
   padding: 1.5rem;
   border-radius: 8px;
-  border: 1px solid #e0e0e0;
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
 }
 
 .step-number {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #1976d2;
+  color: var(--color-accent-blue);
   opacity: 0.5;
 }
 
@@ -120,8 +121,8 @@
 .mini-btn {
   padding: 2px 8px;
   font-size: 0.7rem;
-  border: 1px solid #ccc;
-  background: white;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
   border-radius: 4px;
   cursor: default;
 }
@@ -132,17 +133,18 @@
   height: 18px;
   line-height: 18px;
   text-align: center;
-  border: 1px solid #666;
+  border: 1px solid var(--color-border);
   border-radius: 50%;
   font-size: 0.7rem;
   font-style: italic;
+  color: var(--color-text-muted);
 }
 
 .guide-footer {
   margin-top: 4rem;
   text-align: center;
   font-size: 0.9rem;
-  color: #888;
+  color: var(--color-text-soft);
 }
 
 /* Responsive adjustments */
