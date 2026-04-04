@@ -37,6 +37,7 @@ h1 {
   font-size: 2.6rem;
   position: relative;
   top: -10px;
+  line-height: 45px;
 }
 
 h3 {
