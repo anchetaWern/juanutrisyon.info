@@ -21,6 +21,15 @@
           budget breakdown, and recipes you can cook this week.
         </p>
       </article>
+      <article class="post">
+        <h3>
+          <a class="post-link" href="/blog/is-using-asin-a-sin">Is Using Asin a Sin</a>
+        </h3>
+        <p>
+          A clear, no-guilt look at salt in Filipino cooking, how much is too much, and easy swaps
+          that still keep your food flavorful.
+        </p>
+      </article>
     </div>
   </section>
 </template>
