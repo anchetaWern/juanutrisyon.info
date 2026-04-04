@@ -16,6 +16,10 @@
 
     <hr>
 
+    <PopularFoods />
+
+    <hr>
+
     <BlogPreview />
   </main>
 </template>
@@ -24,6 +28,7 @@
 import IntroLinks from '@/components/IntroLinks.vue'
 import Banner from '@/components/Banner.vue';
 import BlogPreview from '@/components/BlogPreview.vue';
+import PopularFoods from '@/components/PopularFoods.vue';
 </script>
 
 <style scoped>
