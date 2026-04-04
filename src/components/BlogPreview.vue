@@ -1,6 +1,7 @@
 <template>
   <section class="blog-preview">
     <h2>From the Blog</h2>
+    <p>Fresh takes, practical nutrition, and local context for Filipino plates.</p>
     <div class="posts">
       <article class="post">
         <h3>

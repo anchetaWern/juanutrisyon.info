@@ -11,7 +11,9 @@
       In the Philippines, many diet-related health issues such as high blood pressure and diabetes are becoming more common. One challenge is that nutrition information is often difficult to access or understand, especially for everyday meals.
 
       By making nutrition information more accessible, we hope to help people make better food choices without removing the cultural importance of Filipino cuisine.
-      </p>
+        
+      This is especially important since many Filipino meals are home-cooked or bought from carinderias, where nutrition labels are not available.
+    </p>
     </div>
 
     <hr>

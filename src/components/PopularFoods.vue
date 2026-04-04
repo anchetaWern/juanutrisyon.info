@@ -1,6 +1,7 @@
 <template>
   <section class="popular-foods">
     <h2>Popular Foods</h2>
+    <p>Explore the nutrition breakdown of commonly eaten Filipino dishes.</p>
     <ul class="foods">
       <li v-for="food in foods" :key="food.name" class="food">
         <a class="food-link" :href="food.href" target="_blank">
