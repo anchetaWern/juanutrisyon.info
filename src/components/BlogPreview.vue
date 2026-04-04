@@ -1,0 +1,63 @@
+<template>
+  <section class="blog-preview">
+    <h2>From the Blog</h2>
+    <div class="posts">
+      <article class="post">
+        <h3>
+          <a class="post-link" href="/blog/sana-all-may-label">Sana All May Label</a>
+        </h3>
+        <p>
+          A Filipino guide to reading nutrition facts, from instant noodles to 3-in-1 coffee and
+          canned fish, so you actually know what's on your plate.
+        </p>
+      </article>
+      <article class="post">
+        <h3>
+          <a class="post-link" href="/blog/healthy-eating-on-a-budget">Healthy Eating on a Budget</a>
+        </h3>
+        <p>
+          Proof that healthy eating doesn't need to be expensive, with practical tips, a daily
+          budget breakdown, and recipes you can cook this week.
+        </p>
+      </article>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+.blog-preview {
+  margin-top: 32px;
+}
+
+.posts {
+  display: grid;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.post {
+  border: 1px solid #E7E7E7;
+  border-radius: 12px;
+  padding: 16px;
+  background-color: #FFFFFF;
+}
+
+.post h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.post-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-link:hover {
+  text-decoration: underline;
+}
+
+.post p {
+  margin: 0;
+  color: #3A3A3A;
+}
+</style>

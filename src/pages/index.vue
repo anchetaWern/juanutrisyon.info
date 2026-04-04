@@ -3,7 +3,7 @@
   <main>
     <Banner />
     <IntroLinks />
-    <hr />
+    <hr>
 
     <div class="sub-text">
       <h2>Why Nutrition Matters</h2>
@@ -13,12 +13,17 @@
       By making nutrition information more accessible, we hope to help people make better food choices without removing the cultural importance of Filipino cuisine.
       </p>
     </div>
+
+    <hr>
+
+    <BlogPreview />
   </main>
 </template>
 
 <script setup>
 import IntroLinks from '@/components/IntroLinks.vue'
 import Banner from '@/components/Banner.vue';
+import BlogPreview from '@/components/BlogPreview.vue';
 </script>
 
 <style scoped>
