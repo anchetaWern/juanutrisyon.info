@@ -6,9 +6,53 @@
     
     <section class="content-box">
       <p class="highlight-text">
-        <strong>Juan Nutrisyon</strong> is a dedicated nutrition management platform designed specifically for the Filipino context. Our mission is to empower individuals to take control of their health through precise, data-driven nutritional tracking and meal analysis.
+        <strong>Juan Nutrisyon</strong> is a dedicated nutrition management platform designed specifically for Filipinos. Our mission is to empower individuals to take control of their health through precise, data-driven meal planning, nutritional tracking, and meal analysis.
       </p>
     </section>
+
+    <section class="story">
+      <h2>Our Story: Why Juan Nutrisyon Exists</h2>
+      <p>In the Philippines, we show love through food. But for many Filipino families, the food we love is often tied to a silent reality: the rise of lifestyle diseases like hypertension and diabetes.</p>
+      <p>Juan Nutrisyon started with a personal realization.</p>
+      <p>When my mother suffered a stroke, my perspective on food changed overnight. I realized that so many of these health challenges could be managed—or even prevented—if we were simply empowered with the right information. "Prevention is better than cure" isn't just a saying; it’s a life-saving practice. But to prevent these diseases, we need to know exactly what we are putting into our bodies.</p>
+    </section>
+
+    <hr>
+    
+    <section class="problem">
+      <h2>The Problem</h2>
+      <p>Most nutrition apps are built for Western diets. They understand kale and quinoa, but they struggle with Sinigang, Longganisa, or the quick meal you grab at your local carinderia. Without localized data, Filipinos are left guessing, and mindless consumption becomes the default.</p>
+    </section>
+
+    <hr>
+
+    <section class="vision">
+      <h2>The Vision</h2>
+      <p>We want to inspire a new generation of Filipinos—one that is mindful, informed, and proactive about their health. By making the "nutrition label" a staple of the Filipino dining experience, we’re helping our community make informed choices, one meal at a time.</p>
+      <p>Because at the end of the day, when you know better, you eat better.</p>
+    </section>
+
+    <section class="mission">
+      <h2>Our Mission</h2>
+      <p>I created Juan Nutrisyon to be a tool for every Juan. Our goal is to make nutrition data accessible and easy to understand for every Filipino.</p>
+
+      <div class="source-item">
+        <h3>Localized Data</h3>
+        <p>We’re building a database that covers everything from processed snacks to your favorite home-cooked recipes.</p>
+      </div>
+
+      <div class="source-item">
+        <h3>Context Over Numbers</h3>
+        <p>We don’t just show you macros; we give you the context. We celebrate when you meet your iron or fiber goals and help you stay mindful of sugar and saturated fats.</p>
+      </div>
+
+      <div class="source-item">
+        <h3>Empowering Professionals</h3>
+        <p>We provide tools for Filipino Dietitians to automate the technical "boring stuff," allowing them to focus on what they do best: helping people live healthier lives.</p>
+      </div>
+    </section>
+
+    <hr>
 
     <section class="details">
       <h2>Our Data Methodology</h2>
@@ -27,10 +71,6 @@
 
     <hr />
 
-    <section class="vision">
-      <h2>The Vision</h2>
-      <p>Developed in the Philippines, Juan Nutrisyon was born out of a need for a localized tool that understands the Filipino diet. Whether you are tracking macros for fitness, managing a health condition, or simply curious about your nutrition, we are here to help you make informed choices, one meal at a time.</p>
-    </section>
   </div>
 </template>
 
@@ -44,14 +84,14 @@
   color: var(--color-text);
 }
 .legal-header { margin-bottom: 30px; text-align: center; }
+.legal-container section + section { margin-top: 32px; }
 .content-box {
   background: var(--color-surface-2);
   padding: 20px;
   border-left: 5px solid var(--color-link);
-  margin-bottom: 30px;
 }
 .highlight-text { font-size: 1.1rem; }
-.source-item { margin-bottom: 20px; }
+.source-item { margin-top: 20px; }
 .source-item h3 { color: var(--color-link); margin-bottom: 5px; }
 hr { border: 0; border-top: 1px solid var(--color-divider); margin: 40px 0; }
 h1 { font-size: 2.5rem; margin-bottom: 10px; }
