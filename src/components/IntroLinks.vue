@@ -62,6 +62,6 @@ import GlobeIcon from './icons/GlobeIcon.vue'
     </template>
     <template #heading>Follow Us</template>
 
-    We're constantly putting out new features. We also post content on how to stay healthy. So if you want to stay in the loop, be sure to follow us on <a href="https://www.facebook.com/juanutrisyon/" target="_blank">Facebook.</a>
+    We're constantly putting out new features. We also post content all about nutrition and healthy living. So if you want to stay in the loop, be sure to follow us on <a href="https://www.facebook.com/juanutrisyon/" target="_blank">Facebook.</a>
   </LinkWrapper>
 </template>
