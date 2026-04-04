@@ -10,6 +10,7 @@ import HealthyEatingOnABudget from '../pages/blog/healthy-eating-on-a-budget.vue
 import CommonNutritionMistakesFilipinosMake from '../pages/blog/common-nutrition-mistakes-filipinos-make.vue';
 import IsUsingAsinASin from '../pages/blog/is-using-asin-a-sin.vue';
 import SanaAllMayLabel from '../pages/blog/sana-all-may-label.vue';
+import NaturesHiddenPantry from '../pages/blog/natures-hidden-pantry.vue';
 
 export const routes = [
   {
@@ -61,6 +62,11 @@ export const routes = [
     path: '/blog/is-using-asin-a-sin',
     name: 'blog-is-using-asin-a-sin',
     component: IsUsingAsinASin
+  },
+  {
+    path: '/blog/natures-hidden-pantry',
+    name: 'blog-natures-hidden-pantry',
+    component: NaturesHiddenPantry
   },
   {
     path: '/blog/sana-all-may-label',

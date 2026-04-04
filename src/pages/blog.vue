@@ -23,6 +23,10 @@ const posts = [
   { title: 'Healthy eating on a budget', slug: 'healthy-eating-on-a-budget' },
   { title: 'Common nutrition mistakes filipinos make', slug: 'common-nutrition-mistakes-filipinos-make' },
   { title: 'Is using asin a sin?', slug: 'is-using-asin-a-sin' },
+  {
+    title: "Nature's Hidden Pantry: Discovering the Forgotten Superfoods of the Philippines",
+    slug: 'natures-hidden-pantry'
+  },
   { title: 'Sana all may label!', slug: 'sana-all-may-label' }
 ];
 </script>
