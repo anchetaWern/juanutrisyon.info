@@ -5,6 +5,11 @@ import ContactPage from '../pages/contact.vue';
 import TermsPage from '../pages/terms.vue';
 import PrivacyPage from '../pages/privacy.vue';
 import GuidePage from '../pages/guide.vue';
+import BlogPage from '../pages/blog.vue';
+import HealthyEatingOnABudget from '../pages/blog/healthy-eating-on-a-budget.vue';
+import CommonNutritionMistakesFilipinosMake from '../pages/blog/common-nutrition-mistakes-filipinos-make.vue';
+import IsUsingAsinASin from '../pages/blog/is-using-asin-a-sin.vue';
+import SanaAllMayLabel from '../pages/blog/sana-all-may-label.vue';
 
 export const routes = [
   {
@@ -37,6 +42,30 @@ export const routes = [
     name: 'guide',
     component: GuidePage
   },
+  {
+    path: '/blog',
+    name: 'blog',
+    component: BlogPage
+  },
+  {
+    path: '/blog/healthy-eating-on-a-budget',
+    name: 'blog-healthy-eating-on-a-budget',
+    component: HealthyEatingOnABudget
+  },
+  {
+    path: '/blog/common-nutrition-mistakes-filipinos-make',
+    name: 'blog-common-nutrition-mistakes-filipinos-make',
+    component: CommonNutritionMistakesFilipinosMake
+  },
+  {
+    path: '/blog/is-using-asin-a-sin',
+    name: 'blog-is-using-asin-a-sin',
+    component: IsUsingAsinASin
+  },
+  {
+    path: '/blog/sana-all-may-label',
+    name: 'blog-sana-all-may-label',
+    component: SanaAllMayLabel
+  },
  
 ];
-
