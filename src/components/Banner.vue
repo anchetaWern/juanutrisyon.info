@@ -9,9 +9,9 @@ defineProps({
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+    <h1 class="green">Nutrition information for everyday food — without judgment.</h1>
     <h3>
-      Nutrition information for everyday food — without judgment. <br> Visit <a href="https://app.juanutrisyon.info">app.juanutrisyon.info</a>
+       <br>Visit <a href="https://app.juanutrisyon.info">app.juanutrisyon.info</a>
     </h3>
   </div>
 </template>
