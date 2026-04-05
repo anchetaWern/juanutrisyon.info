@@ -13,6 +13,9 @@
         </a>
       </li>
     </ul>
+    <a class="more-link" href="https://app.juanutrisyon.info" target="_blank" rel="noopener">
+      View more foods
+    </a>
   </section>
 </template>
 
@@ -97,9 +100,10 @@ const foods = [
 }
 
 .food {
-  border: 1px solid #E7E7E7;
+  border: 1px solid var(--color-card-border);
   border-radius: 12px;
-  background-color: #FFFFFF;
+  background-color: var(--color-card);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .food-link {
@@ -124,8 +128,8 @@ const foods = [
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #F1F1F1;
-  border: 1px solid #E7E7E7;
+  background-color: var(--color-surface-2);
+  border: 1px solid var(--color-card-border);
 }
 
 .thumb img {
@@ -135,8 +139,8 @@ const foods = [
 }
 
 .thumb.placeholder {
-  background: linear-gradient(135deg, #F6F1EA, #EEE7DC);
-  color: #6B5B44;
+  background: linear-gradient(135deg, var(--color-surface-2), var(--color-surface-3));
+  color: var(--color-text-soft);
   font-weight: 600;
   font-size: 12px;
   text-transform: uppercase;
@@ -149,5 +153,19 @@ const foods = [
 
 .initials {
   letter-spacing: 0.08em;
+}
+
+.more-link {
+  display: block;
+  margin-top: 12px;
+  color: var(--color-link);
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+}
+
+.more-link:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
 }
 </style>

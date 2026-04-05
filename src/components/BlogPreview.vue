@@ -31,6 +31,7 @@
         </p>
       </article>
     </div>
+    <a class="more-link" href="/blog">Read more</a>
   </section>
 </template>
 
@@ -46,10 +47,12 @@
 }
 
 .post {
-  border: 1px solid #E7E7E7;
+  border: 1px solid var(--color-card-border);
   border-radius: 12px;
   padding: 16px;
-  background-color: #FFFFFF;
+  background-color: var(--color-card);
+  color: var(--color-text);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .post h3 {
@@ -68,6 +71,20 @@
 
 .post p {
   margin: 0;
-  color: #3A3A3A;
+  color: var(--color-text-muted);
+}
+
+.more-link {
+  display: block;
+  margin-top: 12px;
+  color: var(--color-link);
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+}
+
+.more-link:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
 }
 </style>
