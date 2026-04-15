@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Keep crawlers focused on the public site content.
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://juanutrisyon.info/sitemap.xml
