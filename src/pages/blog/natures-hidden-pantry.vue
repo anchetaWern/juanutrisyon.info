@@ -143,10 +143,13 @@
 </template>
 
 <script setup>
-if (typeof document !== 'undefined') {
-  document.title =
-    "Nature's Hidden Pantry: Discovering the Forgotten Superfoods of the Philippines | Juan Nutrisyon";
-}
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: "Nature's Hidden Pantry: Discovering the Forgotten Superfoods of the Philippines",
+  description:
+    'Rediscover native Philippine superfoods, foraged ingredients, and sustainable food traditions that support nutrition, culture, and biodiversity.'
+})
 </script>
 
 <style scoped>

@@ -31,6 +31,13 @@ import IntroLinks from '@/components/IntroLinks.vue'
 import Banner from '@/components/Banner.vue';
 import BlogPreview from '@/components/BlogPreview.vue';
 import PopularFoods from '@/components/PopularFoods.vue';
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: 'Nutrition tools for Filipino food',
+  description:
+    'Explore Filipino nutrition tools, localized food data, recipe analysis, and practical healthy eating guidance made for everyday meals.'
+})
 </script>
 
 <style scoped>

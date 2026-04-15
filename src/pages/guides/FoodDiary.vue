@@ -65,7 +65,8 @@
     </section>
 
     <footer class="guide-footer">
-      <p><h3>Guide Complete!</h3> You are now ready to master your nutrition with Juan Nutrisyon.</p>
+      <h3>Guide Complete!</h3> 
+      <p>You are now ready to master your nutrition with Juan Nutrisyon.</p>
       <button class="blue-btn" @click="printGuide">Save Guide as PDF</button>
     </footer>
   </div>

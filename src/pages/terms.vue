@@ -34,6 +34,16 @@
   </div>
 </template>
 
+<script setup>
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: 'Terms and Conditions',
+  description:
+    'Review the Juan Nutrisyon terms, medical disclaimer, data accuracy notes, third-party link policy, and service limitations.'
+})
+</script>
+
 <style scoped>
 .legal-container {
   max-width: 800px;

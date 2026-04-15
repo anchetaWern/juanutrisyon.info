@@ -33,6 +33,16 @@
   </div>
 </template>
 
+<script setup>
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: 'Contact',
+  description:
+    'Contact Juan Nutrisyon for feedback, technical support, data questions, or social updates about Filipino nutrition tools.'
+})
+</script>
+
 <style scoped>
 .legal-container {
   max-width: 800px;

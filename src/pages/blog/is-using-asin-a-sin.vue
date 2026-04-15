@@ -103,9 +103,13 @@
 </template>
 
 <script setup>
-if (typeof document !== 'undefined') {
-  document.title = 'Is Using Asin a Sin? A Guide to Mindful Sodium Intake | Juan Nutrisyon';
-}
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: 'Is Using Asin a Sin? A Guide to Mindful Sodium Intake',
+  description:
+    'Estimate sodium in Filipino cooking, learn practical low-sodium swaps, and understand how much asin, patis, and toyo add to meals.'
+})
 </script>
 
 <style scoped>

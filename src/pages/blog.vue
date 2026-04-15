@@ -12,13 +12,15 @@
         :to="`/blog/${post.slug}`"
         class="post-link"
       >
-        {{ post.title }}
+        Read the article: {{ post.title }}
       </RouterLink>
     </section>
   </div>
 </template>
 
 <script setup>
+import { usePageSeo } from '@/composables/usePageSeo'
+
 const posts = [
   {
     title: "Busog Pero Kulang: Why Feeling Full Doesn't Mean You're Nourished",
@@ -42,6 +44,12 @@ const posts = [
   },
   { title: 'Sana all may label!', slug: 'sana-all-may-label' }
 ];
+
+usePageSeo({
+  title: 'Blog',
+  description:
+    'Browse Juan Nutrisyon articles on Filipino nutrition, hidden sugar, sodium, label reading, carinderia choices, and budget-friendly healthy eating.'
+})
 </script>
 
 <style scoped>

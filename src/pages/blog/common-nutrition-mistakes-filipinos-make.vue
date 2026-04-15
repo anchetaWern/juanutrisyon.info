@@ -242,10 +242,13 @@
 </template>
 
 <script setup>
-if (typeof document !== 'undefined') {
-  document.title =
-    '7 Common Nutrition Mistakes Filipinos Make (At Least #3 Will Sound Very Familiar) | Juan Nutrisyon';
-}
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: '7 Common Nutrition Mistakes Filipinos Make',
+  description:
+    'Read seven common Filipino nutrition mistakes, from soft drinks and sugar to rice portions and exercise myths, with practical corrections.'
+})
 </script>
 
 <style scoped>

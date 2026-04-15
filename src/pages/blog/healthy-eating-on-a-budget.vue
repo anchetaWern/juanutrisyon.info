@@ -366,10 +366,13 @@
 </template>
 
 <script setup>
-if (typeof document !== 'undefined') {
-  document.title =
-    'Healthy Eating on a Budget: Proof Na Hindi Kailangang Mahal Para Maging Masustansya | Juan Nutrisyon';
-}
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: 'Healthy Eating on a Budget',
+  description:
+    'See how affordable Filipino ingredients, realistic meal planning, and simple recipes can make healthy eating possible on a budget.'
+})
 </script>
 
 <style scoped>

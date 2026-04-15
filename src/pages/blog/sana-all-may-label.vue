@@ -142,9 +142,13 @@
 </template>
 
 <script setup>
-if (typeof document !== 'undefined') {
-  document.title = 'Sana All May Label! A Filipino Guide to Reading Nutrition Facts | Juan Nutrisyon';
-}
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: 'Sana All May Label! A Filipino Guide to Reading Nutrition Facts',
+  description:
+    'Learn how to read nutrition facts for instant noodles, 3-in-1 coffee, and canned fish so you can spot sodium, sugar, and serving sizes.'
+})
 </script>
 
 <style scoped>

@@ -23,6 +23,13 @@
 import SearchAndViewFood from './guides/SearchAndViewFood.vue';
 import CreateRecipe from './guides/CreateRecipe.vue';
 import FoodDiary from './guides/FoodDiary.vue';
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: 'User Guide',
+  description:
+    'Follow the Juan Nutrisyon user guide to search foods, create recipes, and track your daily nutrition with confidence.'
+})
 </script>
 
 <style scoped>

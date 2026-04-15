@@ -164,9 +164,13 @@
 </template>
 
 <script setup>
-if (typeof document !== 'undefined') {
-  document.title = "Busog Pero Kulang: Why Feeling Full Doesn't Mean You're Nourished | Juan Nutrisyon";
-}
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: "Busog Pero Kulang: Why Feeling Full Doesn't Mean You're Nourished",
+  description:
+    'Learn why feeling busog is not the same as being nourished, what hidden hunger means, and how to improve simple Filipino meals.'
+})
 </script>
 
 <style scoped>

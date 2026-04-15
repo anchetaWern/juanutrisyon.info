@@ -175,9 +175,13 @@
 </template>
 
 <script setup>
-if (typeof document !== 'undefined') {
-  document.title = 'Why Filipino Food is High in Sodium | Juan Nutrisyon';
-}
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: 'Why Filipino Food is High in Sodium',
+  description:
+    'Understand why Filipino food tends to be high in sodium, from preservation and condiments to modern processed foods and everyday sawsawan.'
+})
 </script>
 
 <style scoped>

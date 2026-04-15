@@ -161,9 +161,13 @@
 </template>
 
 <script setup>
-if (typeof document !== 'undefined') {
-  document.title = 'Hidden Sugar in Common Filipino Foods | Juan Nutrisyon';
-}
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: 'Hidden Sugar in Common Filipino Foods',
+  description:
+    'Discover where hidden sugar shows up in common Filipino foods like tocino, spaghetti, 3-in-1 coffee, bottled bagoong, and juice.'
+})
 </script>
 
 <style scoped>

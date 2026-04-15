@@ -88,6 +88,16 @@ While we aim for accuracy, values for home-cooked meals may vary depending on pr
   </div>
 </template>
 
+<script setup>
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: 'About',
+  description:
+    'Learn the story behind Juan Nutrisyon, our mission for Filipino nutrition, and how we build localized food data and tools.'
+})
+</script>
+
 <style scoped>
 .legal-container {
   max-width: 800px;

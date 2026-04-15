@@ -38,6 +38,16 @@
   </div>
 </template>
 
+<script setup>
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: 'Privacy Policy',
+  description:
+    'Read the Juan Nutrisyon privacy policy covering analytics, ads, cookies, and how website usage data is handled.'
+})
+</script>
+
 <style scoped>
 .legal-container {
   max-width: 800px;

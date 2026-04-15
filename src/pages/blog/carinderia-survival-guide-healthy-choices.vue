@@ -179,9 +179,13 @@
 </template>
 
 <script setup>
-if (typeof document !== 'undefined') {
-  document.title = 'Carinderia Survival Guide (Healthy Choices) | Juan Nutrisyon';
-}
+import { usePageSeo } from '@/composables/usePageSeo'
+
+usePageSeo({
+  title: 'Carinderia Survival Guide (Healthy Choices)',
+  description:
+    'Use this Juan Nutrisyon guide to make healthier carinderia choices with better veggie picks, rice portions, and practical budget tips.'
+})
 </script>
 
 <style scoped>

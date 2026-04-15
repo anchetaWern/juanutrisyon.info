@@ -58,7 +58,7 @@
       </article>
       <article class="post">
         <h3>
-          <a class="post-link" href="/blog/healthy-eating-on-a-budget">Healthy Eating on a Budget</a>
+          <a class="post-link" href="/blog/healthy-eating-on-a-budget">Read Healthy Eating on a Budget</a>
         </h3>
         <p>
           Proof that healthy eating doesn't need to be expensive, with practical tips, a daily
@@ -67,7 +67,7 @@
       </article>
       <article class="post">
         <h3>
-          <a class="post-link" href="/blog/is-using-asin-a-sin">Is Using Asin a Sin</a>
+          <a class="post-link" href="/blog/is-using-asin-a-sin">Read Is Using Asin a Sin</a>
         </h3>
         <p>
           A clear, no-guilt look at salt in Filipino cooking, how much is too much, and easy swaps
@@ -75,7 +75,7 @@
         </p>
       </article>
     </div>
-    <a class="more-link" href="/blog">Read more</a>
+    <a class="more-link" href="/blog">Browse the blog</a>
   </section>
 </template>
 
