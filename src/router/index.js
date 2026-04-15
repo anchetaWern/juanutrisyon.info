@@ -1,20 +1,19 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import IndexPage from '../pages/index.vue';
-import AboutPage from '../pages/about.vue';
-import ContactPage from '../pages/contact.vue';
-import TermsPage from '../pages/terms.vue';
-import PrivacyPage from '../pages/privacy.vue';
-import GuidePage from '../pages/guide.vue';
-import BlogPage from '../pages/blog.vue';
-import HealthyEatingOnABudget from '../pages/blog/healthy-eating-on-a-budget.vue';
-import CommonNutritionMistakesFilipinosMake from '../pages/blog/common-nutrition-mistakes-filipinos-make.vue';
-import IsUsingAsinASin from '../pages/blog/is-using-asin-a-sin.vue';
-import SanaAllMayLabel from '../pages/blog/sana-all-may-label.vue';
-import NaturesHiddenPantry from '../pages/blog/natures-hidden-pantry.vue';
-import WhyFilipinoFoodIsHighInSodium from '../pages/blog/why-filipino-food-is-high-in-sodium.vue';
-import CarinderiaSurvivalGuideHealthyChoices from '../pages/blog/carinderia-survival-guide-healthy-choices.vue';
-import HiddenSugarInCommonFilipinoFoods from '../pages/blog/hidden-sugar-in-common-filipino-foods.vue';
-import BusogPeroKulang from '../pages/blog/busog-pero-kulang-why-feeling-full-doesnt-mean-youre-nourished.vue';
+const IndexPage = () => import('../pages/index.vue');
+const AboutPage = () => import('../pages/about.vue');
+const ContactPage = () => import('../pages/contact.vue');
+const TermsPage = () => import('../pages/terms.vue');
+const PrivacyPage = () => import('../pages/privacy.vue');
+const GuidePage = () => import('../pages/guide.vue');
+const BlogPage = () => import('../pages/blog.vue');
+const HealthyEatingOnABudget = () => import('../pages/blog/healthy-eating-on-a-budget.vue');
+const CommonNutritionMistakesFilipinosMake = () => import('../pages/blog/common-nutrition-mistakes-filipinos-make.vue');
+const IsUsingAsinASin = () => import('../pages/blog/is-using-asin-a-sin.vue');
+const SanaAllMayLabel = () => import('../pages/blog/sana-all-may-label.vue');
+const NaturesHiddenPantry = () => import('../pages/blog/natures-hidden-pantry.vue');
+const WhyFilipinoFoodIsHighInSodium = () => import('../pages/blog/why-filipino-food-is-high-in-sodium.vue');
+const CarinderiaSurvivalGuideHealthyChoices = () => import('../pages/blog/carinderia-survival-guide-healthy-choices.vue');
+const HiddenSugarInCommonFilipinoFoods = () => import('../pages/blog/hidden-sugar-in-common-filipino-foods.vue');
+const BusogPeroKulang = () => import('../pages/blog/busog-pero-kulang-why-feeling-full-doesnt-mean-youre-nourished.vue');
 
 export const routes = [
   {

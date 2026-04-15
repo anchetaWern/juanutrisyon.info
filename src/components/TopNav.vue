@@ -2,7 +2,7 @@
     <div class="nav">
       <picture>
         <source srcset="/logo-dark.png" media="(prefers-color-scheme: dark)" />
-        <img src="/logo.png" alt="Juan Nutrisyon" class="logo" />
+        <img src="/logo.png" alt="Juan Nutrisyon" class="logo" width="280" height="73" />
       </picture>
       <nav>
         <RouterLink to="/">Home</RouterLink> |
