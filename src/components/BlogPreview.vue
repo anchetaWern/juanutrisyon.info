@@ -5,6 +5,50 @@
     <div class="posts">
       <article class="post">
         <h3>
+          <a class="post-link" href="/blog/busog-pero-kulang-why-feeling-full-doesnt-mean-youre-nourished">
+            Busog Pero Kulang
+          </a>
+        </h3>
+        <p>
+          A practical look at hidden hunger, why being full is not the same as being nourished,
+          and how to improve a simple rice meal without spending more.
+        </p>
+      </article>
+      <article class="post">
+        <h3>
+          <a class="post-link" href="/blog/hidden-sugar-in-common-filipino-foods">
+            Hidden Sugar in Common Filipino Foods
+          </a>
+        </h3>
+        <p>
+          A practical guide to the sweeteners hiding in tocino, spaghetti, 3-in-1 coffee, bottled
+          bagoong, and fruit juices that seem healthier than they are.
+        </p>
+      </article>
+      <article class="post">
+        <h3>
+          <a class="post-link" href="/blog/carinderia-survival-guide-healthy-choices">
+            Carinderia Survival Guide
+          </a>
+        </h3>
+        <p>
+          Practical ways to eat better at your neighborhood turo-turo without giving up budget,
+          convenience, or familiar Filipino flavors.
+        </p>
+      </article>
+      <article class="post">
+        <h3>
+          <a class="post-link" href="/blog/why-filipino-food-is-high-in-sodium">
+            Why Filipino Food Is High in Sodium
+          </a>
+        </h3>
+        <p>
+          A closer look at how preservation, condiments, and modern pantry staples made salty
+          flavors a defining part of Filipino food.
+        </p>
+      </article>
+      <article class="post">
+        <h3>
           <a class="post-link" href="/blog/sana-all-may-label">Sana All May Label</a>
         </h3>
         <p>

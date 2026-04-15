@@ -20,6 +20,19 @@
 
 <script setup>
 const posts = [
+  {
+    title: "Busog Pero Kulang: Why Feeling Full Doesn't Mean You're Nourished",
+    slug: 'busog-pero-kulang-why-feeling-full-doesnt-mean-youre-nourished'
+  },
+  {
+    title: 'Hidden sugar in common Filipino foods',
+    slug: 'hidden-sugar-in-common-filipino-foods'
+  },
+  {
+    title: 'Carinderia survival guide (healthy choices)',
+    slug: 'carinderia-survival-guide-healthy-choices'
+  },
+  { title: 'Why Filipino food is high in sodium', slug: 'why-filipino-food-is-high-in-sodium' },
   { title: 'Healthy eating on a budget', slug: 'healthy-eating-on-a-budget' },
   { title: 'Common nutrition mistakes filipinos make', slug: 'common-nutrition-mistakes-filipinos-make' },
   { title: 'Is using asin a sin?', slug: 'is-using-asin-a-sin' },
