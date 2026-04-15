@@ -3,6 +3,7 @@
     <header class="post-header">
       <p class="brand">Juan Nutrisyon</p>
       <h1>Carinderia Survival Guide (Healthy Choices)</h1>
+      <p class="post-meta">Published April 15, 2026 by Wern Ancheta</p>
     </header>
 
     <section class="post-section">
@@ -205,6 +206,13 @@ if (typeof document !== 'undefined') {
   text-transform: uppercase;
   color: var(--color-link);
   margin-bottom: 0.5rem;
+}
+
+.post-meta {
+  margin: 0.6rem 0 0;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  opacity: 0.78;
 }
 
 h1 {

@@ -3,6 +3,7 @@
     <header class="post-header">
       <p class="brand">Juan Nutrisyon</p>
       <h1>Hidden Sugar in Common Filipino Foods</h1>
+      <p class="post-meta">Published April 15, 2026 by Wern Ancheta</p>
     </header>
 
     <section class="post-section">
@@ -187,6 +188,13 @@ if (typeof document !== 'undefined') {
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--color-link);
+}
+
+.post-meta {
+  margin: 0.6rem 0 0;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  opacity: 0.78;
 }
 
 .post-header h1 {
