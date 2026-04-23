@@ -69,17 +69,36 @@
 
     <section class="details">
       <h2>Our Data Methodology</h2>
-      <p>Nutritional values are calculated per 100g and adjusted based on portion size entered by the user. For mixed dishes and recipes, ingredient-level data is combined to estimate total nutrient composition.
-While we aim for accuracy, values for home-cooked meals may vary depending on preparation methods, ingredients, and portion sizes. Some features and workflows in Juan Nutrisyon are inspired by consultations with practicing dietitians, helping ensure that the platform aligns with real-world nutrition practices. Juan Nutrisyon sources its nutritional data from world-class institutions:</p>
-      
+
+      <p>
+        Nutritional values are calculated per 100g and adjusted based on the portion size entered by the user. 
+        For mixed dishes and recipes, ingredient-level data is combined to estimate total nutrient composition.
+      </p>
+
+      <p>
+        Calculation methods for estimating nutrients across multiple foods have been reviewed by a licensed dietitian.
+      </p>
+
+      <p>
+        While we aim for accuracy, values for home-cooked meals may vary depending on preparation methods, ingredients, and portion sizes.
+      </p>
+
+      <p>
+        Juan Nutrisyon sources its nutritional data from established institutions:
+      </p>
+
       <div class="source-item">
         <h3>DOST-FNRI (Philippines)</h3>
-        <p>We utilize the Philippine Food Composition Tables (PhilFCT) to provide culturally relevant data for local Filipino dishes and ingredients.</p>
+        <p>
+          We use the Philippine Food Composition Tables (PhilFCT) to provide culturally relevant data for Filipino dishes and ingredients.
+        </p>
       </div>
 
       <div class="source-item">
         <h3>USDA (United States)</h3>
-        <p>We supplement our database with the U.S. Department of Agriculture FoodData Central for international ingredients and standardized global items.</p>
+        <p>
+          We supplement with USDA FoodData Central for international ingredients and standardized global items.
+        </p>
       </div>
     </section>
 
