@@ -6,4 +6,4 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://juanutrisyon.info/sitemap.xml
+Sitemap: https://juanutrisyon.info/sitemap-main.xml
