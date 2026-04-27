@@ -3,9 +3,11 @@ import { useHead } from '@vueuse/head'
 const SITE_NAME = 'Juan Nutrisyon'
 const SITE_URL = 'https://juanutrisyon.info'
 const DEFAULT_AUTHOR = 'Wern Ancheta'
+const DEFAULT_AUTHOR_URL = 'https://wernancheta.com'
 const DEFAULT_SECTION = 'Nutrition'
 const DEFAULT_IMAGE = '/logo.png'
 const DEFAULT_LOCALE = 'en_PH'
+const DEFAULT_TIMEZONE_OFFSET = '+08:00'
 
 function toAbsoluteUrl(pathOrUrl) {
   if (!pathOrUrl) {
@@ -17,6 +19,34 @@ function toAbsoluteUrl(pathOrUrl) {
   }
 
   return `${SITE_URL}${pathOrUrl.startsWith('/') ? pathOrUrl : `/${pathOrUrl}`}`
+}
+
+function toIsoDateTime(value) {
+  if (!value) {
+    return value
+  }
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    return `${value}T00:00:00${DEFAULT_TIMEZONE_OFFSET}`
+  }
+
+  if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(value)) {
+    return value
+  }
+
+  if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})$/.test(value)) {
+    return value.replace(/(Z|[+-]\d{2}:\d{2})$/, ':00$1')
+  }
+
+  if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/.test(value)) {
+    return `${value}${DEFAULT_TIMEZONE_OFFSET}`
+  }
+
+  if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(value)) {
+    return `${value}:00${DEFAULT_TIMEZONE_OFFSET}`
+  }
+
+  return value
 }
 
 export function useBlogPostSeo({
@@ -35,7 +65,8 @@ export function useBlogPostSeo({
   const canonicalUrl = `${SITE_URL}${path}`
   const imageUrl = toAbsoluteUrl(image)
   const normalizedTags = tags.filter(Boolean)
-  const resolvedModifiedTime = modifiedTime || publishedTime
+  const publishedDateTime = toIsoDateTime(publishedTime)
+  const modifiedDateTime = toIsoDateTime(modifiedTime || publishedTime)
 
   const blogPostingSchema = {
     '@context': 'https://schema.org',
@@ -43,11 +74,12 @@ export function useBlogPostSeo({
     headline: title,
     description,
     image: imageUrl,
-    datePublished: publishedTime,
-    dateModified: resolvedModifiedTime,
+    datePublished: publishedDateTime,
+    dateModified: modifiedDateTime,
     author: {
       '@type': 'Person',
-      name: authorName
+      name: authorName,
+      url: DEFAULT_AUTHOR_URL
     },
     publisher: {
       '@type': 'Organization',
@@ -112,11 +144,11 @@ export function useBlogPostSeo({
       },
       {
         property: 'article:published_time',
-        content: publishedTime
+        content: publishedDateTime
       },
       {
         property: 'article:modified_time',
-        content: resolvedModifiedTime
+        content: modifiedDateTime
       },
       {
         property: 'article:author',
