@@ -143,13 +143,23 @@
 </template>
 
 <script setup>
-import { usePageSeo } from '@/composables/usePageSeo'
+import { useBlogPostSeo } from '@/composables/useBlogPostSeo'
 
-usePageSeo({
+const seo = {
   title: "Nature's Hidden Pantry: Discovering the Forgotten Superfoods of the Philippines",
   description:
-    'Rediscover native Philippine superfoods, foraged ingredients, and sustainable food traditions that support nutrition, culture, and biodiversity.'
-})
+    'Rediscover native Philippine superfoods, foraged ingredients, and sustainable food traditions that support nutrition, culture, and biodiversity.',
+  path: '/blog/natures-hidden-pantry',
+  publishedTime: '2026-04-06',
+  modifiedTime: '2026-04-06',
+  authorName: 'Wern Ancheta',
+  image: '/blog/natures-hidden-pantry/forage-1.jpg',
+  imageAlt: 'Foraged Philippine ingredients featured in Nature’s Hidden Pantry',
+  section: 'Nutrition',
+  tags: ['superfoods', 'foraged foods', 'philippine food', 'biodiversity']
+}
+
+useBlogPostSeo(seo)
 </script>
 
 <style scoped>

@@ -175,13 +175,23 @@
 </template>
 
 <script setup>
-import { usePageSeo } from '@/composables/usePageSeo'
+import { useBlogPostSeo } from '@/composables/useBlogPostSeo'
 
-usePageSeo({
+const seo = {
   title: 'Why Filipino Food is High in Sodium',
   description:
-    'Understand why Filipino food tends to be high in sodium, from preservation and condiments to modern processed foods and everyday sawsawan.'
-})
+    'Understand why Filipino food tends to be high in sodium, from preservation and condiments to modern processed foods and everyday sawsawan.',
+  path: '/blog/why-filipino-food-is-high-in-sodium',
+  publishedTime: '2026-04-15',
+  modifiedTime: '2026-04-15',
+  authorName: 'Wern Ancheta',
+  image: '/logo.png',
+  imageAlt: 'Juan Nutrisyon article about why Filipino food is high in sodium',
+  section: 'Nutrition',
+  tags: ['sodium', 'filipino food', 'preservation', 'condiments']
+}
+
+useBlogPostSeo(seo)
 </script>
 
 <style scoped>

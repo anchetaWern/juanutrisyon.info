@@ -179,13 +179,23 @@
 </template>
 
 <script setup>
-import { usePageSeo } from '@/composables/usePageSeo'
+import { useBlogPostSeo } from '@/composables/useBlogPostSeo'
 
-usePageSeo({
+const seo = {
   title: 'Carinderia Survival Guide (Healthy Choices)',
   description:
-    'Use this Juan Nutrisyon guide to make healthier carinderia choices with better veggie picks, rice portions, and practical budget tips.'
-})
+    'Use this Juan Nutrisyon guide to make healthier carinderia choices with better veggie picks, rice portions, and practical budget tips.',
+  path: '/blog/carinderia-survival-guide-healthy-choices',
+  publishedTime: '2026-04-15',
+  modifiedTime: '2026-04-15',
+  authorName: 'Wern Ancheta',
+  image: '/logo.png',
+  imageAlt: 'Juan Nutrisyon article about healthier carinderia choices',
+  section: 'Nutrition',
+  tags: ['carinderia', 'healthy choices', 'budget meals', 'filipino food']
+}
+
+useBlogPostSeo(seo)
 </script>
 
 <style scoped>

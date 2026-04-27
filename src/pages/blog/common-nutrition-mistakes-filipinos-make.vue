@@ -242,13 +242,23 @@
 </template>
 
 <script setup>
-import { usePageSeo } from '@/composables/usePageSeo'
+import { useBlogPostSeo } from '@/composables/useBlogPostSeo'
 
-usePageSeo({
+const seo = {
   title: '7 Common Nutrition Mistakes Filipinos Make',
   description:
-    'Read seven common Filipino nutrition mistakes, from soft drinks and sugar to rice portions and exercise myths, with practical corrections.'
-})
+    'Read seven common Filipino nutrition mistakes, from soft drinks and sugar to rice portions and exercise myths, with practical corrections.',
+  path: '/blog/common-nutrition-mistakes-filipinos-make',
+  publishedTime: '2026-04-12',
+  modifiedTime: '2026-04-12',
+  authorName: 'Wern Ancheta',
+  image: '/logo.png',
+  imageAlt: 'Juan Nutrisyon article covering common nutrition mistakes Filipinos make',
+  section: 'Nutrition',
+  tags: ['nutrition mistakes', 'sugar intake', 'rice portions', 'healthy habits']
+}
+
+useBlogPostSeo(seo)
 </script>
 
 <style scoped>

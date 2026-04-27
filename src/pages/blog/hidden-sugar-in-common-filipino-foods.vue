@@ -161,13 +161,23 @@
 </template>
 
 <script setup>
-import { usePageSeo } from '@/composables/usePageSeo'
+import { useBlogPostSeo } from '@/composables/useBlogPostSeo'
 
-usePageSeo({
+const seo = {
   title: 'Hidden Sugar in Common Filipino Foods',
   description:
-    'Discover where hidden sugar shows up in common Filipino foods like tocino, spaghetti, 3-in-1 coffee, bottled bagoong, and juice.'
-})
+    'Discover where hidden sugar shows up in common Filipino foods like tocino, spaghetti, 3-in-1 coffee, bottled bagoong, and juice.',
+  path: '/blog/hidden-sugar-in-common-filipino-foods',
+  publishedTime: '2026-04-15',
+  modifiedTime: '2026-04-15',
+  authorName: 'Wern Ancheta',
+  image: '/logo.png',
+  imageAlt: 'Juan Nutrisyon article about hidden sugar in common Filipino foods',
+  section: 'Nutrition',
+  tags: ['hidden sugar', 'processed food', 'filipino diet', 'label reading']
+}
+
+useBlogPostSeo(seo)
 </script>
 
 <style scoped>

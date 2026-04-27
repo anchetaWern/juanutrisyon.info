@@ -103,13 +103,23 @@
 </template>
 
 <script setup>
-import { usePageSeo } from '@/composables/usePageSeo'
+import { useBlogPostSeo } from '@/composables/useBlogPostSeo'
 
-usePageSeo({
+const seo = {
   title: 'Is Using Asin a Sin? A Guide to Mindful Sodium Intake',
   description:
-    'Estimate sodium in Filipino cooking, learn practical low-sodium swaps, and understand how much asin, patis, and toyo add to meals.'
-})
+    'Estimate sodium in Filipino cooking, learn practical low-sodium swaps, and understand how much asin, patis, and toyo add to meals.',
+  path: '/blog/is-using-asin-a-sin',
+  publishedTime: '2026-04-10',
+  modifiedTime: '2026-04-10',
+  authorName: 'Wern Ancheta',
+  image: '/blog/is-using-asin-a-sin/1.png',
+  imageAlt: 'Illustration for mindful sodium intake and using asin in Filipino cooking',
+  section: 'Nutrition',
+  tags: ['sodium intake', 'low-sodium swaps', 'filipino cooking', 'salt']
+}
+
+useBlogPostSeo(seo)
 </script>
 
 <style scoped>

@@ -164,13 +164,23 @@
 </template>
 
 <script setup>
-import { usePageSeo } from '@/composables/usePageSeo'
+import { useBlogPostSeo } from '@/composables/useBlogPostSeo'
 
-usePageSeo({
+const seo = {
   title: "Busog Pero Kulang: Why Feeling Full Doesn't Mean You're Nourished",
   description:
-    'Learn why feeling busog is not the same as being nourished, what hidden hunger means, and how to improve simple Filipino meals.'
-})
+    'Learn why feeling busog is not the same as being nourished, what hidden hunger means, and how to improve simple Filipino meals.',
+  path: '/blog/busog-pero-kulang-why-feeling-full-doesnt-mean-youre-nourished',
+  publishedTime: '2026-04-15',
+  modifiedTime: '2026-04-15',
+  authorName: 'Wern Ancheta',
+  image: '/logo.png',
+  imageAlt: "Juan Nutrisyon article: Busog Pero Kulang: Why Feeling Full Doesn't Mean You're Nourished",
+  section: 'Nutrition',
+  tags: ['hidden hunger', 'balanced meals', 'filipino nutrition', 'satiety']
+}
+
+useBlogPostSeo(seo)
 </script>
 
 <style scoped>

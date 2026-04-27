@@ -366,13 +366,23 @@
 </template>
 
 <script setup>
-import { usePageSeo } from '@/composables/usePageSeo'
+import { useBlogPostSeo } from '@/composables/useBlogPostSeo'
 
-usePageSeo({
+const seo = {
   title: 'Healthy Eating on a Budget',
   description:
-    'See how affordable Filipino ingredients, realistic meal planning, and simple recipes can make healthy eating possible on a budget.'
-})
+    'See how affordable Filipino ingredients, realistic meal planning, and simple recipes can make healthy eating possible on a budget.',
+  path: '/blog/healthy-eating-on-a-budget',
+  publishedTime: '2026-04-14',
+  modifiedTime: '2026-04-14',
+  authorName: 'Wern Ancheta',
+  image: '/logo.png',
+  imageAlt: 'Juan Nutrisyon article about healthy eating on a budget',
+  section: 'Nutrition',
+  tags: ['budget meals', 'healthy eating', 'filipino ingredients', 'meal planning']
+}
+
+useBlogPostSeo(seo)
 </script>
 
 <style scoped>

@@ -142,13 +142,23 @@
 </template>
 
 <script setup>
-import { usePageSeo } from '@/composables/usePageSeo'
+import { useBlogPostSeo } from '@/composables/useBlogPostSeo'
 
-usePageSeo({
+const seo = {
   title: 'Sana All May Label! A Filipino Guide to Reading Nutrition Facts',
   description:
-    'Learn how to read nutrition facts for instant noodles, 3-in-1 coffee, and canned fish so you can spot sodium, sugar, and serving sizes.'
-})
+    'Learn how to read nutrition facts for instant noodles, 3-in-1 coffee, and canned fish so you can spot sodium, sugar, and serving sizes.',
+  path: '/blog/sana-all-may-label',
+  publishedTime: '2026-04-03',
+  modifiedTime: '2026-04-03',
+  authorName: 'Wern Ancheta',
+  image: '/blog/sana-all-may-label/1.png',
+  imageAlt: 'Visual guide to reading nutrition facts on Filipino packaged foods',
+  section: 'Nutrition',
+  tags: ['nutrition facts', 'food labels', 'serving sizes', 'sodium']
+}
+
+useBlogPostSeo(seo)
 </script>
 
 <style scoped>
