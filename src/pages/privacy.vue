@@ -44,13 +44,32 @@
         used solely to provide personalized nutrition insights and recommendations.
       </p>
 
-      <h3>c. Usage Data</h3>
-      <p>We may automatically collect limited technical data such as:</p>
+      <h3>c. Usage Data and Analytics</h3>
+      <p>We collect limited usage data to understand how users interact with Juan Nutrisyon and to improve the performance, usability, and features of the platform.</p>
+      <p>This may include:</p>
       <ul>
-        <li>Pages visited</li>
-        <li>Features used</li>
+        <li>Pages visited and navigation flow</li>
+        <li>Feature usage (e.g., food search, meal logging, recipe analysis)</li>
         <li>Device and browser type</li>
+        <li>Interaction events (e.g., button clicks, feature usage frequency)</li>
       </ul>
+
+      <p>We use analytics services such as Google Analytics to help us understand general usage patterns.</p>
+      &nbsp;
+      <h4>Important Clarification</h4>
+      <p>Analytics data is used only in aggregated and anonymized form. We do not use analytics tools to directly identify individual users or to track what a specific user eats.</p>
+      <p>In particular:</p>
+      <ul>
+        <li>We do not use analytics to profile or monitor individual food logs</li>
+        <li>We do not combine analytics data with personal nutrition entries for behavioral tracking</li>
+        <li>We only use analytics to understand general app usage trends (e.g., which features are most used)</li>
+      </ul>
+
+      &nbsp;
+
+      <h4>Nutrition and Food Data (Separate from Analytics)</h4>
+      <p>Food logs, recipes, and user-provided nutrition data are processed solely for the purpose of generating nutrition analysis, insights, and meal planning features.</p>
+      <p>This data is not used for advertising or general behavioral analytics.</p>
 
       <h3>d. Cookies and Tracking Technologies</h3>
       <p>We use cookies and similar technologies to:</p>
