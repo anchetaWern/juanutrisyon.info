@@ -4,9 +4,4 @@
   <sitemap>
     <loc>https://juanutrisyon.info/sitemap-main.xml</loc>
   </sitemap>
-
-  <!-- Subdomain sitemap -->
-  <sitemap>
-    <loc>https://app.juanutrisyon.info/sitemaps/sitemap-index.xml</loc>
-  </sitemap>
 </sitemapindex>
