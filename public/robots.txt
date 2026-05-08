@@ -6,4 +6,4 @@ Content-Signal: ai-train=no, search=yes, ai-input=yes
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://juanutrisyon.info/sitemap-main.xml
+Sitemap: https://juanutrisyon.info/sitemap.xml
