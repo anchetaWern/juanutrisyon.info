@@ -13,6 +13,9 @@
 
 <script setup>
 import TopNav from "@/components/TopNav.vue";
+import { useWebMcp } from "@/composables/useWebMcp";
+
+useWebMcp()
 </script>
 
 <style>
