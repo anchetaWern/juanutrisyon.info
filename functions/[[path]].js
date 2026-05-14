@@ -595,9 +595,16 @@ function appendHeader(headers, name, value) {
   headers.set(name, current ? `${current}, ${value}` : value);
 }
 
-function decorateResponse(response, origin, { varyAccept = false } = {}) {
+function applyStaticCacheHeaders(headers, pathname) {
+  if (pathname === '/sitemap.xml' || pathname === '/robots.txt') {
+    headers.set('Cache-Control', 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800');
+  }
+}
+
+function decorateResponse(response, origin, pathname, { varyAccept = false } = {}) {
   const headers = new Headers(response.headers);
   headers.set('Content-Signal', CONTENT_SIGNAL);
+  applyStaticCacheHeaders(headers, pathname);
   if (varyAccept) {
     appendHeader(headers, 'Vary', 'Accept');
   }
@@ -619,7 +626,8 @@ function jsonResponse(body, origin, contentType = 'application/json; charset=utf
         'Content-Type': contentType
       }
     }),
-    origin
+    origin,
+    ''
   );
 }
 
@@ -631,6 +639,7 @@ function htmlResponse(html, origin) {
       }
     }),
     origin,
+    '',
     { varyAccept: true }
   );
 }
@@ -642,7 +651,8 @@ function textResponse(text, origin, contentType = 'text/plain; charset=utf-8') {
         'Content-Type': contentType
       }
     }),
-    origin
+    origin,
+    ''
   );
 }
 
@@ -714,6 +724,7 @@ function markdownResponse(markdown, origin, status = 200) {
       }
     }),
     origin,
+    '',
     { varyAccept: true }
   );
 }
@@ -902,5 +913,5 @@ export async function onRequest(context) {
     return markdownResponse(htmlToMarkdown(html, request.url), origin, response.status);
   }
 
-  return decorateResponse(response, origin, { varyAccept: true });
+  return decorateResponse(response, origin, pathname, { varyAccept: true });
 }
