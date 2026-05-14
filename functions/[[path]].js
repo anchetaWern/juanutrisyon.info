@@ -595,16 +595,9 @@ function appendHeader(headers, name, value) {
   headers.set(name, current ? `${current}, ${value}` : value);
 }
 
-function applyStaticCacheHeaders(headers, pathname) {
-  if (pathname === '/sitemap.xml' || pathname === '/robots.txt') {
-    headers.set('Cache-Control', 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800');
-  }
-}
-
-function decorateResponse(response, origin, pathname, { varyAccept = false } = {}) {
+function decorateResponse(response, origin, { varyAccept = false } = {}) {
   const headers = new Headers(response.headers);
   headers.set('Content-Signal', CONTENT_SIGNAL);
-  applyStaticCacheHeaders(headers, pathname);
   if (varyAccept) {
     appendHeader(headers, 'Vary', 'Accept');
   }
@@ -913,5 +906,5 @@ export async function onRequest(context) {
     return markdownResponse(htmlToMarkdown(html, request.url), origin, response.status);
   }
 
-  return decorateResponse(response, origin, pathname, { varyAccept: true });
+  return decorateResponse(response, origin, { varyAccept: true });
 }

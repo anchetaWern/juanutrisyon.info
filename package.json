@@ -4,8 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate:sitemaps": "node scripts/generate-sitemaps.mjs",
-    "prebuild": "node scripts/generate-sitemaps.mjs",
     "dev": "vite",
     "build": "vite-ssg build",
     "preview": "vite preview"
