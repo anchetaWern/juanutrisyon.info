@@ -171,6 +171,25 @@
       <p>
         We do not publicly disclose dietitian associations without user involvement.
       </p>
+      <h3>Professional Use of the Platform</h3>
+      <p>
+        Where a Registered Nutritionist-Dietitian (RND) or other qualified
+        healthcare professional uses Juan Nutrisyon in connection with client or
+        patient services, such professional remains solely responsible for obtaining
+        any required consent before entering client or patient information into the
+        platform.
+      </p>
+      <p>
+        Juan Nutrisyon processes such information solely for the purpose of
+        providing nutrition analysis, meal planning, dietary tracking, and related
+        platform functionality.
+      </p>
+      <p>
+        The healthcare professional remains responsible for complying with all
+        applicable laws, regulations, ethical standards, and professional
+        obligations relating to the collection, processing, storage, and use of
+        client or patient information.
+      </p>
     </section>
 
     <section>
