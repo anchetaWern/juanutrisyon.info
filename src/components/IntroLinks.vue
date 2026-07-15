@@ -33,7 +33,7 @@ import GlobeIcon from './icons/GlobeIcon.vue'
     </template>
     <template #heading>Analyze your diet</template>
 
-    <a href="https://app.juanutrisyon.info/diary" target="_blank">Track</a> your daily intake and discover if you're meeting your nutritional needs, over-consuming, or falling short.
+    <a href="https://app.juanutrisyon.info/diary" target="_blank">Track</a> your daily intake and see how your logged foods compare with the <a href="https://www.fnri.dost.gov.ph/index.php/tools-and-standard/philippine-dietary-reference-intakes-pdri" target="_blank">daily recommended intake.</a>
   </LinkWrapper>
 
   <LinkWrapper>

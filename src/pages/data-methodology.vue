@@ -12,9 +12,7 @@
     <section class="content-panel">
       <h2>Data Sources</h2>
       <p>
-        Juan Nutrisyon uses food-composition data from established public sources where available.
-        Based on the current public site and app copy, confirmed sources include the Philippine Food
-        Composition Tables (PhilFCT) from DOST-FNRI and USDA FoodData Central.
+        Juan Nutrisyon currently uses food-composition data from the Philippine Food Composition Tables (PhilFCT) developed by DOST-FNRI and USDA FoodData Central.
       </p>
       <p>
         The project does not list a source unless it is actually used. As the database grows, food
