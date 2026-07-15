@@ -6,7 +6,7 @@
       <h2>How to Use the Food Diary</h2>
       <p class="intro-text">
         Track your daily intake, monitor water consumption, and get a deep dive into your 
-        nutritional health.
+        nutrition patterns.
       </p>
 
       <div class="step-card">
@@ -51,12 +51,12 @@
           <p>At any point, scroll down to see your real-time <strong>Diet Analysis</strong>:</p>
           <ul>
             <li><strong>The Big Picture:</strong> View remaining calories and your Macro (Carbs/Protein/Fat) bars.</li>
-            <li><strong>Health Risks:</strong> Keep an eye on the "Watch Out" cards for Sodium, Saturated Fat, and Sugar.</li>
+            <li><strong>Nutrients to Watch:</strong> Keep an eye on the "Watch Out" cards for Sodium, Saturated Fat, and Sugar.</li>
             <li><strong>Smart Sorting:</strong> 
               <ul>
-                <li><em>Deficient:</em> Arranged from "least deficient" so you know what's easiest to fix first.</li>
-                <li><em>Over-consumed:</em> Arranged by highest excess so you know what to cut back.</li>
-                <li><em>Good Coverage:</em> Celebrate the nutrients where you've hit your goals!</li>
+                <li><em>Below target:</em> Arranged by nutrients closest to target so you know what may be easiest to improve first.</li>
+                <li><em>Above recommended limit:</em> Arranged by highest excess so you know what to review.</li>
+                <li><em>Within target range:</em> See the nutrients where your logged intake is meeting the app's target range.</li>
               </ul>
             </li>
           </ul>
@@ -66,7 +66,7 @@
 
     <footer class="guide-footer">
       <h3>Guide Complete!</h3> 
-      <p>You are now ready to master your nutrition with Juan Nutrisyon.</p>
+      <p>You are now ready to use Juan Nutrisyon's food diary and nutrition-information tools.</p>
       <button class="blue-btn" @click="printGuide">Save Guide as PDF</button>
     </footer>
   </div>

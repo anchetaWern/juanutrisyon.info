@@ -9,14 +9,14 @@ defineProps({
 
 <template>
   <div class="greetings">
-    <h1 class="green">Nutrition information for everyday food — without judgment.</h1>
+    <h1 class="green">Filipino food nutrition information, made easier to access and understand.</h1>
   </div>
   <p>
-    Juan Nutrisyon helps Filipinos understand the nutritional content of everyday foods — from lutong bahay meals to common ingredients found in local markets and carinderias.
+    Juan Nutrisyon is an independent Filipino food-literacy and nutrition-information initiative developing digital tools for everyday foods, local ingredients, recipes, and professional nutrition workflows.
+  </p>
 
-Many foods we eat daily don’t come with nutrition labels, making it difficult to know how they affect our health. This platform aims to make that information more accessible and easier to understand.
-
-    Whether you’re tracking your diet, planning meals, or simply curious about what’s on your plate, Juan Nutrisyon provides tools and insights to guide your decisions.
+  <p>
+    Many Filipino meals do not come with nutrition labels. The project aims to make food-composition data more understandable while being clear about sources, assumptions, and limitations.
   </p>
   <div class="main-text">
     <a

@@ -42,8 +42,8 @@ import GlobeIcon from './icons/GlobeIcon.vue'
     </template>
     <template #heading>Collaborate</template>
 
-    Whether you are a dietitian, nutritionist, food technologist, chef/baker/food entrepreneur/carinderia, LGU/policy maker, research specialist, food blogger/vlogger, marketer, or a programmer/developer we need you.
-    Please<a href="mailto:juanutrisyon@gmail.com" target="_blank" rel="noopener">say hi.</a>
+    Juan Nutrisyon is open to collaboration with nutrition professionals, researchers, educators, public-health groups, food-data partners, and organizations working on Filipino food literacy.
+    <RouterLink to="/research-partners">View collaboration areas</RouterLink>.
   </LinkWrapper>
 
   <LinkWrapper>
@@ -52,8 +52,8 @@ import GlobeIcon from './icons/GlobeIcon.vue'
     </template>
     <template #heading>Contribute</template>
 
-    Juan Nutrisyon is a community-driven project. We rely on contributions from the community to add new foods to the database.
-    Be sure to visit <a href="https://contribute.juanutrisyon.info" target="_blank">contribute.juanutrisyon.info</a> if you're interested in contributing.
+    Community members can submit information about foods or products that may be missing from Juan Nutrisyon. Submissions are reviewed before they are incorporated into the trusted food database.
+    Visit <a href="https://contribute.juanutrisyon.info" target="_blank" rel="noopener">contribute.juanutrisyon.info</a> to contribute.
   </LinkWrapper>
 
   <LinkWrapper>

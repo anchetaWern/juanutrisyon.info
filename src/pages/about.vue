@@ -1,148 +1,93 @@
 <template>
-  <div class="legal-container">
-    <header class="legal-header">
-      <h1>About Juan Nutrisyon</h1>
+  <main class="page-container">
+    <header class="page-header">
+      <p class="eyebrow">About the project</p>
+      <h1>Juan Nutrisyon is an independent Filipino food-literacy initiative.</h1>
+      <p>
+        The project develops nutrition-information tools that help Filipinos better understand
+        everyday foods, local ingredients, recipes, and meals that often do not come with nutrition
+        labels.
+      </p>
     </header>
-    
-    <section class="content-box">
-      <p class="highlight-text">
-      Juan Nutrisyon is a dedicated nutrition management platform designed specifically for Filipinos. Our goal is simple: to make it easier for Filipinos to understand what they are eating—whether it’s a home-cooked meal, a carinderia dish, or a packaged product.
-      </p>
-    </section>
 
-    <section class="audience">
-      <h2>Who This Is For</h2>
-      <p>Juan Nutrisyon is designed for:</p>
-      <ul class="audience-list">
-        <li>Everyday Filipinos who want to better understand what they are eating.</li>
-        <li>Individuals managing or trying to prevent conditions like hypertension, diabetes, or obesity.</li>
-        <li>Dietitians and health professionals who need tools to analyze and guide their clients.</li>
-      </ul>
-    </section>
-
-    <section class="story">
-      <h2>Our Story: Why Juan Nutrisyon Exists</h2>
-      <p>In the Philippines, we show love through food. But for many Filipino families, the food we love is often tied to a silent reality: the rise of lifestyle diseases like hypertension and diabetes.</p>
-      <br>
-      <p>Juan Nutrisyon started with a personal realization.</p>
-      <p>When my mother suffered a stroke, my perspective on food changed overnight. I realized that so many of these health challenges could be managed—or even prevented—if we were simply empowered with the right information. "Prevention is better than cure" isn't just a saying; it’s a life-saving practice. But to prevent these diseases, we need to know exactly what we are putting into our bodies.</p>
-      <br>
-      <p>Juan Nutrisyon is created and maintained by Wern Ancheta, a web developer based in the Philippines. This project started from a personal experience and continues to grow with the goal of making nutrition information more accessible to everyday Filipinos.</p>
-    </section>
-
-    <hr>
-
-    <section class="media">
-      <h2>Featured Interviews</h2>
+    <section class="content-panel">
+      <h2>What Juan Nutrisyon Does</h2>
       <p>
-        Juan Nutrisyon has been featured on DZMM and PTV, helping bring the
-        conversation around Filipino nutrition and food awareness to a wider audience.
+        Juan Nutrisyon makes food-composition information easier to search, compare, and apply to
+        real Filipino eating patterns. The broader platform includes food nutrient search, recipe
+        nutrient analysis, food comparison, food diary tools, educational content, and professional
+        workflow tools being developed for Registered Nutritionist-Dietitians.
       </p>
-
-      <div class="video-grid">
-        <article class="video-card">
-          <div class="video-frame">
-            <iframe
-              src="https://www.youtube.com/embed/BHW5CEzchQo"
-              title="Juan Nutrisyon interview on DZMM"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            />
-          </div>
-          <h3>DZMM Interview</h3>
-        </article>
-
-        <article class="video-card">
-          <div class="video-frame">
-            <iframe
-              src="https://www.youtube.com/embed/9tKA6UAW_5A"
-              title="Juan Nutrisyon interview on PTV"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            />
-          </div>
-          <h3>PTV Interview</h3>
-        </article>
-      </div>
-    </section>
-
-    <hr>
-    
-    <section class="problem">
-      <h2>The Problem</h2>
-      <p>Most nutrition apps are built for Western diets. They understand kale and quinoa, but they struggle with Sinigang, Longganisa, or the quick meal you grab at your local carinderia. Without localized data, Filipinos are left guessing, and mindless consumption becomes the default.</p>
-    </section>
-
-    <hr>
-
-    <section class="vision">
-      <h2>The Vision</h2>
-      <p>We want to inspire a new generation of Filipinos—one that is mindful, informed, and proactive about their health. By making the "nutrition label" a staple of the Filipino dining experience, we’re helping our community make informed choices, one meal at a time.</p>
-      <p>Because at the end of the day, when you know better, you eat better.</p>
-    </section>
-
-    <section class="mission">
-      <h2>Our Mission</h2>
-      <p>I created Juan Nutrisyon to be a tool for every Juan. Our goal is to make nutrition data accessible and easy to understand for every Filipino.</p>
-
-      <div class="source-item">
-        <h3>Localized Data</h3>
-        <p>We’re building a database that covers everything from processed snacks to your favorite home-cooked recipes.</p>
-      </div>
-
-      <div class="source-item">
-        <h3>Context Over Numbers</h3>
-        <p>We don’t just show you macros; we give you the context. We celebrate when you meet your iron or fiber goals and help you stay mindful of sugar and saturated fats.</p>
-      </div>
-
-      <div class="source-item">
-        <h3>Empowering Professionals</h3>
-        <p>We provide tools for Filipino Dietitians to automate the technical "boring stuff," allowing them to focus on what they do best: helping people live healthier lives.</p>
-      </div>
-    </section>
-
-    <hr>
-
-    <section class="details">
-      <h2>Our Data Methodology</h2>
-
       <p>
-        Nutritional values are calculated per 100g and adjusted based on the portion size entered by the user. 
-        For mixed dishes and recipes, ingredient-level data is combined to estimate total nutrient composition.
+        It is a nutrition-information platform, not a medical service. It does not diagnose
+        nutritional deficiencies, diseases, or clinical conditions, and it should not replace advice
+        from a physician, Registered Nutritionist-Dietitian, or other qualified health professional.
       </p>
-
-      <p>
-        Calculation methods for estimating nutrients across multiple foods have been reviewed by a licensed dietitian.
-      </p>
-
-      <p>
-        While we aim for accuracy, values for home-cooked meals may vary depending on preparation methods, ingredients, and portion sizes.
-      </p>
-
-      <p>
-        Juan Nutrisyon sources its nutritional data from established institutions:
-      </p>
-
-      <div class="source-item">
-        <h3>DOST-FNRI (Philippines)</h3>
-        <p>
-          We use the Philippine Food Composition Tables (PhilFCT) to provide culturally relevant data for Filipino dishes and ingredients.
-        </p>
-      </div>
-
-      <div class="source-item">
-        <h3>USDA (United States)</h3>
-        <p>
-          We supplement with USDA FoodData Central for international ingredients and standardized global items.
-        </p>
-      </div>
     </section>
 
-    <hr />
+    <section>
+      <h2>Why It Exists</h2>
+      <p>
+        Juan Nutrisyon started from a personal realization. My mother's stroke changed the way I
+        thought about food and prevention. It made me realize how difficult it can be for ordinary
+        families to understand the nutritional content of the foods they eat every day, and how
+        important accessible, reliable nutrition information can be in supporting healthier
+        decisions.
+      </p>
+      <p>
+        In the Philippines, many meals are cooked at home, bought from carinderias, or prepared from
+        local ingredients without labels. Juan Nutrisyon exists to reduce that information gap while
+        respecting the cultural importance of Filipino food.
+      </p>
+    </section>
 
-  </div>
+    <section class="founder-card">
+      <p class="eyebrow">Founder & Developer</p>
+      <h2>Wern Ancheta</h2>
+      <p>
+        Juan Nutrisyon is currently led and primarily developed by Wern Ancheta, a software
+        developer based in San Fernando City, La Union, Philippines.
+      </p>
+      <p>
+        Wern created Juan Nutrisyon and leads its software development, product design, and data
+        infrastructure. He is not presenting himself as a Registered Nutritionist-Dietitian,
+        physician, nutrition researcher, or clinical authority.
+      </p>
+      <p>
+        For nutrition methodology and professional-use features, the project seeks and incorporates
+        input from qualified nutrition professionals where appropriate.
+      </p>
+    </section>
+
+    <section>
+      <h2>Professional Input and Validation</h2>
+      <p>
+        Portions of Juan Nutrisyon's nutrient-calculation methodology have been reviewed with or
+        discussed with a licensed nutrition professional. The platform has not undergone formal
+        clinical or academic validation.
+      </p>
+      <p>
+        This distinction matters: professional input can improve methodology and usability, while
+        formal validation requires a separate clinical or academic process. Juan Nutrisyon aims to
+        be transparent about that boundary.
+      </p>
+    </section>
+
+    <section>
+      <h2>Long-Term Direction</h2>
+      <p>
+        The long-term goal is to support better food literacy in the Philippines by making nutrition
+        information more accessible, more locally relevant, and easier to use in everyday and
+        professional contexts.
+      </p>
+      <p>
+        The project is actively interested in collaboration around nutrition methodology review,
+        food-composition data, recipe standardization, nutrition education, academic research,
+        usability studies, professional RND tools, and Philippine food-data interoperability.
+      </p>
+      <RouterLink class="text-link" to="/research-partners">Explore collaboration areas</RouterLink>
+    </section>
+  </main>
 </template>
 
 <script setup>
@@ -151,70 +96,79 @@ import { usePageSeo } from '@/composables/usePageSeo'
 usePageSeo({
   title: 'About',
   description:
-    'Learn the story behind Juan Nutrisyon, our mission for Filipino nutrition, and how we build localized food data and tools.'
+    'Learn about Juan Nutrisyon, an independent Filipino food-literacy and nutrition-information initiative led by Founder and Developer Wern Ancheta.',
+  path: '/about'
 })
 </script>
 
 <style scoped>
-.legal-container {
-  max-width: 800px;
+.page-container {
+  max-width: 820px;
   margin: 0 auto;
-  padding: 40px 20px;
-  font-family: sans-serif;
-  line-height: 1.6;
+  padding: 44px 20px;
+  line-height: 1.7;
   color: var(--color-text);
 }
-.legal-header { margin-bottom: 30px; text-align: center; }
-.legal-container section + section { margin-top: 32px; }
-.content-box {
+
+.page-header {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.page-header p {
+  max-width: 720px;
+  margin: 0.85rem auto 0;
+}
+
+.eyebrow {
+  margin-bottom: 0.5rem;
+  color: var(--color-link);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+section {
+  margin-top: 34px;
+}
+
+.content-panel,
+.founder-card {
+  padding: 24px;
+  border: 1px solid var(--color-card-border);
+  border-radius: 8px;
   background: var(--color-surface-2);
-  padding: 20px;
-  border-left: 5px solid var(--color-link);
-}
-.audience-list {
-  margin: 0;
-  padding-left: 1.5rem;
-}
-.audience-list li + li {
-  margin-top: 0.75rem;
-}
-.highlight-text { font-size: 1.1rem; }
-.source-item { margin-top: 20px; }
-.source-item h3 { color: var(--color-link); margin-bottom: 5px; }
-.media p {
-  margin-bottom: 1.25rem;
 }
 
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.video-card h3 {
-  margin-top: 12px;
+h1,
+h2 {
   color: var(--color-heading);
+  line-height: 1.2;
 }
 
-.video-frame {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+h1 {
+  font-size: 2.45rem;
 }
 
-.video-frame iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.45rem;
 }
 
-hr { border: 0; border-top: 1px solid var(--color-divider); margin: 40px 0; }
-h1 { font-size: 2.5rem; margin-bottom: 10px; }
-h2 { font-size: 1.5rem; margin-bottom: 15px; }
-h1, h2 { color: var(--color-heading); }
+p + p {
+  margin-top: 1rem;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
 </style>

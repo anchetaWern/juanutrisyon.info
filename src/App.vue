@@ -7,6 +7,18 @@
     <div class="wrapper">
       <RouterView />
     </div>
+
+    <footer class="site-footer">
+      <nav aria-label="Footer navigation">
+        <RouterLink to="/contact">Contact</RouterLink>
+        <RouterLink to="/terms">Terms</RouterLink>
+        <RouterLink to="/privacy">Privacy Policy</RouterLink>
+        <a href="https://contribute.juanutrisyon.info" target="_blank" rel="noopener">Contribute</a>
+      </nav>
+      <p>
+        Juan Nutrisyon is an independent Filipino food-literacy and nutrition-information project.
+      </p>
+    </footer>
     
   </div>
 </template>
@@ -44,5 +56,28 @@ useWebMcp()
 .wrapper {
   width: 100%;
   max-width: 1200px;      /* Optional: Prevents content from getting too wide */
+}
+
+.site-footer {
+  width: 100%;
+  margin-top: 40px;
+  padding: 32px 20px 40px;
+  border-top: 1px solid var(--color-divider);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 0.95rem;
 }
 </style>

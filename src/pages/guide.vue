@@ -28,7 +28,8 @@ import { usePageSeo } from '@/composables/usePageSeo'
 usePageSeo({
   title: 'User Guide',
   description:
-    'Follow the Juan Nutrisyon user guide to search foods, create recipes, and track your daily nutrition with confidence.'
+    'Follow the Juan Nutrisyon user guide to search foods, create recipes, and track your daily nutrition with confidence.',
+  path: '/guide'
 })
 </script>
 

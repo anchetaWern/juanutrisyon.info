@@ -39,7 +39,8 @@ import { usePageSeo } from '@/composables/usePageSeo'
 usePageSeo({
   title: 'Contact',
   description:
-    'Contact Juan Nutrisyon for feedback, technical support, data questions, or social updates about Filipino nutrition tools.'
+    'Contact Juan Nutrisyon for feedback, technical support, data questions, collaborations, or social updates about Filipino nutrition tools.',
+  path: '/contact'
 })
 </script>
 

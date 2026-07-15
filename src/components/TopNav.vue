@@ -7,11 +7,11 @@
       <nav>
         <RouterLink to="/">Home</RouterLink> |
         <RouterLink to="/about">About</RouterLink> |
-        <RouterLink to="/terms">Terms</RouterLink> |
-        <RouterLink to="/privacy">Privacy Policy</RouterLink> |
+        <RouterLink to="/data-methodology">Data & Methodology</RouterLink> |
+        <RouterLink to="/research-partners">Research & Partners</RouterLink> |
         <RouterLink to="/guide">Guide</RouterLink> |
         <RouterLink to="/blog">Blog</RouterLink> |
-        <RouterLink to="/contact">Contact</RouterLink>
+        <RouterLink to="/media">Media</RouterLink>
       </nav>
     </div>
 </template>
@@ -21,5 +21,14 @@
   max-width: 280px;
   width: 100%;
   height: auto;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0 1rem;
+  text-align: center;
 }
 </style>
