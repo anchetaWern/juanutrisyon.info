@@ -31,6 +31,44 @@
     </section>
 
     <hr>
+
+    <section class="media">
+      <h2>Featured Interviews</h2>
+      <p>
+        Juan Nutrisyon has been featured on DZMM and PTV, helping bring the
+        conversation around Filipino nutrition and food awareness to a wider audience.
+      </p>
+
+      <div class="video-grid">
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/BHW5CEzchQo"
+              title="Juan Nutrisyon interview on DZMM"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            />
+          </div>
+          <h3>DZMM Interview</h3>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/9tKA6UAW_5A"
+              title="Juan Nutrisyon interview on PTV"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            />
+          </div>
+          <h3>PTV Interview</h3>
+        </article>
+      </div>
+    </section>
+
+    <hr>
     
     <section class="problem">
       <h2>The Problem</h2>
@@ -143,6 +181,38 @@ usePageSeo({
 .highlight-text { font-size: 1.1rem; }
 .source-item { margin-top: 20px; }
 .source-item h3 { color: var(--color-link); margin-bottom: 5px; }
+.media p {
+  margin-bottom: 1.25rem;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.video-card h3 {
+  margin-top: 12px;
+  color: var(--color-heading);
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 hr { border: 0; border-top: 1px solid var(--color-divider); margin: 40px 0; }
 h1 { font-size: 2.5rem; margin-bottom: 10px; }
 h2 { font-size: 1.5rem; margin-bottom: 15px; }
