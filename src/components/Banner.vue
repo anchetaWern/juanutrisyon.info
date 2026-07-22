@@ -24,7 +24,7 @@
   display: grid;
   gap: var(--space-4);
   max-width: 820px;
-  padding: var(--space-8) 0 var(--space-6);
+  padding: var(--space-6) 0 var(--space-3);
 }
 
 .home-hero h1 {
@@ -47,7 +47,7 @@
 
 @media (max-width: 640px) {
   .home-hero {
-    padding-top: var(--space-6);
+    padding: var(--space-5) 0 var(--space-2);
   }
 }
 </style>

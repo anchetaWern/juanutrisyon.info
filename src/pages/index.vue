@@ -71,6 +71,11 @@ useAdsenseLoader()
   border-top: 1px solid var(--border-subtle);
 }
 
+.home-hero + .home-section {
+  margin-top: var(--space-4);
+  padding-top: var(--space-5);
+}
+
 .sub-text {
   max-width: 820px;
   margin-top: var(--space-12);
@@ -140,6 +145,11 @@ useAdsenseLoader()
   .featured-media {
     margin-top: var(--space-8);
     padding-top: var(--space-8);
+  }
+
+  .home-hero + .home-section {
+    margin-top: var(--space-3);
+    padding-top: var(--space-4);
   }
 }
 </style>
