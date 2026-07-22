@@ -47,36 +47,26 @@ usePageSeo({
 <style scoped>
 .legal-container {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  font-family: sans-serif;
-  line-height: 1.6;
-  color: var(--color-text);
 }
-.contact-header { text-align: center; margin-bottom: 40px; }
-h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+h1 {
+  margin-bottom: var(--space-2);
+}
 
 .contact-methods {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-/* Mobile Responsive */
-@media (max-width: 600px) {
-  .contact-methods { grid-template-columns: 1fr; }
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
 }
 
 .method-card {
-  background: var(--color-surface-2);
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid var(--color-card-border);
   text-align: center;
 }
 
-.method-card h3 { color: var(--color-link); margin-bottom: 10px; }
+.method-card h3 {
+  margin-bottom: var(--space-2);
+}
 
 .contact-link {
   display: block;
@@ -90,19 +80,20 @@ h1 { font-size: 2.5rem; margin-bottom: 10px; }
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
   flex-wrap: wrap;
 }
 
 .social-links a {
-  padding: 8px 16px;
+  padding: 8px 14px;
   background: var(--color-card);
   border: 1px solid var(--color-card-border);
-  border-radius: 20px;
+  border-radius: var(--radius-pill);
   text-decoration: none;
   color: var(--color-text);
   font-size: 0.9rem;
+  font-weight: 700;
   transition: all 0.2s;
 }
 
@@ -114,4 +105,10 @@ h1 { font-size: 2.5rem; margin-bottom: 10px; }
 
 .response-time { text-align: center; color: var(--color-text-muted); font-size: 0.9rem; }
 .back-link { display: inline-block; margin-top: 40px; color: var(--color-link); text-decoration: none; }
+
+@media (max-width: 600px) {
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

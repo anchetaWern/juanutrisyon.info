@@ -54,43 +54,35 @@ usePageSeo({
 
 <style scoped>
 .blog-container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1.5rem 3rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: var(--color-text);
-  line-height: 1.6;
-}
-
-.blog-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.blog-header h1 {
-  color: var(--color-heading);
-  margin-bottom: 0.5rem;
+  max-width: var(--content-max);
 }
 
 .post-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
 }
 
 .post-link {
-  display: block;
-  padding: 1rem 1.25rem;
-  border-radius: 12px;
-  background: var(--color-surface-2);
-  color: var(--color-link);
+  display: flex;
+  min-height: 92px;
+  align-items: center;
+  padding: var(--space-4);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  color: var(--text-primary);
   text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 800;
+  line-height: 1.35;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .post-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: var(--brand-500);
+  color: var(--brand-900);
+  transform: translateY(-1px);
 }
 </style>

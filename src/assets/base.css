@@ -1,103 +1,98 @@
-/* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  --brand-500: #74b612;
+  --brand-600: #659f10;
+  --brand-700: #598d21;
+  --brand-900: #335c08;
+  --brand-soft: #eef8df;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  --surface-page: #ffffff;
+  --surface-subtle: #f8fafc;
+  --surface-muted: #f3f4f6;
+  --surface-raised: #ffffff;
 
-  --vt-c-indigo: #2c3e50;
+  --text-primary: #111827;
+  --text-secondary: #64748b;
+  --text-muted: #8a8f93;
 
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-default: #e0e0e0;
+  --border-strong: #bdbdbd;
 
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-}
+  --success: #166534;
+  --warning: #9b6516;
+  --error: #a33b3b;
+  --info: #2563eb;
 
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+  --nutrition-get-enough: #24833e;
+  --nutrition-get-enough-bg: #e8f5ec;
+  --nutrition-monitor: #9b6516;
+  --nutrition-monitor-bg: #fff2da;
+  --nutrition-limit: #a33b3b;
+  --nutrition-limit-bg: #fde8e8;
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
+  --macro-carbs: #2563eb;
+  --macro-fat: #f59e0b;
+  --macro-protein: #0f9488;
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
 
-  --section-gap: 160px;
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
 
-  --color-surface-1: #ffffff;
-  --color-surface-2: #f9f9f9;
-  --color-surface-3: #f5f5f5;
-  --color-card: #ffffff;
-  --color-card-border: #e0e0e0;
-  --color-divider: #eeeeee;
-  --color-text-muted: #666666;
-  --color-text-soft: #777777;
-  --color-link: #70B30B;
-  --color-link-hover: #5b9709;
+  --shadow-none: none;
+  --shadow-sticky: 0 2px 6px -4px rgba(0, 0, 0, 0.25);
+  --shadow-popover: 0 6px 18px rgba(0, 0, 0, 0.16);
+  --shadow-soft: 0 12px 28px rgba(15, 23, 42, 0.05);
 
-  --color-accent-blue: #1976d2;
-  --color-accent-green: #2e7d32;
-  --color-accent-red: #D3302F;
+  --font-family-base: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
-  --color-tint-blue-bg: #e3f2fd;
-  --color-tint-blue-border: #cfe2ff;
-  --color-tint-green-bg: #e8f5e9;
-  --color-tint-red-bg: #ffcece;
-  --color-tint-yellow-bg: #fdf7e3;
-  --color-tint-yellow-border: #fbc02d;
-  --color-tint-amber-bg: #fff3cd;
-  --color-tint-amber-border: #ffeeba;
-  --color-tint-amber-text: #856404;
-}
+  --shell-max: 1180px;
+  --content-max: 860px;
+  --reading-max: 760px;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #141414;
-    --color-background-soft: #1b1b1b;
-    --color-background-mute: #202020;
-
-    --color-border: #2a2a2a;
-    --color-border-hover: #3a3a3a;
-
-    --color-heading: #f4f4f4;
-    --color-text: #e2e2e2;
-
-    --color-surface-1: #1b1b1b;
-    --color-surface-2: #212121;
-    --color-surface-3: #262626;
-    --color-card: #1f1f1f;
-    --color-card-border: #2c2c2c;
-    --color-divider: #2a2a2a;
-    --color-text-muted: #b5b5b5;
-    --color-text-soft: #9e9e9e;
-    --color-link: #9bd83a;
-    --color-link-hover: #b6ea65;
-
-    --color-accent-blue: #6fb6ff;
-    --color-accent-green: #7cd47f;
-    --color-accent-red: #ff8a8a;
-
-    --color-tint-blue-bg: #172634;
-    --color-tint-blue-border: #28435a;
-    --color-tint-green-bg: #1b2a1f;
-    --color-tint-red-bg: #311b1b;
-    --color-tint-yellow-bg: #2f2a1c;
-    --color-tint-yellow-border: #8e6f1d;
-    --color-tint-amber-bg: #2d2418;
-    --color-tint-amber-border: #7b5c1d;
-    --color-tint-amber-text: #f5d98a;
-  }
+  --color-background: var(--surface-page);
+  --color-background-soft: var(--surface-subtle);
+  --color-background-mute: var(--surface-muted);
+  --color-border: var(--border-subtle);
+  --color-border-hover: var(--border-strong);
+  --color-heading: var(--text-primary);
+  --color-text: var(--text-primary);
+  --color-surface-1: var(--surface-page);
+  --color-surface-2: var(--surface-subtle);
+  --color-surface-3: var(--surface-muted);
+  --color-card: var(--surface-raised);
+  --color-card-border: var(--border-default);
+  --color-divider: var(--border-subtle);
+  --color-text-muted: var(--text-secondary);
+  --color-text-soft: var(--text-muted);
+  --color-link: var(--brand-700);
+  --color-link-hover: var(--brand-900);
+  --color-accent-blue: var(--info);
+  --color-accent-green: var(--nutrition-get-enough);
+  --color-accent-red: var(--error);
+  --color-tint-blue-bg: #eff6ff;
+  --color-tint-blue-border: #bfdbfe;
+  --color-tint-green-bg: var(--nutrition-get-enough-bg);
+  --color-tint-red-bg: var(--nutrition-limit-bg);
+  --color-tint-yellow-bg: var(--nutrition-monitor-bg);
+  --color-tint-yellow-border: #f7c66b;
+  --color-tint-amber-bg: var(--nutrition-monitor-bg);
+  --color-tint-amber-border: #f7c66b;
+  --color-tint-amber-text: var(--nutrition-monitor);
 }
 
 *,
@@ -112,24 +107,9 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
   line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  font-size: 15px;
+  font-family: var(--font-family-base);
+  font-size: 16px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

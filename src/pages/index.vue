@@ -1,9 +1,10 @@
 <template>
-
-  <main>
+  <main class="home-page">
     <Banner />
-    <IntroLinks />
-    <hr>
+
+    <section class="home-section">
+      <IntroLinks />
+    </section>
 
     <div class="sub-text">
       <h2>Why Food Literacy Matters</h2>
@@ -19,8 +20,6 @@
       </div>
     </div>
 
-    <hr>
-
     <section class="featured-media">
       <h2>Media Discussions</h2>
       <p>
@@ -31,13 +30,13 @@
       <RouterLink class="text-link" to="/media">See verified media appearances</RouterLink>
     </section>
 
-    <hr>
+    <section class="home-section">
+      <PopularFoods />
+    </section>
 
-    <PopularFoods />
-
-    <hr>
-
-    <BlogPreview />
+    <section class="home-section">
+      <BlogPreview />
+    </section>
   </main>
 </template>
 
@@ -60,43 +59,87 @@ useAdsenseLoader()
 </script>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.home-page {
+  width: min(100% - 40px, 980px);
+  margin: 0 auto;
+  padding: var(--space-8) 0 var(--space-12);
 }
 
-main {
-    max-width: 600px;
-    padding: 40px 20px;
-    margin: 0 auto;
-}
-
-hr {
-  margin-top: 10px;
-  border: none;
-  height: 1px;
-  background-color: #E7E7E7;
+.home-section {
+  margin-top: var(--space-12);
+  padding-top: var(--space-12);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .sub-text {
-  margin-top: 30px;
+  max-width: 820px;
+  margin-top: var(--space-12);
+  padding-top: var(--space-12);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sub-text h2,
+.featured-media h2 {
+  margin-bottom: var(--space-3);
+}
+
+.sub-text p,
+.featured-media p {
+  max-width: 760px;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .featured-media {
-  margin-top: 30px;
+  max-width: 820px;
+  margin-top: var(--space-12);
+  padding-top: var(--space-12);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .featured-media p {
-  margin-top: 0.75rem;
+  margin-top: 0;
 }
 
 .credibility-links {
   display: grid;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-5);
 }
 
-.credibility-links a,
-.text-link {
+.credibility-links a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  color: var(--text-primary);
   font-weight: 700;
+}
+
+.credibility-links a:hover {
+  border-color: var(--brand-500);
+  color: var(--brand-900);
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 720px) {
+  .home-page {
+    width: min(100% - 32px, 980px);
+  }
+
+  .home-section,
+  .sub-text,
+  .featured-media {
+    margin-top: var(--space-8);
+    padding-top: var(--space-8);
+  }
 }
 </style>

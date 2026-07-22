@@ -67,8 +67,8 @@
 
 <style>
 .workflow-section h2 {
-  color: var(--color-accent-blue); /* Search blue */
-  margin-top: 0.5rem;
+  color: var(--text-primary);
+  margin-top: var(--space-2);
 }
 
 .workflow-badge {
@@ -76,24 +76,23 @@
   background: var(--color-tint-blue-bg);
   color: var(--color-accent-blue);
   padding: 4px 12px;
-  border-radius: 16px;
+  border-radius: var(--radius-pill);
   font-size: 0.8rem;
-  font-weight: bold;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
 .intro-text {
-  font-style: italic;
   color: var(--color-text-muted);
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-6);
 }
 
 .step-card {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  border-radius: 8px;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
   background: var(--color-card);
   border: 1px solid var(--color-card-border);
 }
@@ -106,7 +105,7 @@
 }
 
 .step-content h3 {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 var(--space-2) 0;
 }
 
 .step-content ul {
@@ -156,6 +155,6 @@
 }
 
 .top-bottom-margin {
-    margin: 20px 0;
+    margin: var(--space-5) 0;
 }
 </style>

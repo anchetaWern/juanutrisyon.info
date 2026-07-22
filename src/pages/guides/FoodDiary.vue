@@ -85,8 +85,8 @@ export default {
 
 <style scoped>
 .workflow-section h2 {
-  color: var(--color-accent-red);
-  margin-top: 0.5rem;
+  color: var(--text-primary);
+  margin-top: var(--space-2);
 }
 
 .workflow-badge {
@@ -94,17 +94,17 @@ export default {
   background: var(--color-tint-red-bg);
   color: var(--color-accent-red);
   padding: 4px 12px;
-  border-radius: 16px;
+  border-radius: var(--radius-pill);
   font-size: 0.8rem;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .step-card {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  border-radius: 12px;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
   background: var(--color-card);
   border: 1px solid var(--color-card-border);
 }
@@ -122,7 +122,7 @@ export default {
 }
 
 .action-text { font-weight: bold; }
-.green-border { color: var(--color-accent-red); border: 1px solid var(--color-accent-red); padding: 2px 6px; border-radius: 4px; }
+.green-border { color: var(--color-accent-red); border: 1px solid var(--color-accent-red); padding: 2px 6px; border-radius: var(--radius-xs); }
 .blue { color: var(--color-accent-blue); }
 
 .plus-btn {
@@ -138,21 +138,18 @@ export default {
 }
 
 .blue-btn {
-  background-color: var(--color-accent-blue);
+  background-color: var(--brand-600);
   color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
   cursor: pointer;
   margin-top: 1rem;
 }
 
 .guide-footer {
-  margin-top: 4rem;
-  padding: 2rem;
+  margin-top: var(--space-10);
+  padding: var(--space-6);
   background: var(--color-surface-2);
   text-align: center;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
 }
 
 @media print {
@@ -167,6 +164,6 @@ export default {
     color: var(--color-accent-blue);
     border: 1px solid var(--color-accent-blue);
     padding: 2px 6px;
-    border-radius: 4px;
+    border-radius: var(--radius-xs);
 }
 </style>

@@ -35,31 +35,17 @@ usePageSeo({
 
 <style scoped>
 .guide-container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: var(--color-text);
-  line-height: 1.6;
-}
-
-.guide-header {
-  text-align: center;
-  margin-bottom: 2rem;
+  max-width: var(--content-max);
 }
 
 .guide-header h1 {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-2);
 }
 
 .separator {
   border: 0;
   height: 1px;
-  background: var(--color-divider);
-  margin: 2rem 0;
-}
-
-.guide-header h1 {
-  color: var(--color-heading);
+  background: var(--border-subtle);
+  margin: var(--space-8) 0;
 }
 </style>

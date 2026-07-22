@@ -1,16 +1,351 @@
 @import './base.css';
 
-
 a,
 .green {
   text-decoration: none;
   color: var(--color-link);
-  transition: 0.4s;
-  padding: 3px;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+a:hover {
+  color: var(--color-link-hover);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--brand-500) 32%, transparent);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-heading);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+p,
+li {
+  color: var(--color-text);
+}
+
+.page-container,
+.legal-container,
+.guide-container,
+.blog-container,
+.post-container {
+  width: min(100% - 40px, var(--content-max));
+  margin: 0 auto;
+  padding: var(--space-12) 0;
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  line-height: 1.7;
+}
+
+.post-container {
+  width: min(100% - 40px, var(--reading-max));
+}
+
+.page-header,
+.contact-header,
+.guide-header,
+.blog-header,
+.post-header {
+  max-width: 760px;
+  margin: 0 auto var(--space-10);
+  text-align: center;
+}
+
+.page-header p,
+.contact-header p,
+.guide-header p,
+.blog-header p {
+  max-width: 720px;
+  margin: var(--space-3) auto 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.eyebrow,
+.brand,
+.post-meta,
+.meta {
+  color: var(--brand-700);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.eyebrow,
+.brand {
+  text-transform: uppercase;
+}
+
+.content-panel,
+.founder-card,
+.cta-panel,
+.method-card,
+.media-card,
+.step-card,
+.post,
+.food,
+.tips-block,
+.recipe-block,
+.cta-card,
+.disclaimer-box {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-none);
+}
+
+.content-panel,
+.founder-card,
+.cta-panel,
+.method-card,
+.tips-block,
+.recipe-block,
+.cta-card,
+.disclaimer-box {
+  padding: var(--space-6);
+}
+
+.content-panel,
+.founder-card,
+.cta-panel,
+.disclaimer-box {
+  background: var(--surface-subtle);
+}
+
+.text-link,
+.more-link,
+.back-link,
+.post-link {
+  font-weight: 700;
+}
+
+.primary-button,
+.visit-button,
+.cta-link,
+.cta-button,
+.blue-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.75rem 1.1rem;
+  border: 1px solid var(--brand-600);
+  border-radius: var(--radius-pill);
+  background: var(--brand-600);
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.primary-button:hover,
+.visit-button:hover,
+.cta-link:hover,
+.cta-button:hover,
+.blue-btn:hover {
+  border-color: var(--brand-700);
+  background: var(--brand-700);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-pill);
+  background: var(--surface-raised);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.card-grid,
+.grid-list,
+.posts,
+.foods,
+.contact-methods,
+.media-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.grid-list {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: left;
+}
+
+th {
+  background: var(--surface-subtle);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+td {
+  color: var(--text-primary);
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+  background: var(--surface-muted);
+}
+
+.site-shell .site-main .post-container {
+  width: min(100% - 40px, var(--reading-max));
+  max-width: var(--reading-max);
+  margin: 0 auto;
+  padding: var(--space-12) 0;
+  font-family: var(--font-family-base);
+  color: var(--text-primary);
+  line-height: 1.72;
+}
+
+.site-shell .site-main .post-header {
+  max-width: var(--reading-max);
+  margin: 0 auto var(--space-10);
+  text-align: center;
+}
+
+.site-shell .site-main .post-header h1 {
+  margin: var(--space-2) 0;
+  font-size: clamp(2rem, 5vw, 2.65rem);
+  line-height: 1.08;
+}
+
+.site-shell .site-main .post-meta {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-transform: none;
+}
+
+.site-shell .site-main .post-section {
+  margin-top: var(--space-8);
+}
+
+.site-shell .site-main .post-section h2 {
+  margin-bottom: var(--space-3);
+  font-size: 1.35rem;
+}
+
+.site-shell .site-main .post-section h3 {
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-2);
+}
+
+.site-shell .site-main .post-section p + p {
+  margin-top: var(--space-4);
+}
+
+.site-shell .site-main .list,
+.site-shell .site-main .steps {
+  margin: var(--space-3) 0;
+  padding-left: 1.35rem;
+}
+
+.site-shell .site-main .list li + li,
+.site-shell .site-main .steps li + li {
+  margin-top: var(--space-2);
+}
+
+.site-shell .site-main .tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+.site-shell .site-main .tips-block,
+.site-shell .site-main .recipe-block,
+.site-shell .site-main .cta-card {
+  padding: var(--space-5);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-subtle);
+}
+
+.site-shell .site-main .closing-note,
+.site-shell .site-main .disclaimer {
+  padding: var(--space-4);
+  border-left: 4px solid var(--brand-500);
+  border-radius: var(--radius-sm);
+  background: var(--brand-soft);
+}
+
+@media (max-width: 720px) {
+  .page-container,
+  .legal-container,
+  .guide-container,
+  .blog-container,
+  .post-container {
+    width: min(100% - 32px, var(--content-max));
+    padding: var(--space-10) 0;
+  }
+
+  .content-panel,
+  .founder-card,
+  .cta-panel,
+  .method-card,
+  .tips-block,
+  .recipe-block,
+  .cta-card,
+  .disclaimer-box {
+    padding: var(--space-4);
+  }
+
+  .site-shell .site-main .post-container {
+    width: min(100% - 32px, var(--reading-max));
+    padding: var(--space-10) 0;
   }
 }

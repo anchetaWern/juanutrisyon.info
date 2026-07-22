@@ -1,10 +1,8 @@
 <template>
-  <!-- Added a class 'container' to the parent div -->
-  <div class="container">
-
+  <div class="site-shell">
     <TopNav />
 
-    <div class="wrapper">
+    <div class="site-main">
       <RouterView />
     </div>
 
@@ -19,7 +17,6 @@
         Juan Nutrisyon is an independent Filipino food-literacy and nutrition-information project.
       </p>
     </footer>
-    
   </div>
 </template>
 
@@ -31,53 +28,54 @@ useWebMcp()
 </script>
 
 <style>
-/* 1. The Parent Container */
-.container {
+.site-shell {
   display: flex;
-  flex-direction: column; /* Stack nav and wrapper vertically */
-  align-items: center;    /* Center them horizontally */
-  width: 100%;
-}
-
-/* 2. The Nav Section */
-.nav {
-  padding-top: 20px;
-  display: flex;
+  min-height: 100vh;
   flex-direction: column;
-  align-items: center;    /* Centers the logo and the nav links */
-  gap: 10px;              /* Adds space between logo and links */
-}
-
-.nav a {
-  color: var(--color-text);
-}
-
-/* 3. The Content Wrapper */
-.wrapper {
+  align-items: center;
   width: 100%;
-  max-width: 1200px;      /* Optional: Prevents content from getting too wide */
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--brand-soft) 55%, transparent), transparent 34rem),
+    var(--surface-page);
+}
+
+.site-main {
+  width: 100%;
+  flex: 1;
 }
 
 .site-footer {
   width: 100%;
-  margin-top: 40px;
-  padding: 32px 20px 40px;
-  border-top: 1px solid var(--color-divider);
+  margin-top: var(--space-8);
+  padding: var(--space-8) var(--space-5) var(--space-10);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--surface-subtle);
   text-align: center;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .site-footer nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.site-footer a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.site-footer a:hover {
+  color: var(--brand-700);
 }
 
 .site-footer p {
   max-width: 680px;
   margin: 0 auto;
-  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
 </style>

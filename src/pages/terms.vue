@@ -264,39 +264,44 @@ usePageSeo({
 <style scoped>
 .legal-container {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  font-family: sans-serif;
-  line-height: 1.6;
-  color: var(--color-text);
 }
 .legal-container section {
-  margin-bottom: 24px;
+  margin-bottom: var(--space-8);
 }
 .legal-container ul {
-  margin: 12px 0 12px 20px;
+  margin: var(--space-3) 0 var(--space-3) 20px;
   padding: 0;
 }
 .legal-container li + li {
-  margin-top: 6px;
+  margin-top: var(--space-2);
 }
-.meta { color: var(--color-text-muted); margin-bottom: 30px; }
-h1 { font-size: 2.5rem; margin-bottom: 10px; }
-h2 { font-size: 1.5rem; margin-top: 10px; margin-bottom: 10px; }
+
+.meta {
+  margin-bottom: var(--space-8);
+  color: var(--color-text-muted);
+}
+
+h1 {
+  margin-bottom: var(--space-2);
+}
+
+h2 {
+  margin-bottom: var(--space-2);
+  font-size: 1.35rem;
+}
 
 .disclaimer-box {
   background: var(--color-tint-amber-bg);
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
   border: 1px solid var(--color-tint-amber-border);
   color: var(--color-tint-amber-text);
 }
 
 .back-link {
   display: inline-block;
-  margin-top: 40px;
+  margin-top: var(--space-6);
   color: var(--color-link);
   text-decoration: none;
 }
-h1, h2 { color: var(--color-heading); }
 </style>

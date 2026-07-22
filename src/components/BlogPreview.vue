@@ -81,27 +81,40 @@
 
 <style scoped>
 .blog-preview {
-  margin-top: 32px;
+  margin-top: 0;
+}
+
+.blog-preview > p {
+  margin-top: var(--space-2);
+  color: var(--text-secondary);
 }
 
 .posts {
   display: grid;
-  gap: 16px;
-  margin-top: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
 }
 
 .post {
   border: 1px solid var(--color-card-border);
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
   background-color: var(--color-card);
   color: var(--color-text);
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.post:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
 }
 
 .post h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
+  margin: 0 0 var(--space-2);
+  font-size: 1rem;
 }
 
 .post-link {
@@ -116,15 +129,16 @@
 .post p {
   margin: 0;
   color: var(--color-text-muted);
+  font-size: 0.94rem;
+  line-height: 1.5;
 }
 
 .more-link {
-  display: block;
-  margin-top: 12px;
+  display: inline-flex;
+  margin-top: var(--space-4);
   color: var(--color-link);
   text-decoration: none;
-  font-weight: 600;
-  text-align: center;
+  font-weight: 800;
 }
 
 .more-link:hover {

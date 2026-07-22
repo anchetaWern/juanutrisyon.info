@@ -87,8 +87,8 @@
 
 <style scoped>
 .workflow-section h2 {
-  color: var(--color-accent-green);
-  margin-top: 0.5rem;
+  color: var(--text-primary);
+  margin-top: var(--space-2);
 }
 
 .workflow-badge {
@@ -96,23 +96,22 @@
   background: var(--color-tint-green-bg);
   color: var(--color-accent-green);
   padding: 4px 12px;
-  border-radius: 16px;
+  border-radius: var(--radius-pill);
   font-size: 0.8rem;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .intro-text {
-  font-style: italic;
   color: var(--color-text-muted);
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-5);
 }
 
 .step-card {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  border-radius: 8px;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
   background: var(--color-card);
   border: 1px solid var(--color-card-border);
 }
@@ -146,11 +145,11 @@
 }
 
 .guide-footer {
-  margin-top: 3rem;
-  padding: 2rem;
+  margin-top: var(--space-10);
+  padding: var(--space-6);
   background: var(--color-surface-2);
   text-align: center;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
 }
 
 @media (max-width: 600px) {
@@ -161,8 +160,8 @@
 }
 
 .top-bottom-margin {
-    margin: 20px 0;
+    margin: var(--space-5) 0;
 }
 
-.green-border { color: var(--color-accent-green); border: 1px solid var(--color-accent-green); padding: 2px 6px; border-radius: 4px; }
+.green-border { color: var(--color-accent-green); border: 1px solid var(--color-accent-green); padding: 2px 6px; border-radius: var(--radius-xs); }
 </style>

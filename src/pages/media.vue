@@ -67,60 +67,29 @@ usePageSeo({
 <style scoped>
 .page-container {
   max-width: 960px;
-  margin: 0 auto;
-  padding: 44px 20px;
-  line-height: 1.7;
-  color: var(--color-text);
-}
-
-.page-header {
-  margin-bottom: 36px;
-  text-align: center;
-}
-
-.page-header p {
-  max-width: 720px;
-  margin: 0.85rem auto 0;
-}
-
-.eyebrow {
-  margin-bottom: 0.5rem;
-  color: var(--color-link);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: uppercase;
 }
 
 h1,
 h2 {
-  color: var(--color-heading);
   line-height: 1.2;
 }
 
-h1 {
-  font-size: 2.35rem;
-}
-
 h2 {
-  margin-bottom: 0.75rem;
-  font-size: 1.35rem;
+  margin-bottom: var(--space-3);
 }
 
 .media-grid {
   display: grid;
-  gap: 28px;
+  gap: var(--space-5);
 }
 
 .media-card {
   display: grid;
   grid-template-columns: minmax(280px, 1.2fr) minmax(260px, 0.8fr);
-  gap: 24px;
+  gap: var(--space-6);
   align-items: center;
-  padding: 22px;
-  border: 1px solid var(--color-card-border);
-  border-radius: 8px;
-  background: var(--color-surface-2);
+  padding: var(--space-5);
+  background: var(--surface-subtle);
 }
 
 .video-frame {
@@ -128,7 +97,7 @@ h2 {
   width: 100%;
   padding-top: 56.25%;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   background: var(--color-surface-3);
 }
 
@@ -141,12 +110,9 @@ h2 {
 }
 
 @media (max-width: 760px) {
-  h1 {
-    font-size: 2rem;
-  }
-
   .media-card {
     grid-template-columns: 1fr;
+    padding: var(--space-4);
   }
 }
 </style>

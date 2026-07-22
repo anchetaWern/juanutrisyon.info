@@ -117,56 +117,20 @@ usePageSeo({
 
 <style scoped>
 .page-container {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 44px 20px;
-  line-height: 1.7;
-  color: var(--color-text);
-}
-
-.page-header {
-  margin-bottom: 36px;
-  text-align: center;
-}
-
-.page-header p {
-  max-width: 720px;
-  margin: 0.85rem auto 0;
-}
-
-.eyebrow {
-  margin-bottom: 0.5rem;
-  color: var(--color-link);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: uppercase;
+  max-width: var(--content-max);
 }
 
 section {
-  margin-top: 34px;
-}
-
-.content-panel {
-  padding: 24px;
-  border: 1px solid var(--color-card-border);
-  border-radius: 8px;
-  background: var(--color-surface-2);
+  margin-top: var(--space-8);
 }
 
 h1,
 h2 {
-  color: var(--color-heading);
   line-height: 1.2;
 }
 
-h1 {
-  font-size: 2.35rem;
-}
-
 h2 {
-  margin-bottom: 0.75rem;
-  font-size: 1.45rem;
+  margin-bottom: var(--space-3);
 }
 
 p + p {
@@ -179,11 +143,5 @@ ul {
 
 li + li {
   margin-top: 0.6rem;
-}
-
-@media (max-width: 640px) {
-  h1 {
-    font-size: 2rem;
-  }
 }
 </style>

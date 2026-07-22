@@ -14,74 +14,58 @@
 
 <style scoped>
 .item {
-  margin-top: 2rem;
   display: flex;
-  position: relative;
+  gap: var(--space-3);
+  min-height: 100%;
+  padding: var(--space-4);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.item:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
 }
 
 .details {
   flex: 1;
-  margin-left: 1rem;
+  min-width: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 i {
   display: flex;
-  place-items: center;
-  place-content: center;
-  width: 32px;
-  height: 32px;
-
-  color: var(--color-text);
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: var(--brand-soft);
+  color: var(--brand-700);
 }
 
 h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-  color: var(--color-heading);
+  margin: 0 0 var(--space-2);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
 }
 
-@media (min-width: 1024px) {
+.details :deep(a) {
+  font-weight: 700;
+}
+
+@media (max-width: 560px) {
   .item {
-    margin-top: 0;
-    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
-  }
-
-  i {
-    top: calc(50% - 25px);
-    left: -26px;
-    position: absolute;
-    border: 1px solid var(--color-border);
-    background: var(--color-background);
-    border-radius: 8px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .item:before {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    bottom: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-
-  .item:after {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    top: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-
-  .item:first-of-type:before {
-    display: none;
-  }
-
-  .item:last-of-type:after {
-    display: none;
+    flex-direction: column;
   }
 }
 </style>

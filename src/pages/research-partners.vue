@@ -87,70 +87,33 @@ usePageSeo({
 <style scoped>
 .page-container {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 44px 20px;
-  line-height: 1.7;
-  color: var(--color-text);
-}
-
-.page-header {
-  margin-bottom: 36px;
-  text-align: center;
-}
-
-.page-header p {
-  max-width: 740px;
-  margin: 0.85rem auto 0;
-}
-
-.eyebrow {
-  margin-bottom: 0.5rem;
-  color: var(--color-link);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: uppercase;
 }
 
 section {
-  margin-top: 34px;
-}
-
-.content-panel,
-.cta-panel {
-  padding: 24px;
-  border: 1px solid var(--color-card-border);
-  border-radius: 8px;
-  background: var(--color-surface-2);
+  margin-top: var(--space-8);
 }
 
 .grid-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
+  gap: var(--space-4);
 }
 
 .grid-list article {
-  padding: 18px;
+  padding: var(--space-4);
   border: 1px solid var(--color-card-border);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   background: var(--color-card);
 }
 
 h1,
 h2,
 h3 {
-  color: var(--color-heading);
   line-height: 1.2;
 }
 
-h1 {
-  font-size: 2.35rem;
-}
-
 h2 {
-  margin-bottom: 0.75rem;
-  font-size: 1.45rem;
+  margin-bottom: var(--space-3);
 }
 
 h3 {
@@ -170,20 +133,5 @@ li + li {
 .cta-link {
   display: inline-flex;
   margin-top: 1rem;
-  padding: 0.8rem 1.15rem;
-  border-radius: 999px;
-  background: #1f7a4a;
-  color: #ffffff;
-  font-weight: 700;
-}
-
-.cta-link:hover {
-  background: #19643d;
-}
-
-@media (max-width: 640px) {
-  h1 {
-    font-size: 2rem;
-  }
 }
 </style>

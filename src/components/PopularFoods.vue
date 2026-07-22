@@ -88,29 +88,43 @@ const foods = [
 
 <style scoped>
 .popular-foods {
-  margin-top: 32px;
+  margin-top: 0;
+}
+
+.popular-foods > p {
+  margin-top: var(--space-2);
+  color: var(--text-secondary);
 }
 
 .foods {
   list-style: none;
   padding: 0;
-  margin: 12px 0 0;
+  margin: var(--space-4) 0 0;
   display: grid;
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
 }
 
 .food {
   border: 1px solid var(--color-card-border);
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   background-color: var(--color-card);
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.food:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
 }
 
 .food-link {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
+  gap: var(--space-3);
+  min-height: 74px;
+  padding: var(--space-3);
   color: inherit;
   text-decoration: none;
 }
@@ -120,9 +134,9 @@ const foods = [
 }
 
 .thumb {
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-xs);
   overflow: hidden;
   flex: 0 0 auto;
   display: inline-flex;
@@ -147,8 +161,10 @@ const foods = [
 }
 
 .food-name {
-  font-size: 16px;
-  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.98rem;
+  font-weight: 800;
+  line-height: 1.3;
 }
 
 .initials {
@@ -156,12 +172,11 @@ const foods = [
 }
 
 .more-link {
-  display: block;
-  margin-top: 12px;
+  display: inline-flex;
+  margin-top: var(--space-4);
   color: var(--color-link);
   text-decoration: none;
-  font-weight: 600;
-  text-align: center;
+  font-weight: 800;
 }
 
 .more-link:hover {

@@ -9,59 +9,81 @@ import GlobeIcon from './icons/GlobeIcon.vue'
 </script>
 
 <template>
-  <LinkWrapper>
-    <template #icon>
-      <DocumentationIcon />
-    </template>
-    <template #heading>View Nutrients</template>
+  <div class="intro-links">
+    <LinkWrapper>
+      <template #icon>
+        <DocumentationIcon />
+      </template>
+      <template #heading>View Nutrients</template>
 
-    <a href="https://app.juanutrisyon.info" target="_blank">Search for foods</a> and explore their nutrient content.
-  </LinkWrapper>
+      <a href="https://app.juanutrisyon.info" target="_blank">Search for foods</a> and explore their nutrient content.
+    </LinkWrapper>
 
-  <LinkWrapper>
-    <template #icon>
-      <ToolingIcon />
-    </template>
-    <template #heading>Create Recipes</template>
+    <LinkWrapper>
+      <template #icon>
+        <ToolingIcon />
+      </template>
+      <template #heading>Create Recipes</template>
 
-    <a href="https://app.juanutrisyon.info/recipe" target="_blank">Build recipes</a> and see the combined nutrient breakdown of all your ingredients.
-  </LinkWrapper>
+      <a href="https://app.juanutrisyon.info/recipe" target="_blank">Build recipes</a> and see the combined nutrient breakdown of all your ingredients.
+    </LinkWrapper>
 
-  <LinkWrapper>
-    <template #icon>
-      <EcosystemIcon />
-    </template>
-    <template #heading>Analyze your diet</template>
+    <LinkWrapper>
+      <template #icon>
+        <EcosystemIcon />
+      </template>
+      <template #heading>Analyze your diet</template>
 
-    <a href="https://app.juanutrisyon.info/diary" target="_blank">Track</a> your daily intake and see how your logged foods compare with the <a href="https://www.fnri.dost.gov.ph/index.php/tools-and-standard/philippine-dietary-reference-intakes-pdri" target="_blank">daily recommended intake.</a>
-  </LinkWrapper>
+      <a href="https://app.juanutrisyon.info/diary" target="_blank">Track</a> your daily intake and see how your logged foods compare with the <a href="https://www.fnri.dost.gov.ph/index.php/tools-and-standard/philippine-dietary-reference-intakes-pdri" target="_blank">daily recommended intake.</a>
+    </LinkWrapper>
 
-  <LinkWrapper>
-    <template #icon>
-      <SupportIcon />
-    </template>
-    <template #heading>Collaborate</template>
+    <LinkWrapper>
+      <template #icon>
+        <SupportIcon />
+      </template>
+      <template #heading>Collaborate</template>
 
-    Juan Nutrisyon is open to collaboration with nutrition professionals, researchers, educators, public-health groups, food-data partners, and organizations working on Filipino food literacy.
-    <RouterLink to="/research-partners">View collaboration areas</RouterLink>.
-  </LinkWrapper>
+      Juan Nutrisyon is open to collaboration with nutrition professionals, researchers, educators, public-health groups, food-data partners, and organizations working on Filipino food literacy.
+      <RouterLink to="/research-partners">View collaboration areas</RouterLink>.
+    </LinkWrapper>
 
-  <LinkWrapper>
-    <template #icon>
-      <CommunityIcon />
-    </template>
-    <template #heading>Contribute</template>
+    <LinkWrapper>
+      <template #icon>
+        <CommunityIcon />
+      </template>
+      <template #heading>Contribute</template>
 
-    Community members can submit information about foods or products that may be missing from Juan Nutrisyon. Submissions are reviewed before they are incorporated into the trusted food database.
-    Visit <a href="https://contribute.juanutrisyon.info" target="_blank" rel="noopener">contribute.juanutrisyon.info</a> to contribute.
-  </LinkWrapper>
+      Community members can submit information about foods or products that may be missing from Juan Nutrisyon. Submissions are reviewed before they are incorporated into the trusted food database.
+      Visit <a href="https://contribute.juanutrisyon.info" target="_blank" rel="noopener">contribute.juanutrisyon.info</a> to contribute.
+    </LinkWrapper>
 
-  <LinkWrapper>
-    <template #icon>
-      <GlobeIcon />
-    </template>
-    <template #heading>Follow Us</template>
+    <LinkWrapper>
+      <template #icon>
+        <GlobeIcon />
+      </template>
+      <template #heading>Follow Us</template>
 
-    We're constantly putting out new features. We also post content all about nutrition and healthy living. So if you want to stay in the loop, be sure to follow us on <a href="https://www.facebook.com/juanutrisyon/" target="_blank">Facebook.</a>
-  </LinkWrapper>
+      We're constantly putting out new features. We also post content all about nutrition and healthy living. So if you want to stay in the loop, be sure to follow us on <a href="https://www.facebook.com/juanutrisyon/" target="_blank">Facebook.</a>
+    </LinkWrapper>
+  </div>
 </template>
+
+<style scoped>
+.intro-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+@media (max-width: 860px) {
+  .intro-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-links {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

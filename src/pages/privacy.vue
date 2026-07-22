@@ -268,26 +268,46 @@ usePageSeo({
 <style scoped>
 .legal-container {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  font-family: sans-serif;
-  line-height: 1.6;
-  color: var(--color-text);
 }
-.meta { color: var(--color-text-muted); margin-bottom: 30px; }
-h1 { font-size: 2.5rem; margin-bottom: 10px; }
-h2 { font-size: 1.5rem; margin-top: 10px; margin-bottom: 10px; }
-h3 { font-size: 1.125rem; margin-top: 20px; margin-bottom: 10px; }
-section { margin-bottom: 24px; }
-ul { padding-left: 20px; margin: 10px 0; }
-li + li { margin-top: 6px; }
+
+.meta {
+  margin-bottom: var(--space-8);
+  color: var(--color-text-muted);
+}
+
+h1 {
+  margin-bottom: var(--space-2);
+}
+
+h2 {
+  margin-bottom: var(--space-2);
+  font-size: 1.35rem;
+}
+
+h3 {
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-2);
+}
+
+section {
+  margin-bottom: var(--space-8);
+}
+
+ul {
+  padding-left: 20px;
+  margin: var(--space-3) 0;
+}
+
+li + li {
+  margin-top: var(--space-2);
+}
+
 .back-link {
   display: inline-block;
-  margin-top: 40px;
+  margin-top: var(--space-6);
   color: var(--color-link);
   text-decoration: none;
 }
 .back-link:hover { text-decoration: underline; }
-h1, h2 { color: var(--color-heading); }
 a { color: var(--color-link); }
 </style>
