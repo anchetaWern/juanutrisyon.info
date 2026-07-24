@@ -11,6 +11,9 @@
         use, store, and protect your information when you use our platform.
       </p>
       <p>
+        Juan Nutrisyon respects your privacy and is committed to protecting your personal information in accordance with Republic Act No. 10173, otherwise known as the Data Privacy Act of 2012, its Implementing Rules and Regulations, and other applicable privacy regulations.
+      </p>
+      <p>
         By creating an account or using Juan Nutrisyon, you agree to the terms of this
         Privacy Policy.
       </p>
