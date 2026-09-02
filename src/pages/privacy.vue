@@ -160,7 +160,7 @@
       </ul>
       <p>To exercise these rights, contact us at:</p>
       <p>
-        <a href="mailto:juanutrisyon@gmail.com">juanutrisyon@gmail.com</a>
+        <a :href="`mailto:${siteConfig.contactEmail}`">{{ siteConfig.contactEmail }}</a>
       </p>
     </section>
 
@@ -241,7 +241,7 @@
       </p>
       <p>
         <strong>Email:</strong>
-        <a href="mailto:juanutrisyon@gmail.com">juanutrisyon@gmail.com</a>
+        <a :href="`mailto:${siteConfig.contactEmail}`">{{ siteConfig.contactEmail }}</a>
       </p>
     </section>
 
@@ -260,6 +260,7 @@
 
 <script setup>
 import { usePageSeo } from '@/composables/usePageSeo'
+import { siteConfig } from '@/config/site'
 
 usePageSeo({
   title: 'Privacy Policy',

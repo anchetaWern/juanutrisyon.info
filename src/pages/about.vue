@@ -85,7 +85,7 @@
         food-composition data, recipe standardization, nutrition education, academic research,
         usability studies, professional RND tools, and Philippine food-data interoperability.
       </p>
-      <RouterLink class="text-link" to="/research-partners">Explore collaboration areas</RouterLink>
+      <RouterLink class="text-link" to="/collaborate">Explore collaboration areas</RouterLink>
     </section>
   </main>
 </template>

@@ -13,6 +13,16 @@ const SITE_PAGES = [
     path: '/about'
   },
   {
+    slug: 'collaborate',
+    title: 'Collaborate',
+    path: '/collaborate'
+  },
+  {
+    slug: 'research',
+    title: 'Research',
+    path: '/research'
+  },
+  {
     slug: 'guide',
     title: 'User Guide',
     path: '/guide'

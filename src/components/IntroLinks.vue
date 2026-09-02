@@ -44,7 +44,7 @@ import GlobeIcon from './icons/GlobeIcon.vue'
       <template #heading>Collaborate</template>
 
       Juan Nutrisyon is open to collaboration with nutrition professionals, researchers, educators, public-health groups, food-data partners, and organizations working on Filipino food literacy.
-      <RouterLink to="/research-partners">View collaboration areas</RouterLink>.
+      <RouterLink to="/collaborate">View collaboration areas</RouterLink>.
     </LinkWrapper>
 
     <LinkWrapper>

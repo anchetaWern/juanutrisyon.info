@@ -17,6 +17,18 @@ const SITE_PAGES = [
     summary: 'The story, mission, and localized nutrition data approach behind Juan Nutrisyon.'
   },
   {
+    slug: 'collaborate',
+    title: 'Collaborate',
+    path: '/collaborate',
+    summary: 'Ways to collaborate on Filipino food data, nutrition methodology, education, research, recipes, and professional tools.'
+  },
+  {
+    slug: 'research',
+    title: 'Research',
+    path: '/research',
+    summary: 'How Juan Nutrisyon software and Filipino food-data infrastructure may support suitable academic research.'
+  },
+  {
     slug: 'guide',
     title: 'User Guide',
     path: '/guide',

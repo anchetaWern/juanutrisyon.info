@@ -9,8 +9,8 @@
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/data-methodology">Data & Methodology</RouterLink>
-        <RouterLink to="/research-partners">Research & Partners</RouterLink>
-        <RouterLink to="/guide">Guide</RouterLink>
+        <RouterLink to="/collaborate">Collaborate</RouterLink>
+        <RouterLink to="/research">Research</RouterLink>
         <RouterLink to="/blog">Blog</RouterLink>
         <RouterLink to="/media">Media</RouterLink>
         <a

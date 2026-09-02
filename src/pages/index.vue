@@ -15,7 +15,7 @@
 
       <div class="credibility-links">
         <RouterLink to="/data-methodology">Review data and methodology</RouterLink>
-        <RouterLink to="/research-partners">Explore research and partner work</RouterLink>
+        <RouterLink to="/collaborate">Explore collaboration opportunities</RouterLink>
         <RouterLink to="/media">View media appearances</RouterLink>
       </div>
     </div>

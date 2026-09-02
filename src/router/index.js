@@ -1,7 +1,8 @@
 const IndexPage = () => import('../pages/index.vue');
 const AboutPage = () => import('../pages/about.vue');
 const DataMethodologyPage = () => import('../pages/data-methodology.vue');
-const ResearchPartnersPage = () => import('../pages/research-partners.vue');
+const CollaboratePage = () => import('../pages/collaborate.vue');
+const ResearchPage = () => import('../pages/research.vue');
 const MediaPage = () => import('../pages/media.vue');
 const ContactPage = () => import('../pages/contact.vue');
 const TermsPage = () => import('../pages/terms.vue');
@@ -35,9 +36,14 @@ export const routes = [
     component: DataMethodologyPage
   },
   {
-    path: '/research-partners',
-    name: 'research-partners',
-    component: ResearchPartnersPage
+    path: '/collaborate',
+    name: 'collaborate',
+    component: CollaboratePage
+  },
+  {
+    path: '/research',
+    name: 'research',
+    component: ResearchPage
   },
   {
     path: '/media',

@@ -10,7 +10,9 @@
       <div class="method-card">
         <h3>Email Support</h3>
         <p>For technical support or data inquiries, please reach out to:</p>
-        <a href="mailto:juanutrisyon@gmail.com" class="contact-link">juanutrisyon@gmail.com</a>
+        <a :href="`mailto:${siteConfig.contactEmail}`" class="contact-link">
+          {{ siteConfig.contactEmail }}
+        </a>
       </div>
 
       <!-- Social Media Section -->
@@ -35,6 +37,7 @@
 
 <script setup>
 import { usePageSeo } from '@/composables/usePageSeo'
+import { siteConfig } from '@/config/site'
 
 usePageSeo({
   title: 'Contact',
