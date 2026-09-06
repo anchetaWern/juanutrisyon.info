@@ -1,7 +1,7 @@
 <template>
   <div class="legal-container">
     <h1>Privacy Policy</h1>
-    <p class="meta"><strong>Last Updated:</strong> 2026-04-28</p>
+    <p class="meta"><strong>Last Updated:</strong> 2026-09-06</p>
 
     <section>
       <h2>1. Introduction</h2>
@@ -86,6 +86,18 @@
         your personal data but may still use cookies for basic functionality.
       </p>
       <p>You can control or disable cookies through your browser settings.</p>
+
+      <h3>e. Donation Details</h3>
+      <p>
+        If you choose to report a donation, we may collect the optional details you
+        provide, such as your name or nickname, donation amount, payment method,
+        acknowledgement preference, message, and contact information.
+      </p>
+      <p>
+        We use this information to record support for the project, follow your
+        acknowledgement preference, and contact you only when needed about your
+        donation.
+      </p>
     </section>
 
     <section>
@@ -97,6 +109,7 @@
         <li>Improve and develop platform features</li>
         <li>Maintain security and prevent misuse</li>
         <li>Send essential service-related communications (e.g., password reset)</li>
+        <li>Record donation details and donor acknowledgement preferences</li>
       </ul>
       <p>
         We may send newsletters or updates in the future, but only with appropriate

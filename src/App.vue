@@ -6,6 +6,8 @@
       <RouterView />
     </div>
 
+    <DonationSupport />
+
     <footer class="site-footer">
       <nav aria-label="Footer navigation">
         <RouterLink to="/contact">Contact</RouterLink>
@@ -21,6 +23,7 @@
 </template>
 
 <script setup>
+import DonationSupport from "@/components/DonationSupport.vue";
 import TopNav from "@/components/TopNav.vue";
 import { useWebMcp } from "@/composables/useWebMcp";
 
@@ -77,5 +80,9 @@ useWebMcp()
   margin: 0 auto;
   color: var(--text-secondary);
   font-size: 0.9rem;
+}
+
+body.donation-modal-is-open {
+  overflow: hidden;
 }
 </style>
