@@ -128,7 +128,7 @@
           <fieldset>
             <legend>How should we acknowledge you?</legend>
             <label class="radio-option">
-              <input v-model="form.acknowledgement" type="radio" name="acknowledgement" value="none" />
+              <input v-model="form.acknowledgement" type="radio" name="acknowledgement" value="private" />
               <span>Please don't acknowledge me publicly</span>
             </label>
             <label class="radio-option">
@@ -136,7 +136,7 @@
               <span>Acknowledge me anonymously</span>
             </label>
             <label class="radio-option">
-              <input v-model="form.acknowledgement" type="radio" name="acknowledgement" value="name" />
+              <input v-model="form.acknowledgement" type="radio" name="acknowledgement" value="use_name" />
               <span>Use my name or nickname</span>
             </label>
           </fieldset>
@@ -233,7 +233,7 @@ const form = reactive({
   name: '',
   amount: '',
   payment_method: 'gcash',
-  acknowledgement: 'none',
+  acknowledgement: 'private',
   message: '',
   contact: ''
 })
@@ -279,7 +279,7 @@ const resetForm = () => {
   form.name = ''
   form.amount = ''
   form.payment_method = selectedPaymentMethod.value
-  form.acknowledgement = 'none'
+  form.acknowledgement = 'private'
   form.message = ''
   form.contact = ''
 }
