@@ -1,0 +1,216 @@
+{
+  "id": 678,
+  "description": "Mango, Manila super, ripe",
+  "description_slug": "mango-manila-super-ripe",
+  "scientific_name": "Mangifera indica",
+  "alternate_names": "Mangga, kalabaw, hinog",
+  "brand": null,
+  "is_visible": 1,
+  "data_source": "ph_fct",
+  "custom_id": "E051",
+  "calories": 70,
+  "calories_unit": "kcal",
+  "serving_size": "100.000",
+  "serving_size_unit": "g",
+  "custom_serving_size": null,
+  "servings_per_container": null,
+  "edible_portion": 67,
+  "food_type": 24,
+  "food_subtype": 28,
+  "food_state": 1,
+  "food_substate": null,
+  "default_role": "veg",
+  "title_image": "http://localhost/storage/fnri/mango-manila-super-ripe.png",
+  "nutrition_label_image": null,
+  "created_at": "2024-06-08T07:41:32.000000Z",
+  "updated_at": "2026-09-09T06:55:56.000000Z",
+  "type": {
+    "id": 24,
+    "name": "Fruits",
+    "slug": "fruits"
+  },
+  "subtype": {
+    "id": 28,
+    "name": "Tropical Fruits",
+    "slug": "tropical-fruits"
+  },
+  "state": {
+    "id": 1,
+    "name": "Solids"
+  },
+  "substate": null,
+  "density": null,
+  "source_metadata": {
+    "source_food_id": "E051",
+    "database_subset": null,
+    "source_version": null,
+    "source_url": "https://i.fnri.dost.gov.ph/fct/library/report/3633",
+    "source_published_at": null,
+    "source_updated_at": null,
+    "retrieved_at": "2026-08-30T12:55:36+00:00",
+    "declared_serving": null,
+    "upstream_nutrients": []
+  },
+  "nutrients": [
+    {
+      "name": "water",
+      "amount": "82.400",
+      "unit": "g"
+    },
+    {
+      "name": "protein",
+      "amount": "0.600",
+      "unit": "g"
+    },
+    {
+      "name": "total fat",
+      "amount": "0.200",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "saturated fat",
+          "amount": "0.050",
+          "unit": "g"
+        },
+        {
+          "name": "cholesterol",
+          "amount": "0.000",
+          "unit": "mg"
+        },
+        {
+          "name": "unsaturated fat",
+          "amount": "0.110",
+          "unit": "g",
+          "composition": [
+            {
+              "name": "monounsaturated fat",
+              "amount": "0.070",
+              "unit": "g"
+            },
+            {
+              "name": "polyunsaturated fat",
+              "amount": "0.040",
+              "unit": "g"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "total carbohydrates",
+      "amount": "16.400",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "dietary fiber",
+          "amount": "1.700",
+          "unit": "g"
+        },
+        {
+          "name": "sugar",
+          "amount": "13.800",
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "name": "total ash",
+      "amount": "0.400",
+      "unit": "g"
+    },
+    {
+      "name": "calcium",
+      "amount": "10.000",
+      "unit": "mg"
+    },
+    {
+      "name": "phosphorus",
+      "amount": "19.000",
+      "unit": "mg"
+    },
+    {
+      "name": "iron",
+      "amount": "0.600",
+      "unit": "mg"
+    },
+    {
+      "name": "sodium",
+      "amount": "4.000",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin a",
+      "amount": "0.000",
+      "unit": "µg",
+      "composition": [
+        {
+          "name": "beta-carotene",
+          "amount": "1165.000",
+          "unit": "µg"
+        }
+      ]
+    },
+    {
+      "name": "retinol activity equivalent",
+      "amount": "97.000",
+      "unit": "µg"
+    },
+    {
+      "name": "vitamin b1",
+      "amount": "0.090",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin b2",
+      "amount": "0.070",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin b3",
+      "amount": "0.800",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin c",
+      "amount": "46.000",
+      "unit": "mg"
+    }
+  ],
+  "custom_servings": {
+    "id": 62,
+    "name": "Mango, Manila super, ripe",
+    "slug": "mango-manila-super-ripe",
+    "food_subtype": null,
+    "serving_units": [
+      {
+        "id": 121,
+        "name": "1/2 cup",
+        "long_name": null,
+        "weight": 70,
+        "weight_unit": "g",
+        "volume_in_ml": null
+      }
+    ]
+  },
+  "serving_profile": {
+    "id": 62,
+    "code": "legacy-profile-62",
+    "name": "Mango, Manila super, ripe",
+    "legacy_slug": "mango-manila-super-ripe",
+    "options": [
+      {
+        "id": 159,
+        "serving_profile_id": 62,
+        "label": "1/2 cup",
+        "gram_weight": "70.0000",
+        "milliliter_volume": null,
+        "sort_order": 0,
+        "is_default": true,
+        "source": "legacy_custom_servings",
+        "legacy_serving_unit_id": 121
+      }
+    ]
+  },
+  "recipe_ingredients": [],
+  "recipe": null
+}

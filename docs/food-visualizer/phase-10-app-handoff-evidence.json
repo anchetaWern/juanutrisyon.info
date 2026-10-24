@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-23T11:42:43.398Z",
+  "origin": "https://app.juanutrisyon.info",
+  "method": "Live Chromium, isolated contexts, anonymous public navigation; only test-context sessionStorage changed.",
+  "seed": "rice-well-milled-boiled",
+  "results": [
+    { "scenario": "fresh", "httpStatus": 200, "mode": "1", "slugs": ["rice-well-milled-boiled"], "comparisonEnabled": true },
+    { "scenario": "existing-other-mode-off", "httpStatus": 200, "mode": "1", "slugs": ["rice-well-milled-boiled", "mango-manila-super-ripe"], "comparisonEnabled": true },
+    { "scenario": "existing-same-mode-off", "httpStatus": 200, "mode": "0", "slugs": ["rice-well-milled-boiled"], "comparisonEnabled": false, "manualRecoveryVerified": true },
+    { "path": "/food/rice-well-milled-boiled", "httpStatus": 200, "heading": "Rice, well-milled, boiled", "archive": false },
+    { "path": "/food/archive/salt-table-iodized", "httpStatus": 200, "heading": "Salt, table, iodized", "archive": true }
+  ],
+  "limitation": "An already-selected seed does not enable comparison when stored mode is off. Selecting the existing Compare foods button enables it while retaining the food. Landing copy explains this recovery; no app source was changed.",
+  "sourceInspection": "nuxt-juanutrisyon/src/pages/search.vue hydrateComparisonState enables mode only when it inserts a new seeded food.",
+  "portionOrLensTransferred": false,
+  "userSessionOrServerRecordsChanged": false
+}

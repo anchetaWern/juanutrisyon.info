@@ -3,6 +3,11 @@ import { onMounted } from 'vue'
 const APP_URL = 'https://app.juanutrisyon.info'
 const SITE_PAGES = [
   {
+    slug: 'food-visualizer',
+    title: 'Food Visualizer',
+    path: '/tools/food-visualizer'
+  },
+  {
     slug: 'home',
     title: 'Home',
     path: '/'
@@ -203,7 +208,7 @@ export function useWebMcp() {
           },
           execute: () =>
             toolResult(
-              'Juan Nutrisyon provides Filipino food nutrition search, recipe analysis, diet tracking, and practical blog content for healthier everyday meals.'
+              'Juan Nutrisyon provides a Food Visualizer for learning about total sugar, sodium, saturated fat and carbohydrates, Filipino food nutrition search, recipe analysis, diet tracking, and practical blog content.'
             )
         }
       ]

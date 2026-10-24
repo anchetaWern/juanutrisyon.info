@@ -1,5 +1,5 @@
 <template>
-  <header class="site-header">
+  <header class="site-header" :class="{ 'site-header--visualizer': $route.name === 'food-visualizer' }">
     <div class="site-header__inner">
       <RouterLink to="/" class="brand-link" aria-label="Juan Nutrisyon home">
         <img src="/logo.png" alt="Juan Nutrisyon" class="logo" width="176" height="46" />
@@ -7,6 +7,7 @@
 
       <nav class="header-nav" aria-label="Main navigation">
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/tools/food-visualizer">Food Visualizer</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/data-methodology">Data & Methodology</RouterLink>
         <RouterLink to="/collaborate">Collaborate</RouterLink>
@@ -37,6 +38,9 @@
   backdrop-filter: blur(14px);
   box-shadow: var(--shadow-sticky);
 }
+
+/* Keep the long, keyboard-driven tool clear of the shared navigation. */
+.site-header.site-header--visualizer { position: static; }
 
 .site-header__inner {
   display: flex;

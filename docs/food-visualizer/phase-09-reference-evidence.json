@@ -1,0 +1,20 @@
+{
+  "api_url": "https://api.juanutrisyon.info/api/foods/rice-well-milled-boiled",
+  "retrieved_at_utc": "2026-10-23T10:55:18.816Z",
+  "authentication": "none",
+  "raw_response_sha256": "49eef3af6cc846468ba586637eb1f86ff7b78de32a5e1538eaac313c1c4c2bc2",
+  "reference": {
+    "foodId": 78,
+    "slug": "rice-well-milled-boiled",
+    "description": "Rice, well-milled, boiled",
+    "optionId": 206,
+    "label": "1/2 cup",
+    "amount": 80,
+    "unit": "g",
+    "source": "Philippine Food Composition Tables via JN",
+    "sourceId": "A020",
+    "servingSource": "legacy_custom_servings",
+    "carbs": 23.76
+  },
+  "original_source_review": "pending; this verifies the current public API contract, not the inaccessible original rice report"
+}

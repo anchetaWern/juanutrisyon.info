@@ -1,0 +1,221 @@
+{
+  "id": 78,
+  "description": "Rice, well-milled, boiled",
+  "description_slug": "rice-well-milled-boiled",
+  "scientific_name": "Oryza sativa",
+  "alternate_names": "Bigas, maputi, sinaing",
+  "brand": null,
+  "is_visible": 1,
+  "data_source": "ph_fct",
+  "custom_id": "A020",
+  "calories": 129,
+  "calories_unit": "kcal",
+  "serving_size": "100.000",
+  "serving_size_unit": "g",
+  "custom_serving_size": null,
+  "servings_per_container": null,
+  "edible_portion": 100,
+  "food_type": 57,
+  "food_subtype": 74,
+  "food_state": 7,
+  "food_substate": null,
+  "default_role": "carb",
+  "title_image": "http://localhost/storage/fnri/rice-well-milled-boiled.png",
+  "nutrition_label_image": null,
+  "created_at": "2024-06-08T06:40:34.000000Z",
+  "updated_at": "2026-09-09T06:55:51.000000Z",
+  "type": {
+    "id": 57,
+    "name": "Prepared and Processed",
+    "slug": "prepared-and-processed"
+  },
+  "subtype": {
+    "id": 74,
+    "name": "Ready-to-Eat Meals",
+    "slug": "ready-to-eat-meals"
+  },
+  "state": {
+    "id": 7,
+    "name": "Semi-solid"
+  },
+  "substate": null,
+  "density": null,
+  "source_metadata": {
+    "source_food_id": "A020",
+    "database_subset": null,
+    "source_version": null,
+    "source_url": "https://i.fnri.dost.gov.ph/fct/library/report/2982",
+    "source_published_at": null,
+    "source_updated_at": null,
+    "retrieved_at": "2026-08-30T12:55:11+00:00",
+    "declared_serving": null,
+    "upstream_nutrients": []
+  },
+  "nutrients": [
+    {
+      "name": "water",
+      "amount": "67.600",
+      "unit": "g"
+    },
+    {
+      "name": "protein",
+      "amount": "2.100",
+      "unit": "g"
+    },
+    {
+      "name": "total fat",
+      "amount": "0.200",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "saturated fat",
+          "amount": "0.050",
+          "unit": "g"
+        },
+        {
+          "name": "cholesterol",
+          "amount": "0.000",
+          "unit": "mg"
+        },
+        {
+          "name": "unsaturated fat",
+          "amount": "0.110",
+          "unit": "g",
+          "composition": [
+            {
+              "name": "monounsaturated fat",
+              "amount": "0.060",
+              "unit": "g"
+            },
+            {
+              "name": "polyunsaturated fat",
+              "amount": "0.050",
+              "unit": "g"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "total carbohydrates",
+      "amount": "29.700",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "dietary fiber",
+          "amount": "0.400",
+          "unit": "g"
+        },
+        {
+          "name": "sugar",
+          "amount": "0.100",
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "name": "total ash",
+      "amount": "0.400",
+      "unit": "g"
+    },
+    {
+      "name": "calcium",
+      "amount": "11.000",
+      "unit": "mg"
+    },
+    {
+      "name": "phosphorus",
+      "amount": "36.000",
+      "unit": "mg"
+    },
+    {
+      "name": "iron",
+      "amount": "0.600",
+      "unit": "mg"
+    },
+    {
+      "name": "sodium",
+      "amount": "3.000",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin a",
+      "amount": "0.000",
+      "unit": "µg",
+      "composition": [
+        {
+          "name": "beta-carotene",
+          "amount": "0.000",
+          "unit": "µg"
+        }
+      ]
+    },
+    {
+      "name": "retinol activity equivalent",
+      "amount": "0.000",
+      "unit": "µg"
+    },
+    {
+      "name": "vitamin b1",
+      "amount": "0.020",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin b2",
+      "amount": "0.020",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin b3",
+      "amount": "0.500",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin c",
+      "amount": "0.000",
+      "unit": "mg"
+    },
+    {
+      "name": "food type",
+      "amount": "1.000",
+      "unit": "g"
+    }
+  ],
+  "custom_servings": {
+    "id": 109,
+    "name": "Rice, well-milled, boiled",
+    "slug": "rice-well-milled-boiled",
+    "food_subtype": null,
+    "serving_units": [
+      {
+        "id": 168,
+        "name": "1/2 cup",
+        "long_name": null,
+        "weight": 80,
+        "weight_unit": "g",
+        "volume_in_ml": null
+      }
+    ]
+  },
+  "serving_profile": {
+    "id": 109,
+    "code": "legacy-profile-109",
+    "name": "Rice, well-milled, boiled",
+    "legacy_slug": "rice-well-milled-boiled",
+    "options": [
+      {
+        "id": 206,
+        "serving_profile_id": 109,
+        "label": "1/2 cup",
+        "gram_weight": "80.0000",
+        "milliliter_volume": null,
+        "sort_order": 0,
+        "is_default": true,
+        "source": "legacy_custom_servings",
+        "legacy_serving_unit_id": 168
+      }
+    ]
+  },
+  "recipe_ingredients": [],
+  "recipe": null
+}

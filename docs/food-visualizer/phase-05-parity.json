@@ -1,0 +1,25 @@
+{
+  "sourceArtifactExact": true,
+  "selections": 72,
+  "foodDetailsFieldComparisons": 504,
+  "tableRoundingOrderDifferences": [
+    {
+      "food": "recipe",
+      "option": "g",
+      "quantity": 1,
+      "nutrient": "sodium",
+      "table": 1.5868986083499004,
+      "canonical": 1.5868986083499008,
+      "kind": "floating_point_operation_order"
+    },
+    {
+      "food": "recipe",
+      "option": "g",
+      "quantity": 2,
+      "nutrient": "sodium",
+      "table": 3.1737972166998007,
+      "canonical": 3.1737972166998016,
+      "kind": "floating_point_operation_order"
+    }
+  ]
+}

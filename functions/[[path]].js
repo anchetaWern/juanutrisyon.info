@@ -5,6 +5,12 @@ const CONTRIBUTOR_URL = 'https://contribute.juanutrisyon.info';
 const API_PREFIX = '/api';
 const SITE_PAGES = [
   {
+    slug: 'food-visualizer',
+    title: 'Food Visualizer',
+    path: '/tools/food-visualizer',
+    summary: 'Explore total sugar, sodium, saturated fat and carbohydrates in Filipino foods and drinks, with portion controls and source details. Free; no sign-in required.'
+  },
+  {
     slug: '',
     title: 'Home',
     path: '/',
@@ -119,6 +125,22 @@ const BLOG_POSTS = [
 
 function buildSkillDefinitions(origin) {
   return [
+    {
+      slug: 'explore-food-nutrients',
+      name: 'explore-food-nutrients',
+      type: 'local',
+      description: 'Open the Food Visualizer to learn about total sugar, sodium, saturated fat and carbohydrates in a food and portion.',
+      body: `---
+name: explore-food-nutrients
+description: Open the Food Visualizer for educational nutrient views of Filipino foods and drinks.
+---
+
+1. Open ${origin}/tools/food-visualizer. No sign-in is required.
+2. Search for a food and check its exact identity, brand and preparation.
+3. Choose a supported portion and nutrient view; review source details and missing-data notices.
+4. Explain that visual equivalents compare nutrient amounts, not health effects. Total sugar is not necessarily added sugar. This tool does not provide a health score or personalized medical advice.
+`
+    },
     {
       slug: 'search-foods',
       name: 'search-foods',
@@ -420,6 +442,7 @@ function buildApiDocsHtml(origin) {
       <section class="card">
         <h2>Application Links</h2>
         <ul>
+          <li><a href="${origin}/tools/food-visualizer">Food Visualizer</a> for learning about nutrients in a selected food and portion</li>
           <li><a href="${APP_URL}">${APP_URL}</a> for food search</li>
           <li><a href="${APP_URL}/recipe">${APP_URL}/recipe</a> for recipe analysis</li>
           <li><a href="${APP_URL}/diary">${APP_URL}/diary</a> for food diary analysis</li>
@@ -438,6 +461,10 @@ function buildDiscoveryPayload(origin) {
       url: origin
     },
     tools: [
+      {
+        name: 'food-visualizer',
+        url: `${origin}/tools/food-visualizer`
+      },
       {
         name: 'food-search',
         url: APP_URL
@@ -496,7 +523,7 @@ function buildMcpTools(origin) {
         content: [
           {
             type: 'text',
-            text: `${SITE_NAME} explains nutrition for Filipino foods and links to public tools for food search, recipe analysis, and diet tracking.`
+            text: `${SITE_NAME} explains nutrition for Filipino foods. The Food Visualizer (${origin}/tools/food-visualizer) explores total sugar, sodium, saturated fat and carbohydrates for a selected food and portion. Other public tools provide food search, recipe analysis, and diet tracking.`
           }
         ]
       })
@@ -644,7 +671,6 @@ function htmlResponse(html, origin) {
       }
     }),
     origin,
-    '',
     { varyAccept: true }
   );
 }
@@ -662,9 +688,22 @@ function textResponse(text, origin, contentType = 'text/plain; charset=utf-8') {
 }
 
 function shouldReturnMarkdown(request, response) {
-  const accept = request.headers.get('accept') || '';
   const contentType = response.headers.get('content-type') || '';
-  return accept.includes('text/markdown') && contentType.includes('text/html');
+  return prefersMarkdown(request) && contentType.includes('text/html');
+}
+
+function prefersMarkdown(request) {
+  const media = (request.headers.get('accept') || '').toLowerCase().split(',').map((item) => {
+    const [type, ...parameters] = item.trim().split(';');
+    const quality = parameters.find((parameter) => parameter.trim().startsWith('q='));
+    const q = quality ? Number(quality.trim().slice(2)) : 1;
+    return { type, q: Number.isFinite(q) && q >= 0 && q <= 1 ? q : 0 };
+  });
+  const markdown = media.find((item) => item.type === 'text/markdown')?.q || 0;
+  const html = media.find((item) => item.type === 'text/html')?.q
+    ?? media.find((item) => item.type === 'text/*')?.q
+    ?? media.find((item) => item.type === '*/*')?.q ?? 0;
+  return markdown > 0 && markdown >= html;
 }
 
 function decodeEntities(text) {
@@ -729,7 +768,6 @@ function markdownResponse(markdown, origin, status = 200) {
       }
     }),
     origin,
-    '',
     { varyAccept: true }
   );
 }
@@ -852,7 +890,7 @@ export async function onRequest(context) {
 
   if (pathname === '/docs/api') {
     const html = buildApiDocsHtml(origin);
-    if ((request.headers.get('accept') || '').includes('text/markdown')) {
+    if (prefersMarkdown(request)) {
       return markdownResponse(htmlToMarkdown(html, request.url), origin);
     }
     return htmlResponse(html, origin);

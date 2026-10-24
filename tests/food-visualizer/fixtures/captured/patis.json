@@ -1,0 +1,204 @@
+{
+  "id": 1270,
+  "description": "Fish sauce",
+  "description_slug": "fish-sauce",
+  "scientific_name": "N/A",
+  "alternate_names": "Patis",
+  "brand": null,
+  "is_visible": 1,
+  "data_source": "ph_fct",
+  "custom_id": "N011",
+  "calories": 49,
+  "calories_unit": "kcal",
+  "serving_size": "100.000",
+  "serving_size_unit": "g",
+  "custom_serving_size": null,
+  "servings_per_container": null,
+  "edible_portion": 100,
+  "food_type": 57,
+  "food_subtype": 76,
+  "food_state": 2,
+  "food_substate": null,
+  "default_role": "flavor",
+  "title_image": "http://localhost/storage/fnri/fish-sauce.png",
+  "nutrition_label_image": null,
+  "created_at": "2024-06-08T07:46:23.000000Z",
+  "updated_at": "2026-09-09T06:56:04.000000Z",
+  "type": {
+    "id": 57,
+    "name": "Prepared and Processed",
+    "slug": "prepared-and-processed"
+  },
+  "subtype": {
+    "id": 76,
+    "name": "Condiments and Sauces",
+    "slug": "condiments-and-sauces"
+  },
+  "state": {
+    "id": 2,
+    "name": "Liquids"
+  },
+  "substate": null,
+  "density": null,
+  "source_metadata": {
+    "source_food_id": "N011",
+    "database_subset": null,
+    "source_version": null,
+    "source_url": "https://i.fnri.dost.gov.ph/fct/library/report/4334",
+    "source_published_at": null,
+    "source_updated_at": null,
+    "retrieved_at": "2026-08-30T12:56:00+00:00",
+    "declared_serving": null,
+    "upstream_nutrients": []
+  },
+  "nutrients": [
+    {
+      "name": "water",
+      "amount": "66.300",
+      "unit": "g"
+    },
+    {
+      "name": "protein",
+      "amount": "10.600",
+      "unit": "g"
+    },
+    {
+      "name": "total fat",
+      "amount": "0.300",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "saturated fat",
+          "amount": "0.090",
+          "unit": "g"
+        },
+        {
+          "name": "cholesterol",
+          "amount": "0.000",
+          "unit": "mg"
+        },
+        {
+          "name": "unsaturated fat",
+          "amount": "0.150",
+          "unit": "g",
+          "composition": [
+            {
+              "name": "monounsaturated fat",
+              "amount": "0.060",
+              "unit": "g"
+            },
+            {
+              "name": "polyunsaturated fat",
+              "amount": "0.090",
+              "unit": "g"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "total carbohydrates",
+      "amount": "0.900",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "dietary fiber",
+          "amount": "0.000",
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "name": "total ash",
+      "amount": "21.900",
+      "unit": "g"
+    },
+    {
+      "name": "calcium",
+      "amount": "42.000",
+      "unit": "mg"
+    },
+    {
+      "name": "phosphorus",
+      "amount": "32.000",
+      "unit": "mg"
+    },
+    {
+      "name": "iron",
+      "amount": "9.300",
+      "unit": "mg"
+    },
+    {
+      "name": "sodium",
+      "amount": "5061.000",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin a",
+      "amount": "0.000",
+      "unit": "µg"
+    },
+    {
+      "name": "vitamin b1",
+      "amount": "0.000",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin b2",
+      "amount": "0.080",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin b3",
+      "amount": "4.100",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin c",
+      "amount": "0.000",
+      "unit": "mg"
+    },
+    {
+      "name": "food type",
+      "amount": "1.000",
+      "unit": "g"
+    }
+  ],
+  "custom_servings": {
+    "id": 854,
+    "name": "Fish sauce",
+    "slug": "fish-sauce",
+    "food_subtype": null,
+    "serving_units": [
+      {
+        "id": 911,
+        "name": "1 tbsp",
+        "long_name": null,
+        "weight": 15,
+        "weight_unit": "g",
+        "volume_in_ml": null
+      }
+    ]
+  },
+  "serving_profile": {
+    "id": 854,
+    "code": "legacy-profile-854",
+    "name": "Fish sauce",
+    "legacy_slug": "fish-sauce",
+    "options": [
+      {
+        "id": 953,
+        "serving_profile_id": 854,
+        "label": "1 tbsp",
+        "gram_weight": "15.0000",
+        "milliliter_volume": null,
+        "sort_order": 0,
+        "is_default": true,
+        "source": "legacy_custom_servings",
+        "legacy_serving_unit_id": 911
+      }
+    ]
+  },
+  "recipe_ingredients": [],
+  "recipe": null
+}

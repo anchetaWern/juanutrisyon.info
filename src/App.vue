@@ -1,5 +1,6 @@
 <template>
-  <div class="site-shell">
+  <div class="site-shell" :class="{ 'site-shell--visualizer': $route.name === 'food-visualizer' }">
+    <a v-if="$route.name === 'food-visualizer'" class="visualizer-skip" href="#food-search">Skip to food search</a>
     <TopNav />
 
     <div class="site-main">
@@ -31,6 +32,20 @@ useWebMcp()
 </script>
 
 <style>
+.site-shell--visualizer {
+  --brand-600: #49780b;
+  --brand-700: #426e17;
+  --text-secondary: #526175;
+  --border-strong: #718096;
+  --color-link: var(--brand-700);
+}
+.visualizer-skip { position: fixed; top: 8px; left: 8px; z-index: 50; transform: translateY(-200%); padding: 12px 16px; border: 2px solid var(--brand-900); border-radius: var(--radius-sm); background: white; color: var(--brand-900); font-weight: 700; }
+.visualizer-skip:focus { transform: none; }
+.site-shell--visualizer :is(a, button, input, select, summary, [tabindex="-1"]):focus-visible { outline: 3px solid var(--brand-900); outline-offset: 3px; }
+.site-shell--visualizer :is(.method-note, .donation-support) a { text-decoration: underline; text-underline-offset: .18em; }
+@media (prefers-reduced-motion: reduce) {
+  .site-shell--visualizer *, .site-shell--visualizer *::before, .site-shell--visualizer *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
 .site-shell {
   display: flex;
   min-height: 100vh;

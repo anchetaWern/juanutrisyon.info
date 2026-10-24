@@ -1,0 +1,14 @@
+{
+  "url": "http://127.0.0.1:4327/tools/food-visualizer",
+  "fetchTime": "2026-10-23T12:25:30.416Z",
+  "version": "12.8.2",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+  "scores": {
+    "accessibility": {
+      "title": "Accessibility",
+      "score": 1,
+      "description": "These checks highlight opportunities to [improve the accessibility of your web app](https://developer.chrome.com/docs/lighthouse/accessibility/). Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so [manual testing](https://web.dev/articles/how-to-review) is also encouraged."
+    }
+  },
+  "metrics": {}
+}

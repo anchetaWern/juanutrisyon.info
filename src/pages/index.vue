@@ -2,6 +2,13 @@
   <main class="home-page">
     <Banner />
 
+    <section class="visualizer-intro" aria-labelledby="visualizer-heading">
+      <h2 id="visualizer-heading">Explore your food, one nutrient at a time</h2>
+      <p>Use the Food Visualizer to explore total sugar, sodium, saturated fat and carbohydrates in Filipino foods and drinks. Choose a portion and see what each nutrient view means.</p>
+      <RouterLink class="text-link" to="/tools/food-visualizer">Try the Food Visualizer</RouterLink>
+      <p class="visualizer-access">Free · No sign-in required</p>
+    </section>
+
     <section class="home-section">
       <IntroLinks />
     </section>
@@ -70,6 +77,20 @@ useAdsenseLoader()
   padding-top: var(--space-12);
   border-top: 1px solid var(--border-subtle);
 }
+
+.visualizer-intro {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+}
+
+.visualizer-intro h2 { margin-top: 0; }
+.visualizer-intro p { max-width: 760px; color: var(--text-secondary); line-height: 1.6; }
+.visualizer-intro .text-link { min-height: 44px; align-items: center; color: var(--brand-900); font-weight: 700; text-decoration: underline; }
+.visualizer-intro .text-link:focus-visible { outline: 3px solid var(--brand-900); outline-offset: 3px; }
+.visualizer-intro .visualizer-access { margin-bottom: 0; font-size: 0.9rem; }
 
 .home-hero + .home-section {
   margin-top: var(--space-4);

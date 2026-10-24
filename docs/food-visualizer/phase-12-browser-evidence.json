@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-10-23T13:00:51.500Z",
+  "browser": "156.0.8078.4",
+  "method": "Built assets at intercepted HTTPS origin; captured food fixtures; PostHog requests intercepted, never delivered to a real project.",
+  "checks": [
+    {
+      "scenario": "configured-opt-in",
+      "eventTypes": [
+        "food_visualizer_opened",
+        "food_visualizer_food_selected",
+        "food_visualizer_portion_changed",
+        "food_visualizer_lens_changed",
+        "food_visualizer_outbound_clicked"
+      ],
+      "counts": {
+        "opened": 3,
+        "food_selected": 3,
+        "portion_changed": 5,
+        "lens_changed": 3,
+        "outbound_clicked": 4
+      },
+      "noPreOptInEvents": true,
+      "noKeystrokeEvents": true,
+      "noRawSearchOrUrl": true,
+      "noStaleOrFailedSelectionEvents": true,
+      "preferenceAxeViolations": 0,
+      "rotatingVisitIdentity": true
+    },
+    {
+      "scenario": "localhost",
+      "capturedEvents": 0,
+      "calculatorUsable": true
+    },
+    {
+      "scenario": "unconfigured",
+      "capturedEvents": 0,
+      "calculatorUsable": true
+    },
+    {
+      "scenario": "dnt",
+      "capturedEvents": 0,
+      "calculatorUsable": true
+    },
+    {
+      "scenario": "gpc",
+      "capturedEvents": 0,
+      "calculatorUsable": true
+    },
+    {
+      "scenario": "failure",
+      "capturedEvents": 0,
+      "calculatorUsable": true
+    }
+  ],
+  "pageErrors": []
+}

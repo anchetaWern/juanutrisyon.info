@@ -1,0 +1,144 @@
+{
+  "contract_version": "jn-nutrition-core-1",
+  "source": {
+    "repository": "nuxt-juanutrisyon",
+    "commit": "22f81d7eedd82c1567d32e2c65817efae637e29a",
+    "dirty": true,
+    "dirty_source_recorded": true,
+    "files": [
+      {
+        "path": "docs/reference-values-api-2026-09-16.json",
+        "sha256": "dde92500919a4842ee3e13df57001abcd4fcec462b68de3164cc1ddc3db32768",
+        "git_status": "clean"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "63f83bf4a8d44616748849540b80affe33077a07343ebe318ab28ae73983918b",
+        "git_status": "clean"
+      },
+      {
+        "path": "package.json",
+        "sha256": "7e8af4f776dbe5dc96df98502e49a88b8cf3f77e80d9968f7da046b16ff86181",
+        "git_status": " M package.json"
+      },
+      {
+        "path": "scripts/build-nutrition-core.mjs",
+        "sha256": "b887e4acd5dfba7aa4f9285a93f80d79d1699ac17f44fcafd3fc1ca22838692c",
+        "git_status": "?? scripts/build-nutrition-core.mjs"
+      },
+      {
+        "path": "src/exports/nutrition-core.js",
+        "sha256": "52fa602aa2c3b5e3136735452eee79a38ce02b0e03d05c6b65e5292ccb523391",
+        "git_status": "?? src/exports/nutrition-core.js"
+      },
+      {
+        "path": "src/exports/nutrition-core.test.js",
+        "sha256": "2aefb426f9f4316e38836ba22d82b6561f22dde844a5ced95f112ae123def4ba",
+        "git_status": "?? src/exports/nutrition-core.test.js"
+      },
+      {
+        "path": "src/helpers/RecipeCooking.js",
+        "sha256": "c0098d6213dbe127ab905de434b206c2ec11fb67e54036dbdc85b7e3f0b47cdf",
+        "git_status": "clean"
+      },
+      {
+        "path": "src/helpers/calculation/adapters.js",
+        "sha256": "504af524e8033c2bc068a508592cfe60cf1d3ae7bd80a24c9d69406539553cac",
+        "git_status": "clean"
+      },
+      {
+        "path": "src/helpers/calculation/aggregate.js",
+        "sha256": "12876a4f82db93b4fd079ed674e0630695784b9c949819dead19a43c6a6c07e0",
+        "git_status": "clean"
+      },
+      {
+        "path": "src/helpers/calculation/basis.js",
+        "sha256": "1e169d1ed313e90bc355b7064d89444472bfa79a2ceb2824aff7677141aeaed0",
+        "git_status": "clean"
+      },
+      {
+        "path": "src/helpers/calculation/feature.js",
+        "sha256": "229543319dd7a164aaaf60e4e00e84148a7c0e02d48e97c58bee5f64afb66af3",
+        "git_status": "clean"
+      },
+      {
+        "path": "src/helpers/calculation/interpretation.js",
+        "sha256": "c3c4ea0e4076cf1bacfb7ab70ab4ac7f8c3101100970a0cf1839e5f9f99856e4",
+        "git_status": "clean"
+      },
+      {
+        "path": "src/helpers/calculation/numbers.js",
+        "sha256": "adbaf0ae996c8d41709ce4ff55e55f6265cca4ef5ba672a3de1020be326dfe91",
+        "git_status": "clean"
+      },
+      {
+        "path": "src/helpers/calculation/nutrients.js",
+        "sha256": "62899ffd8bdbd18b0a2660dabe555f79f83065937f0393635fcab9400df76d8a",
+        "git_status": "clean"
+      },
+      {
+        "path": "src/helpers/calculation/occurrences.js",
+        "sha256": "e748fba6aea8ac648c7ab3263746801e26778799b93a78cf0333aedcce4d8bae",
+        "git_status": "clean"
+      },
+      {
+        "path": "src/helpers/calculation/references.js",
+        "sha256": "d5cf43743fb488538de16d64cc0488511287108eabe0e43a76192fe4bb0f075a",
+        "git_status": "clean"
+      },
+      {
+        "path": "src/helpers/calculation/source.js",
+        "sha256": "9f398b2908662ce34f86eb2e61358fd89f0b127631fe6f6fbc8969333df6467c",
+        "git_status": "clean"
+      },
+      {
+        "path": "src/helpers/calculation/units.js",
+        "sha256": "b14fe2a1794739d7fca375fe19e52269882f8205aaf5c9e3e78e49d534f635be",
+        "git_status": "clean"
+      },
+      {
+        "path": "vite.nutrition-core.config.js",
+        "sha256": "6621cc20ed5496f38bfe37f65fb51994ee4a84d46ae1d1919be6b10174a4c4fb",
+        "git_status": "?? vite.nutrition-core.config.js"
+      }
+    ]
+  },
+  "build": {
+    "command": "npm run build:nutrition-core -- --allow-dirty-source",
+    "node": "v22.22.0",
+    "vite": "6.4.1",
+    "rollup": "4.60.1",
+    "esbuild": "0.25.12",
+    "target": "es2022"
+  },
+  "distribution": {
+    "file": "index.mjs",
+    "sha256": "a39b6b16161f355bcb97789dcef3f7fe28823af0c759ebd165a9138307745e5a",
+    "bytes": 31253,
+    "exports": [
+      "calculateFood",
+      "convertEdibleWeight",
+      "exactValue",
+      "findNutrient",
+      "isExact",
+      "normalizeBasis",
+      "normalizeDensity",
+      "normalizeHouseholdMeasure",
+      "parseAmount"
+    ],
+    "imports": [],
+    "dynamic_imports": [],
+    "rendered_modules": [
+      "src/helpers/RecipeCooking.js",
+      "src/helpers/calculation/adapters.js",
+      "src/helpers/calculation/aggregate.js",
+      "src/helpers/calculation/basis.js",
+      "src/helpers/calculation/feature.js",
+      "src/helpers/calculation/numbers.js",
+      "src/helpers/calculation/nutrients.js",
+      "src/helpers/calculation/occurrences.js",
+      "src/helpers/calculation/source.js",
+      "src/helpers/calculation/units.js"
+    ]
+  }
+}

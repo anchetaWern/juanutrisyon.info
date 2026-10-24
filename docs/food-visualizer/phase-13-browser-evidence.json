@@ -1,0 +1,292 @@
+{
+  "testedAt": "2026-10-23T14:08:46.631Z",
+  "localEnvironment": "Node HTTP harness: built Vite SSG assets + imported Pages onRequest; not deployed Cloudflare runtime",
+  "artifactSha256": "c6c6c949ec093616541258eb7b69a139f3e67c1cfd88913f12e9b131bfc38046",
+  "checks": [
+    "JavaScript-disabled homepage entry, direct nested route, query, trailing slash and refresh: 200, static copy, empty selection, one query-free main-domain canonical; no API reads",
+    "Built sitemap/robots and Pages function HTML/Markdown negotiation pass locally; Accept variation present on both representations",
+    "Browser WebMCP entry navigates to nested route; synthetic 429 without readable Retry-After shows manual retry and no automatic request loop",
+    "Scoped axe audit: .visualizer-intro, 390px, zero violations; 0 gradient-rule flags explicitly contrast-checked",
+    "Scoped axe audit: .header-nav, 390px, zero violations; 1 gradient-rule flags explicitly contrast-checked",
+    "Scoped axe audit: .visualizer-intro, 1280px, zero violations; 0 gradient-rule flags explicitly contrast-checked",
+    "Scoped axe audit: .header-nav, 1280px, zero violations; 1 gradient-rule flags explicitly contrast-checked",
+    "Homepage and tool navigation fit 360/390/768/1280px, with keyboard-focusable Food Visualizer link",
+    "Actual anonymous cross-origin rice search/detail succeeds at controlled main-site browser origin; quantity/lens/cache interactions add no API requests. No real 429 induced"
+  ],
+  "errors": [],
+  "homeHtmlSha256": "1c747950d539c43722d0bc7e29f781e0661ca10f719e955b4de4fbd239d56a00",
+  "pagesFunctionSha256": "bf440996ff1cd578d5ca20705b11f47774419de0b6892ea84df8c44512d34977",
+  "manualContrastReview": [
+    {
+      "selector": ".header-nav > a[href=\"/\"][data-v-64059308=\"\"]",
+      "width": 390,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"about\"][data-v-64059308=\"\"]",
+      "width": 390,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"data-methodology\"][data-v-64059308=\"\"]",
+      "width": 390,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"collaborate\"]",
+      "width": 390,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"research\"]",
+      "width": 390,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"blog\"]",
+      "width": 390,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"media\"]",
+      "width": 390,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": ".header-nav > a[href=\"/\"][data-v-64059308=\"\"]",
+      "width": 1280,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"about\"][data-v-64059308=\"\"]",
+      "width": 1280,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"data-methodology\"][data-v-64059308=\"\"]",
+      "width": 1280,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"collaborate\"]",
+      "width": 1280,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"research\"]",
+      "width": 1280,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"blog\"]",
+      "width": 1280,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"media\"]",
+      "width": 1280,
+      "foreground": "rgb(82, 97, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "reviewedBackdrop": [
+        245,
+        251,
+        237
+      ],
+      "ratio": 5.985312149407747
+    }
+  ],
+  "live": {
+    "environment": "Existing public main-site deployment, version unknown; local feature not deployed",
+    "site": [
+      {
+        "accept": "text/html",
+        "status": 200,
+        "url": "https://juanutrisyon.info/tools/food-visualizer",
+        "headers": {
+          "content-type": "text/html; charset=utf-8",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "cf-cache-status": "DYNAMIC",
+          "vary": "Accept, accept-encoding",
+          "access-control-allow-origin": "*"
+        },
+        "bodySha256": "b9e58262701de69588597e6e40f4bde43b6439e0fd9ddc6957b3e7e3486cba5b",
+        "title": "Nutrition tools for Filipino food | Juan Nutrisyon",
+        "visualizerHeading": false
+      },
+      {
+        "accept": "text/markdown",
+        "status": 200,
+        "url": "https://juanutrisyon.info/tools/food-visualizer",
+        "headers": {
+          "content-type": "text/markdown; charset=utf-8",
+          "cf-cache-status": "DYNAMIC",
+          "vary": "accept-encoding"
+        },
+        "bodySha256": "560048663b2b111f769cc10c96379923844bb3b44868db761a32951df928c6c7",
+        "title": "Nutrition tools for Filipino food | Juan Nutrisyon",
+        "visualizerHeading": false
+      }
+    ],
+    "discovery": {
+      "status": 200,
+      "visualizerListed": false
+    },
+    "api": {
+      "environment": "Local built assets intercepted at main-site HTTPS origin in Chromium; actual anonymous cross-origin API responses, NOT deployed feature",
+      "responses": [
+        {
+          "url": "https://api.juanutrisyon.info/api/foods?description=rice&page=1",
+          "status": 200,
+          "headers": {
+            "cache-control": "no-cache, private",
+            "cf-cache-status": "DYNAMIC",
+            "x-ratelimit-remaining": "58",
+            "access-control-allow-origin": "*",
+            "x-ratelimit-limit": "60"
+          }
+        },
+        {
+          "url": "https://api.juanutrisyon.info/api/foods/rice-well-milled-boiled",
+          "status": 200,
+          "headers": {
+            "cache-control": "no-cache, private",
+            "cf-cache-status": "DYNAMIC",
+            "x-ratelimit-remaining": "56",
+            "access-control-allow-origin": "*",
+            "x-ratelimit-limit": "60"
+          }
+        },
+        {
+          "url": "https://api.juanutrisyon.info/api/foods/rice-well-milled-boiled",
+          "status": 200,
+          "headers": {
+            "cf-cache-status": "DYNAMIC",
+            "cache-control": "no-cache, private",
+            "x-ratelimit-remaining": "58",
+            "access-control-allow-origin": "*",
+            "x-ratelimit-limit": "60"
+          }
+        }
+      ],
+      "credentials": [
+        {
+          "method": "GET",
+          "origin": "https://juanutrisyon.info",
+          "cookiePresent": false,
+          "authorizationPresent": false
+        },
+        {
+          "method": "GET",
+          "origin": "https://juanutrisyon.info",
+          "cookiePresent": false,
+          "authorizationPresent": false
+        },
+        {
+          "method": "GET",
+          "origin": "https://juanutrisyon.info",
+          "cookiePresent": false,
+          "authorizationPresent": false
+        }
+      ],
+      "cachedRepeatAndPortionLensReadCount": 0,
+      "readableHeaders": {
+        "status": 200,
+        "cacheControl": "no-cache, private",
+        "retryAfter": null,
+        "exposeHeaders": null
+      }
+    }
+  },
+  "passed": true
+}

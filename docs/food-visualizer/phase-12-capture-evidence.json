@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-23T13:05:18.589Z",
+  "host": "https://us.i.posthog.com",
+  "method": "Local Node capture-endpoint smoke test; five explicit verification events using public rice catalog context.",
+  "verificationVisit": "phase12-verification-e8c90947-654f-4cad-89c5-27d4f8ae93b4",
+  "tokenRecorded": false,
+  "personProfiles": false,
+  "responses": [
+    {
+      "event": "food_visualizer_opened",
+      "httpStatus": 200,
+      "acknowledged": true,
+      "acknowledgementFormat": "status-Ok"
+    },
+    {
+      "event": "food_visualizer_food_selected",
+      "httpStatus": 200,
+      "acknowledged": true,
+      "acknowledgementFormat": "status-Ok"
+    },
+    {
+      "event": "food_visualizer_portion_changed",
+      "httpStatus": 200,
+      "acknowledged": true,
+      "acknowledgementFormat": "status-Ok"
+    },
+    {
+      "event": "food_visualizer_lens_changed",
+      "httpStatus": 200,
+      "acknowledged": true,
+      "acknowledgementFormat": "status-Ok"
+    },
+    {
+      "event": "food_visualizer_outbound_clicked",
+      "httpStatus": 200,
+      "acknowledged": true,
+      "acknowledgementFormat": "status-Ok"
+    }
+  ],
+  "captureEndpointAcknowledged": true,
+  "mainSiteDeploymentVerified": false,
+  "projectQueryReadbackVerified": false,
+  "limitation": "A capture acknowledgement does not establish event query visibility or verify a deployed main-site build."
+}

@@ -1,0 +1,359 @@
+{
+  "reviewedOn": "2026-10-23",
+  "method": "Official FNRI PDF text exposed through web retrieval; current anonymous JN API GETs and Phase 1 captured records compared using the shared core at 100 g.",
+  "directReportHttpStatus": 503,
+  "directReportContent": "HTML error, not a PDF",
+  "currentApiHttpStatus": 200,
+  "visualPdfReviewCompleted": false,
+  "servingWeightsIndependentlyVerified": false,
+  "reportEditionNotInjectedIntoApiOrUi": true,
+  "featuredFoodCount": 0,
+  "records": [
+    {
+      "key": "rice",
+      "foodId": 78,
+      "slug": "rice-well-milled-boiled",
+      "description": "Rice, well-milled, boiled",
+      "sourceId": "A020",
+      "sourceUrl": "https://i.fnri.dost.gov.ph/fct/library/report/2982",
+      "reportGeneratedAt": "10/20/2026 13:02:53",
+      "releaseLabel": "Release 1 December 2019",
+      "reportBasis": "100 g edible portion",
+      "ediblePortionPercent": 100,
+      "values": [
+        {
+          "id": "sugar",
+          "unit": "g",
+          "report": 0.1,
+          "captured": 0.1,
+          "currentApi": 0.1,
+          "match": true
+        },
+        {
+          "id": "total carbohydrates",
+          "unit": "g",
+          "report": 29.7,
+          "captured": 29.7,
+          "currentApi": 29.7,
+          "match": true
+        },
+        {
+          "id": "dietary fiber",
+          "unit": "g",
+          "report": 0.4,
+          "captured": 0.4,
+          "currentApi": 0.4,
+          "match": true
+        },
+        {
+          "id": "sodium",
+          "unit": "mg",
+          "report": 3,
+          "captured": 3,
+          "currentApi": 3,
+          "match": true
+        },
+        {
+          "id": "saturated fat",
+          "unit": "g",
+          "report": 0.05,
+          "captured": 0.05,
+          "currentApi": 0.05,
+          "match": true
+        },
+        {
+          "id": "total fat",
+          "unit": "g",
+          "report": 0.2,
+          "captured": 0.2,
+          "currentApi": 0.2,
+          "match": true
+        },
+        {
+          "id": "calories",
+          "unit": "kcal",
+          "report": 129,
+          "captured": 129,
+          "currentApi": 129,
+          "match": true
+        }
+      ],
+      "serving": {
+        "profileId": 109,
+        "optionId": 206,
+        "label": "1/2 cup",
+        "grams": 80,
+        "legacyId": 168,
+        "source": "legacy_custom_servings"
+      },
+      "status": "text-values-match; not promoted",
+      "pending": [
+        "visual original-report review",
+        "independent household-serving evidence review"
+      ]
+    },
+    {
+      "key": "pandesal",
+      "foodId": 119,
+      "slug": "bread-pan-de-sal",
+      "description": "Bread, pan de sal",
+      "sourceId": "A042",
+      "sourceUrl": "https://i.fnri.dost.gov.ph/fct/library/report/3004",
+      "reportGeneratedAt": "10/14/2026 16:21:00",
+      "releaseLabel": "Release 1 December 2019",
+      "reportBasis": "100 g edible portion",
+      "ediblePortionPercent": 100,
+      "values": [
+        {
+          "id": "sugar",
+          "unit": "g",
+          "report": 7.6,
+          "captured": 7.6,
+          "currentApi": 7.6,
+          "match": true
+        },
+        {
+          "id": "total carbohydrates",
+          "unit": "g",
+          "report": 62.9,
+          "captured": 62.9,
+          "currentApi": 62.9,
+          "match": true
+        },
+        {
+          "id": "dietary fiber",
+          "unit": "g",
+          "report": 2.5,
+          "captured": 2.5,
+          "currentApi": 2.5,
+          "match": true
+        },
+        {
+          "id": "sodium",
+          "unit": "mg",
+          "report": 596,
+          "captured": 596,
+          "currentApi": 596,
+          "match": true
+        },
+        {
+          "id": "saturated fat",
+          "unit": "g",
+          "report": 0.99,
+          "captured": 0.99,
+          "currentApi": 0.99,
+          "match": true
+        },
+        {
+          "id": "total fat",
+          "unit": "g",
+          "report": 4.2,
+          "captured": 4.2,
+          "currentApi": 4.2,
+          "match": true
+        },
+        {
+          "id": "calories",
+          "unit": "kcal",
+          "report": 330,
+          "captured": 330,
+          "currentApi": 330,
+          "match": true
+        }
+      ],
+      "serving": {
+        "profileId": 116,
+        "optionId": 213,
+        "label": "1 piece",
+        "grams": 23.33,
+        "legacyId": 175,
+        "source": "legacy_custom_servings"
+      },
+      "status": "text-values-match; not promoted",
+      "pending": [
+        "visual original-report review",
+        "independent household-serving evidence review"
+      ]
+    },
+    {
+      "key": "mango",
+      "foodId": 678,
+      "slug": "mango-manila-super-ripe",
+      "description": "Mango, Manila super, ripe",
+      "sourceId": "E051",
+      "sourceUrl": "https://i.fnri.dost.gov.ph/fct/library/report/3633",
+      "reportGeneratedAt": "10/14/2026 16:58:56",
+      "releaseLabel": "Release 1 December 2019",
+      "reportBasis": "100 g edible portion",
+      "ediblePortionPercent": 67,
+      "values": [
+        {
+          "id": "sugar",
+          "unit": "g",
+          "report": 13.8,
+          "captured": 13.8,
+          "currentApi": 13.8,
+          "match": true
+        },
+        {
+          "id": "total carbohydrates",
+          "unit": "g",
+          "report": 16.4,
+          "captured": 16.4,
+          "currentApi": 16.4,
+          "match": true
+        },
+        {
+          "id": "dietary fiber",
+          "unit": "g",
+          "report": 1.7,
+          "captured": 1.7,
+          "currentApi": 1.7,
+          "match": true
+        },
+        {
+          "id": "sodium",
+          "unit": "mg",
+          "report": 4,
+          "captured": 4,
+          "currentApi": 4,
+          "match": true
+        },
+        {
+          "id": "saturated fat",
+          "unit": "g",
+          "report": 0.05,
+          "captured": 0.05,
+          "currentApi": 0.05,
+          "match": true
+        },
+        {
+          "id": "total fat",
+          "unit": "g",
+          "report": 0.2,
+          "captured": 0.2,
+          "currentApi": 0.2,
+          "match": true
+        },
+        {
+          "id": "calories",
+          "unit": "kcal",
+          "report": 70,
+          "captured": 70,
+          "currentApi": 70,
+          "match": true
+        }
+      ],
+      "serving": {
+        "profileId": 62,
+        "optionId": 159,
+        "label": "1/2 cup",
+        "grams": 70,
+        "legacyId": 121,
+        "source": "legacy_custom_servings"
+      },
+      "status": "text-values-match; not promoted",
+      "pending": [
+        "visual original-report review",
+        "household weight and edible-versus-as-purchased basis review"
+      ]
+    },
+    {
+      "key": "patis",
+      "foodId": 1270,
+      "slug": "fish-sauce",
+      "description": "Fish sauce",
+      "sourceId": "N011",
+      "sourceUrl": "https://i.fnri.dost.gov.ph/fct/library/report/4334",
+      "reportGeneratedAt": "10/21/2026 12:58:18",
+      "releaseLabel": "Release 1 December 2019",
+      "reportBasis": "100 g edible portion",
+      "ediblePortionPercent": 100,
+      "values": [
+        {
+          "id": "sugar",
+          "unit": "g",
+          "report": null,
+          "captured": null,
+          "currentApi": null,
+          "match": true
+        },
+        {
+          "id": "total carbohydrates",
+          "unit": "g",
+          "report": 0.9,
+          "captured": 0.9,
+          "currentApi": 0.9,
+          "match": true
+        },
+        {
+          "id": "dietary fiber",
+          "unit": "g",
+          "report": 0,
+          "captured": 0,
+          "currentApi": 0,
+          "match": true
+        },
+        {
+          "id": "sodium",
+          "unit": "mg",
+          "report": 5061,
+          "captured": 5061,
+          "currentApi": 5061,
+          "match": true
+        },
+        {
+          "id": "saturated fat",
+          "unit": "g",
+          "report": 0.09,
+          "captured": 0.09,
+          "currentApi": 0.09,
+          "match": true
+        },
+        {
+          "id": "total fat",
+          "unit": "g",
+          "report": 0.3,
+          "captured": 0.3,
+          "currentApi": 0.3,
+          "match": true
+        },
+        {
+          "id": "calories",
+          "unit": "kcal",
+          "report": 49,
+          "captured": 49,
+          "currentApi": 49,
+          "match": true
+        }
+      ],
+      "serving": {
+        "profileId": 854,
+        "optionId": 953,
+        "label": "1 tbsp",
+        "grams": 15,
+        "legacyId": 911,
+        "source": "legacy_custom_servings"
+      },
+      "status": "text-values-match; not promoted",
+      "pending": [
+        "visual original-report review",
+        "independent household-serving evidence review"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "foodId": 1597,
+      "reason": "Localhost label URL; duplicate carbohydrate parents make nested sugar unusable."
+    },
+    {
+      "foodId": 1715,
+      "reason": "Localhost label URL; no original label review."
+    },
+    {
+      "foodId": 19346,
+      "reason": "Community recipe with incomplete nutrient contributions; estimate only."
+    }
+  ]
+}
