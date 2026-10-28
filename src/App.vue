@@ -14,6 +14,7 @@
         <RouterLink to="/terms">Terms</RouterLink>
         <RouterLink to="/privacy">Privacy Policy</RouterLink>
         <a href="https://contribute.juanutrisyon.info" target="_blank" rel="noopener">Contribute</a>
+        <a href="https://games.juanutrisyon.info" target="_blank" rel="noopener">Games</a>
       </nav>
       <p>
         Juan Nutrisyon is an independent Filipino food-literacy and nutrition-information project.
