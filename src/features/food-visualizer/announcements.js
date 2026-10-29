@@ -1,4 +1,4 @@
-import { sugarResult, sodiumResult, saltTeaspoonGrams, saturatedFatResult, carbohydrateResult } from './lenses.js'
+import { sugarResult, sodiumResult, saltTeaspoonGrams, saturatedFatDailyValueGrams, saturatedFatResult, carbohydrateResult } from './lenses.js'
 
 // Reuse lens presentation results; never derive nutrients or equivalents here.
 export function resultAnnouncement(lens, result, referenceState) {
@@ -19,11 +19,10 @@ export function resultAnnouncement(lens, result, referenceState) {
  }
  if (lens === 'saturated-fat') {
   const value = saturatedFatResult(result)
-  const reason = value.status === 'inconsistent' ? 'Reported saturated fat exceeds total fat; share unavailable.'
-   : value.status === 'zero-total' ? 'Zero total fat; share unavailable.'
-   : value.percentText === null ? 'Complete fat values are needed; share unavailable.'
-   : `${value.percentText}% of total fat is saturated fat.`
-  return `Saturated fat: ${value.saturatedText}. Total fat: ${value.totalText}. ${reason}`
+  const reason = value.status === 'inconsistent' ? 'Reported saturated fat exceeds total fat; Daily Value percentage unavailable.'
+   : value.percentText === null ? 'Daily Value percentage unavailable.'
+   : `${value.percentText}% Daily Value. ${value.bandLabel}.${value.aboveDailyValue ? ' Above the Daily Value reference.' : ''}`
+  return `Saturated fat: ${value.saturatedText}. ${reason} FDA Daily Value: ${saturatedFatDailyValueGrams} g saturated fat.`
  }
  if (lens === 'carbohydrates') {
   const value = carbohydrateResult(result, referenceState)

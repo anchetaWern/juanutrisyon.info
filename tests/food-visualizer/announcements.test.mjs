@@ -11,7 +11,7 @@ test('announcements reuse the portion values and qualified weight equivalents ac
  const rice = calculateFood(await captured('rice'), 40, 'g')
  assert.match(resultAnnouncement('sugar', rice, cola), /Total sugar: 0.04 g.*<0.01 glasses of cola.*260 g.*does not estimate added sugar/)
  assert.match(resultAnnouncement('sodium', rice), /Sodium: 1.2 mg.*<0.01 g salt-equivalent.*not salt added/)
- assert.match(resultAnnouncement('saturated-fat', rice), /Saturated fat: 0.02 g.*Total fat: 0.08 g.*25%/)
+ assert.match(resultAnnouncement('saturated-fat', rice), /Saturated fat: 0.02 g.*0.1% Daily Value.*Low.*20 g saturated fat/)
  assert.match(resultAnnouncement('carbohydrates', rice, {status:'ready', reference:{carbs:23.76}}), /11.88 g.*0.5 reference rice servings.*not equivalent health effects/)
 })
 test('missing and partial nutrients cannot be announced as zero or complete totals', async () => {
@@ -25,9 +25,9 @@ test('missing and partial nutrients cannot be announced as zero or complete tota
 test('zero, inconsistent fat and missing reference have distinct announcements', () => {
  const zero = synthetic([{name:'sugar',amount:0,unit:'g'},{name:'total fat',amount:0,unit:'g',composition:[{name:'saturated fat',amount:0,unit:'g'}]}])
  assert.match(resultAnnouncement('sugar',zero,cola), /Total sugar: 0 g.*0 glasses of cola/)
- assert.match(resultAnnouncement('saturated-fat',zero), /Zero total fat; share unavailable/)
+ assert.match(resultAnnouncement('saturated-fat',zero), /0% Daily Value.*Low/)
  const invalid = synthetic([{name:'total fat',amount:1,unit:'g',composition:[{name:'saturated fat',amount:2,unit:'g'}]}])
- assert.match(resultAnnouncement('saturated-fat',invalid), /exceeds total fat; share unavailable/)
+ assert.match(resultAnnouncement('saturated-fat',invalid), /exceeds total fat; Daily Value percentage unavailable/)
  const carbs = synthetic([{name:'total carbohydrates',amount:20,unit:'g'}])
  assert.match(resultAnnouncement('carbohydrates',carbs,{status:'loading'}), /20 g.*Rice comparison unavailable/)
  assert.equal(resultAnnouncement('unknown',carbs),'')
@@ -42,4 +42,11 @@ test('sodium announces salt grams and the distinct 5 g teaspoon definition', () 
  }
  assert.match(resultAnnouncement('sodium',synthetic([{name:'sodium',amount:1,unit:'mg'}])), /<0.01 teaspoon equivalents/)
  assert.match(resultAnnouncement('sodium',synthetic([])), /teaspoon equivalent unavailable/)
+})
+
+test('saturated-fat announcements retain uncapped DV and band without a total-fat denominator',()=>{
+ const fat=grams=>synthetic([{name:'saturated fat',amount:grams,unit:'g'}])
+ assert.match(resultAnnouncement('saturated-fat',fat(30)),/150% Daily Value.*High.*Above the Daily Value reference/)
+ assert.match(resultAnnouncement('saturated-fat',fat(1.02)),/5.1% Daily Value.*Mid-range/)
+ assert.match(resultAnnouncement('saturated-fat',fat(1)),/5% Daily Value.*Low/)
 })

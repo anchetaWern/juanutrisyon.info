@@ -82,24 +82,29 @@ export function sodiumResult(result) {
     fills: milligrams === 0 || tiny ? [] : Array.from({ length: Math.min(8, Math.ceil(teaspoons)) }, (_, i) => Math.min(1, teaspoons - i)) }
 }
 
+export const saturatedFatDailyValueGrams = 20
+export const saturatedFatDailyValueSource = 'https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels'
+
 export function saturatedFatResult(result) {
   const saturatedNode = findNutrient(result?.nutrients, 'saturated fat')
   const totalNode = findNutrient(result?.nutrients, 'total fat')
   const saturated = saturatedNode?.unit === 'g' ? exactValue(saturatedNode) : null
   const total = totalNode?.unit === 'g' ? exactValue(totalNode) : null
-  const partial = saturatedNode?.coverage === 'partial' || totalNode?.coverage === 'partial'
-  const base = { saturated, total, partial, ratio: null, percent: null, percentText: null, otherFat: null, otherText: null,
-    saturatedText: saturated === null ? 'Data not available' : `${formatEquivalent(saturated)} g`,
-    totalText: total === null ? 'Data not available' : `${formatEquivalent(total)} g` }
-  if (saturated === null || total === null) return { ...base, status: 'unavailable' }
-  if (saturated > total) return { ...base, status: 'inconsistent' }
-  if (total === 0) return { ...base, status: 'zero-total' }
-  const ratio = saturated / total
-  const percent = ratio * 100
+  const base = { saturated, total, partial: saturatedNode?.coverage === 'partial',
+    percent: null, percentText: null, barPercent: null, band: null, bandLabel: null, aboveDailyValue: false,
+    saturatedText: saturated === null ? 'Data not available' : `${formatEquivalent(saturated)} g` }
+  if (saturated === null) return { ...base, status: 'unavailable' }
+  if (total !== null && saturated > total) return { ...base, status: 'inconsistent' }
+  // Combine the conversion to preserve very small positive values.
+  const percent = saturated * (100 / saturatedFatDailyValueGrams)
+  if (!Number.isFinite(percent)) return { ...base, status: 'unavailable-percentage' }
+  const band = percent <= 5 ? 'low' : percent < 20 ? 'mid' : 'high'
+  const rounded = Math.round(percent * 100) / 100
+  const boundary = [5, 20, 100].find(value => rounded === value && percent !== value)
   const percentText = saturated > 0 && percent < 0.01 ? '<0.01'
-    : saturated < total && percent > 99.99 ? '>99.99' : formatNutrient(percent)
-  const otherFat = total - saturated
-  return { ...base, status: 'valid', ratio, percent, percentText, otherFat, otherText: `${formatEquivalent(otherFat)} g` }
+    : boundary !== undefined ? `${percent < boundary ? '<' : '>'}${boundary}` : formatEquivalent(percent)
+  return { ...base, status: 'valid', percent, percentText, barPercent: Math.min(percent, 100), band,
+    bandLabel: { low: 'Low', mid: 'Mid-range', high: 'High' }[band], aboveDailyValue: percent > 100 }
 }
 
 export function carbohydrateResult(result, referenceState) {

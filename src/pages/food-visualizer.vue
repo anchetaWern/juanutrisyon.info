@@ -307,7 +307,7 @@ function suggestion(query) { state.query = query; runSearch() }
             <path d="m23 59 4 7m42-7-4 8M45 65v8" stroke="#c4b08a" stroke-width="2" stroke-linecap="round"/>
             <path d="M69 8c0 0-7 9-7 13a7 7 0 0 0 14 0c0-4-7-13-7-13Z" fill="#fff" stroke="#426e17" stroke-width="1.5"/>
           </svg>
-          <div><h3>Saturated fat</h3><p>Saturated fat is one part of total fat. Both values are needed to understand the proportion.</p></div>
+          <div><h3>Saturated fat</h3><p>See how much the selected portion contributes to the FDA Daily Value of 20 g saturated fat.</p></div>
         </article>
         <article>
           <svg class="lesson-art" viewBox="0 0 96 88" aria-hidden="true" focusable="false">
