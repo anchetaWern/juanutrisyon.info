@@ -1,0 +1,108 @@
+{
+  "id": 1715,
+  "description": "Coco mama fresh gata (coconut cream)",
+  "description_slug": "coco-mama-fresh-gata-coconut-cream",
+  "scientific_name": null,
+  "alternate_names": null,
+  "brand": null,
+  "is_visible": 1,
+  "data_source": "nutrition_label",
+  "custom_id": null,
+  "calories": 220,
+  "calories_unit": "kcal",
+  "serving_size": "100.000",
+  "serving_size_unit": "ml",
+  "custom_serving_size": null,
+  "servings_per_container": 2,
+  "edible_portion": null,
+  "food_type": 57,
+  "food_subtype": null,
+  "food_state": 2,
+  "food_substate": 4,
+  "default_role": "fat",
+  "title_image": "http://localhost/storage/2024-07-26-0841-title-pcz5dm9esmgfmog16bm4kdnbal3azc8jpiilanfc.jpg",
+  "nutrition_label_image": "http://localhost/storage/2024-07-26-0841-nutrilabel-pcz5dm9esmgfmog16bm4kdnbal3azc8jpiilanfc.jpg",
+  "created_at": "2024-07-26T13:58:06.000000Z",
+  "updated_at": "2026-09-09T06:56:11.000000Z",
+  "type": {
+    "id": 57,
+    "name": "Prepared and Processed",
+    "slug": "prepared-and-processed"
+  },
+  "subtype": null,
+  "state": {
+    "id": 2,
+    "name": "Liquids"
+  },
+  "substate": {
+    "id": 4,
+    "name": "Medium Viscosity Liquids"
+  },
+  "density": null,
+  "source_metadata": {
+    "source_food_id": null,
+    "database_subset": null,
+    "source_version": null,
+    "source_url": null,
+    "source_published_at": null,
+    "source_updated_at": null,
+    "retrieved_at": null,
+    "declared_serving": null,
+    "upstream_nutrients": []
+  },
+  "nutrients": [
+    {
+      "name": "total carbohydrates",
+      "amount": "4.000",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "sugar",
+          "amount": "2.400",
+          "unit": "g"
+        },
+        {
+          "name": "dietary fiber",
+          "amount": "0.000",
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "name": "total fat",
+      "amount": "22.000",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "saturated fat",
+          "amount": "17.500",
+          "unit": "g"
+        },
+        {
+          "name": "trans fat",
+          "amount": "0.000",
+          "unit": "g"
+        },
+        {
+          "name": "cholesterol",
+          "amount": "0.000",
+          "unit": "mg"
+        }
+      ]
+    },
+    {
+      "name": "protein",
+      "amount": "2.000",
+      "unit": "g"
+    },
+    {
+      "name": "sodium",
+      "amount": "15.000",
+      "unit": "mg"
+    }
+  ],
+  "custom_servings": null,
+  "serving_profile": null,
+  "recipe_ingredients": [],
+  "recipe": null
+}

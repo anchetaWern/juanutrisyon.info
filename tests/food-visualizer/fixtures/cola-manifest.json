@@ -1,0 +1,18 @@
+{
+  "method": "GET",
+  "url": "https://pinoy-food-api.test/api/foods/softdrink-cola?catalog=food_visualizer",
+  "captured_date": "2026-10-29",
+  "timezone": "Asia/Manila",
+  "scope": "Local Herd API response captured read-only during implementation planning. No source-report review is implied.",
+  "projection": "Existing capture-food-visualizer-fixtures.py food() allowlist",
+  "file": "captured/cola.json",
+  "sanitized_sha256": "9f19dfd96ccf8a46e35fdf73ccd81826fed3e5e166a820351be2ab72e290d524",
+  "reference": {
+    "food_id": 1346,
+    "source": "ph_fct",
+    "source_id": "Q053",
+    "amount": 260,
+    "unit": "g",
+    "serving_origin": "User-defined internal reference; no catalog assignment"
+  }
+}

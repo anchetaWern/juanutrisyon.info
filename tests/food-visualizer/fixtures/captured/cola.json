@@ -1,0 +1,162 @@
+{
+  "id": 1346,
+  "description": "Softdrink, cola",
+  "description_slug": "softdrink-cola",
+  "scientific_name": "N/A",
+  "alternate_names": "N/A",
+  "brand": null,
+  "is_visible": 1,
+  "data_source": "ph_fct",
+  "custom_id": "Q053",
+  "calories": 41,
+  "calories_unit": "kcal",
+  "serving_size": "100.000",
+  "serving_size_unit": "g",
+  "custom_serving_size": null,
+  "servings_per_container": null,
+  "edible_portion": 100,
+  "food_type": 45,
+  "food_subtype": 49,
+  "food_state": 2,
+  "food_substate": null,
+  "default_role": "sweetener",
+  "title_image": "https://pinoy-food-api.test/storage/fnri/softdrink-cola.png",
+  "nutrition_label_image": null,
+  "created_at": "2024-06-08T07:46:40.000000Z",
+  "updated_at": "2026-10-28T08:14:43.000000Z",
+  "type": {
+    "id": 45,
+    "name": "Beverages",
+    "slug": "beverages"
+  },
+  "subtype": {
+    "id": 49,
+    "name": "Carbonated Drinks",
+    "slug": "carbonated-drinks"
+  },
+  "state": {
+    "id": 2,
+    "name": "Liquids"
+  },
+  "substate": null,
+  "density": null,
+  "source_metadata": {
+    "source_food_id": "Q053",
+    "database_subset": null,
+    "source_version": null,
+    "source_url": "https://i.fnri.dost.gov.ph/fct/library/report/4412",
+    "source_published_at": null,
+    "source_updated_at": null,
+    "retrieved_at": "2026-08-30T12:56:04+00:00",
+    "declared_serving": null,
+    "upstream_nutrients": []
+  },
+  "nutrients": [
+    {
+      "name": "water",
+      "amount": "90.000",
+      "unit": "g"
+    },
+    {
+      "name": "protein",
+      "amount": "0.000",
+      "unit": "g"
+    },
+    {
+      "name": "total fat",
+      "amount": "0.100",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "cholesterol",
+          "amount": "0.000",
+          "unit": "mg"
+        }
+      ]
+    },
+    {
+      "name": "total carbohydrates",
+      "amount": "9.900",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "dietary fiber",
+          "amount": "0.000",
+          "unit": "g"
+        },
+        {
+          "name": "sugar",
+          "amount": "9.400",
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "name": "total ash",
+      "amount": "0.000",
+      "unit": "g"
+    },
+    {
+      "name": "calcium",
+      "amount": "0.000",
+      "unit": "mg"
+    },
+    {
+      "name": "phosphorus",
+      "amount": "12.000",
+      "unit": "mg"
+    },
+    {
+      "name": "iron",
+      "amount": "0.000",
+      "unit": "mg"
+    },
+    {
+      "name": "sodium",
+      "amount": "4.000",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin a",
+      "amount": "0.000",
+      "unit": "µg",
+      "composition": [
+        {
+          "name": "beta-carotene",
+          "amount": "0.000",
+          "unit": "µg"
+        }
+      ]
+    },
+    {
+      "name": "retinol activity equivalent",
+      "amount": "0.000",
+      "unit": "µg"
+    },
+    {
+      "name": "vitamin b1",
+      "amount": "0.000",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin b2",
+      "amount": "0.000",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin b3",
+      "amount": "0.000",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin c",
+      "amount": "0.000",
+      "unit": "mg"
+    }
+  ],
+  "custom_servings": null,
+  "custom_serving_by_subtype": null,
+  "serving_profile": null,
+  "recipe_ingredients": [],
+  "recipe": null
+}

@@ -1,7 +1,7 @@
 <template>
   <div class="legal-container">
     <h1>Privacy Policy</h1>
-    <p class="meta"><strong>Last Updated:</strong> 2026-09-06</p>
+    <p class="meta"><strong>Last Updated:</strong> 2026-10-23</p>
 
     <section>
       <h2>1. Introduction</h2>
@@ -57,16 +57,21 @@
         <li>Interaction events (e.g., button clicks, feature usage frequency)</li>
       </ul>
 
-      <p>We use analytics services such as Google Analytics to help us understand general usage patterns.</p>
+      <p>We use analytics services such as Google Analytics and, when enabled for the Food Visualizer, PostHog to help us understand general usage patterns.</p>
       &nbsp;
       <h4>Important Clarification</h4>
-      <p>Analytics data is used only in aggregated and anonymized form. We do not use analytics tools to directly identify individual users or to track what a specific user eats.</p>
+      <p>We use analytics reports to understand aggregate usage. Analytics events may use a random visit identifier to group interactions; this does not make every event record fully anonymous. We do not use this integration to link Food Visualizer activity to an account or a personal food log.</p>
       <p>In particular:</p>
       <ul>
         <li>We do not use analytics to profile or monitor individual food logs</li>
         <li>We do not combine analytics data with personal nutrition entries for behavioral tracking</li>
         <li>We only use analytics to understand general app usage trends (e.g., which features are most used)</li>
       </ul>
+
+      <h4>Food Visualizer analytics choice</h4>
+      <p>Usage analytics for the Food Visualizer is optional and off by default. Where available, its Usage analytics control lets you enable or disable it. We remember only that preference in this browser; the random analytics identifier stays in memory for the current visit and is not saved in cookies or browser storage.</p>
+      <p>When you opt in, the tool sends feature-open, food-selection, accepted portion-change, lens-change and outbound-link events. These may include public catalog food IDs and sources, lens, serving option/unit, quantity and destination type. They do not include search text, food names, nutrition values, full food records, personal food logs or account identity. Automatic interaction capture and session recording are not used by this integration.</p>
+      <p>You can turn this off at any time using the same control. Browser Do Not Track and Global Privacy Control signals also keep capture off. Analytics providers receive ordinary network information when a request is sent; disabling capture stops future requests from this integration.</p>
 
       &nbsp;
 

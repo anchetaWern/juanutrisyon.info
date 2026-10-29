@@ -1,0 +1,500 @@
+{
+  "checkedAt": "2026-10-23T12:30:14.838Z",
+  "browser": "156.0.8078.4",
+  "axeVersion": "4.10.3",
+  "method": "Local Chromium; intercepted captured API records plus explicitly synthetic error/long-label cases; no real catalog writes or API traffic.",
+  "checks": [
+    {
+      "viewport": 360,
+      "completeLenses": 4,
+      "emptyAndErrorStates": true,
+      "longLabels": true,
+      "noOverflow": true
+    },
+    {
+      "viewport": 390,
+      "completeLenses": 4,
+      "emptyAndErrorStates": true,
+      "longLabels": true,
+      "noOverflow": true
+    },
+    {
+      "viewport": 1280,
+      "completeLenses": 4,
+      "emptyAndErrorStates": true,
+      "longLabels": true,
+      "noOverflow": true
+    },
+    {
+      "keyboard": true,
+      "asyncFocusPreserved": true,
+      "reducedMotion": true,
+      "ariaTreeReviewed": true
+    },
+    {
+      "viewport": 640,
+      "zoomEquivalent": "200% of 1280px desktop",
+      "longLabels": true,
+      "completeLenses": 4,
+      "noOverflow": true
+    },
+    {
+      "viewport": 320,
+      "zoomEquivalent": null,
+      "longLabels": true,
+      "completeLenses": 4,
+      "noOverflow": true
+    }
+  ],
+  "audits": [
+    {
+      "state": "360-initial",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "360-search",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "360-Sugar",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "360-Sodium",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "360-Saturated fat",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "360-Carbohydrates",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "360-unavailable",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "360-partial-recipe",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "360-expanded-source",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "360-long-label",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "360-empty",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "360-server-error",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "360-rate-limited",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "390-initial",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "390-search",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "390-Sugar",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "390-Sodium",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "390-Saturated fat",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "390-Carbohydrates",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "390-unavailable",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "390-partial-recipe",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "390-expanded-source",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "390-long-label",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "390-empty",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "390-server-error",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "390-rate-limited",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "1280-initial",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "1280-search",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "1280-Sugar",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "1280-Sodium",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "1280-Saturated fat",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "1280-Carbohydrates",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "1280-unavailable",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "1280-partial-recipe",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "1280-expanded-source",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "1280-long-label",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "1280-empty",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "1280-server-error",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "1280-rate-limited",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "keyboard-search-loading",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "keyboard-detail-loading",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "640-reflow-expanded",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "state": "320-reflow-expanded",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    }
+  ],
+  "manualContrastReview": [
+    {
+      "selector": ".header-nav > a[href=\"/\"][data-v-274c4e5f=\"\"]",
+      "foreground": "rgb(82, 97, 117)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"about\"][data-v-274c4e5f=\"\"]",
+      "foreground": "rgb(82, 97, 117)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"data-methodology\"][data-v-274c4e5f=\"\"]",
+      "foreground": "rgb(82, 97, 117)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"collaborate\"]",
+      "foreground": "rgb(82, 97, 117)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"research\"]",
+      "foreground": "rgb(82, 97, 117)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"blog\"]",
+      "foreground": "rgb(82, 97, 117)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": "a[href$=\"media\"]",
+      "foreground": "rgb(82, 97, 117)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 5.985312149407747
+    },
+    {
+      "selector": ".intro > .eyebrow",
+      "foreground": "rgb(66, 110, 23)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 5.728840426411508
+    },
+    {
+      "selector": "h1",
+      "foreground": "rgb(17, 24, 39)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 16.814086028173513
+    },
+    {
+      "selector": ".lead",
+      "foreground": "rgb(17, 24, 39)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 16.814086028173513
+    },
+    {
+      "selector": ".intro > p:nth-child(4)",
+      "foreground": "rgb(17, 24, 39)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 16.814086028173513
+    },
+    {
+      "selector": "#lessons-heading",
+      "foreground": "rgb(17, 24, 39)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 16.814086028173513
+    },
+    {
+      "selector": ".lessons > p:nth-child(2)",
+      "foreground": "rgb(17, 24, 39)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 16.814086028173513
+    },
+    {
+      "selector": ".method-note",
+      "foreground": "rgb(17, 24, 39)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 16.814086028173513
+    },
+    {
+      "selector": ".method-note > a[href$=\"data-methodology\"]",
+      "foreground": "rgb(66, 110, 23)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 5.728840426411508
+    },
+    {
+      "selector": "button[aria-label=\"Decrease quantity by 0.5\"]",
+      "foreground": "rgb(51, 92, 8)",
+      "background": "rgb(238, 248, 223)",
+      "reason": "labelled stepper symbol",
+      "ratio": 7.150291195684093
+    },
+    {
+      "selector": "legend",
+      "foreground": "rgb(17, 24, 39)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 16.814086028173513
+    },
+    {
+      "selector": ".lens-mode > p",
+      "foreground": "rgb(17, 24, 39)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 16.814086028173513
+    },
+    {
+      "selector": ".eyebrow[data-v-dd709c1c=\"\"]",
+      "foreground": "rgb(66, 110, 23)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 5.728840426411508
+    },
+    {
+      "selector": "#lens-result-heading",
+      "foreground": "rgb(17, 24, 39)",
+      "background": "#f5fbed (conservative gradient bound)",
+      "reason": "gradient",
+      "ratio": 16.814086028173513
+    }
+  ],
+  "pageErrors": [],
+  "screenshots": "/private/tmp/jn-phase11",
+  "limitations": [
+    "Keyboard, ARIA tree and live-region DOM semantics were checked; no claim of listening to VoiceOver/NVDA speech.",
+    "200% desktop zoom is verified through equivalent CSS viewport and device scale, not browser toolbar zoom."
+  ]
+}

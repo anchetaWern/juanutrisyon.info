@@ -1,0 +1,295 @@
+{
+  "request_headers": {
+    "Origin": "https://juanutrisyon.info"
+  },
+  "authentication": "none; no cookies or API key",
+  "captures": [
+    {
+      "key": "rice",
+      "method": "GET",
+      "url": "https://api.juanutrisyon.info/api/foods/rice-well-milled-boiled",
+      "captured_at_utc": "2026-10-23T07:48:35+00:00",
+      "status": 200,
+      "response_headers": {
+        "date": "Fri, 23 Oct 2026 07:48:35 GMT",
+        "content-type": "application/json",
+        "cache-control": "no-cache, private",
+        "x-ratelimit-limit": "60",
+        "x-ratelimit-remaining": "58",
+        "access-control-allow-origin": "*",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "file": "captured/rice.json",
+      "sanitized_sha256": "36349e32e2e8e6d5ceeddf834861f4ca0cfac5f8cbd6ad89738b43af23774466",
+      "id": 78,
+      "description_slug": "rice-well-milled-boiled",
+      "data_source": "ph_fct",
+      "serving_size": "100.000",
+      "serving_size_unit": "g"
+    },
+    {
+      "key": "coke",
+      "method": "GET",
+      "url": "https://api.juanutrisyon.info/api/foods/coca-cola-original-taste",
+      "captured_at_utc": "2026-10-23T07:49:22+00:00",
+      "status": 200,
+      "response_headers": {
+        "date": "Fri, 23 Oct 2026 07:49:22 GMT",
+        "content-type": "application/json",
+        "cache-control": "no-cache, private",
+        "x-ratelimit-limit": "60",
+        "x-ratelimit-remaining": "58",
+        "access-control-allow-origin": "*",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "file": "captured/coke.json",
+      "sanitized_sha256": "f83fda2ab64131f40e3f327ed389f48ab74625dc53164de824b4d0d6e674b311",
+      "id": 1597,
+      "description_slug": "coca-cola-original-taste",
+      "data_source": "nutrition_label",
+      "serving_size": "240.000",
+      "serving_size_unit": "mL"
+    },
+    {
+      "key": "pandesal",
+      "method": "GET",
+      "url": "https://api.juanutrisyon.info/api/foods/bread-pan-de-sal",
+      "captured_at_utc": "2026-10-23T07:49:20+00:00",
+      "status": 200,
+      "response_headers": {
+        "date": "Fri, 23 Oct 2026 07:49:20 GMT",
+        "content-type": "application/json",
+        "cache-control": "no-cache, private",
+        "x-ratelimit-limit": "60",
+        "x-ratelimit-remaining": "58",
+        "access-control-allow-origin": "*",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "file": "captured/pandesal.json",
+      "sanitized_sha256": "748c1dc57cc4cc9444014a6e6478cc949e133fa55fef1741f2a76611c31e2a1f",
+      "id": 119,
+      "description_slug": "bread-pan-de-sal",
+      "data_source": "ph_fct",
+      "serving_size": "100.000",
+      "serving_size_unit": "g"
+    },
+    {
+      "key": "mango",
+      "method": "GET",
+      "url": "https://api.juanutrisyon.info/api/foods/mango-manila-super-ripe",
+      "captured_at_utc": "2026-10-23T07:49:17+00:00",
+      "status": 200,
+      "response_headers": {
+        "date": "Fri, 23 Oct 2026 07:49:17 GMT",
+        "content-type": "application/json",
+        "cache-control": "no-cache, private",
+        "x-ratelimit-limit": "60",
+        "x-ratelimit-remaining": "58",
+        "access-control-allow-origin": "*",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "file": "captured/mango.json",
+      "sanitized_sha256": "0fef834566960975afc7336ca0a7cd18cea9165863c280ba2b027dada4c21d3a",
+      "id": 678,
+      "description_slug": "mango-manila-super-ripe",
+      "data_source": "ph_fct",
+      "serving_size": "100.000",
+      "serving_size_unit": "g"
+    },
+    {
+      "key": "patis",
+      "method": "GET",
+      "url": "https://api.juanutrisyon.info/api/foods/fish-sauce",
+      "captured_at_utc": "2026-10-23T07:49:25+00:00",
+      "status": 200,
+      "response_headers": {
+        "date": "Fri, 23 Oct 2026 07:49:25 GMT",
+        "content-type": "application/json",
+        "cache-control": "no-cache, private",
+        "x-ratelimit-limit": "60",
+        "x-ratelimit-remaining": "56",
+        "access-control-allow-origin": "*",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "file": "captured/patis.json",
+      "sanitized_sha256": "a924dcf015465ea4fd535228473c42843258e684dafc1dce241336fce0d1b666",
+      "id": 1270,
+      "description_slug": "fish-sauce",
+      "data_source": "ph_fct",
+      "serving_size": "100.000",
+      "serving_size_unit": "g"
+    },
+    {
+      "key": "gata",
+      "method": "GET",
+      "url": "https://api.juanutrisyon.info/api/foods/coco-mama-fresh-gata-coconut-cream",
+      "captured_at_utc": "2026-10-23T07:49:24+00:00",
+      "status": 200,
+      "response_headers": {
+        "date": "Fri, 23 Oct 2026 07:49:24 GMT",
+        "content-type": "application/json",
+        "cache-control": "no-cache, private",
+        "x-ratelimit-limit": "60",
+        "x-ratelimit-remaining": "58",
+        "access-control-allow-origin": "*",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "file": "captured/gata.json",
+      "sanitized_sha256": "26309be7af83447134ae53ad7bd6682a647e5f0c16825b9cdfd4c57b83ec9636",
+      "id": 1715,
+      "description_slug": "coco-mama-fresh-gata-coconut-cream",
+      "data_source": "nutrition_label",
+      "serving_size": "100.000",
+      "serving_size_unit": "ml"
+    },
+    {
+      "key": "recipe",
+      "method": "GET",
+      "url": "https://api.juanutrisyon.info/api/foods/chicken-adobo",
+      "captured_at_utc": "2026-10-23T07:50:00+00:00",
+      "status": 200,
+      "response_headers": {
+        "date": "Fri, 23 Oct 2026 07:50:00 GMT",
+        "content-type": "application/json",
+        "cache-control": "no-cache, private",
+        "x-ratelimit-limit": "60",
+        "x-ratelimit-remaining": "54",
+        "access-control-allow-origin": "*",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "file": "captured/recipe.json",
+      "sanitized_sha256": "31327be7e287c6074a51df9cb8e2ac41865e5fc1361c39f11061f9be19f7a04d",
+      "id": 19346,
+      "description_slug": "chicken-adobo",
+      "data_source": "community_recipe",
+      "serving_size": "377.000",
+      "serving_size_unit": "g"
+    },
+    {
+      "key": "rice-repeat",
+      "method": "GET",
+      "url": "https://api.juanutrisyon.info/api/foods/rice-well-milled-boiled",
+      "captured_at_utc": "2026-10-23T07:52:25+00:00",
+      "status": 200,
+      "response_headers": {
+        "date": "Fri, 23 Oct 2026 07:52:25 GMT",
+        "content-type": "application/json",
+        "cache-control": "no-cache, private",
+        "x-ratelimit-limit": "60",
+        "x-ratelimit-remaining": "56",
+        "access-control-allow-origin": "*",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "file": "captured/rice-repeat.json",
+      "sanitized_sha256": "36349e32e2e8e6d5ceeddf834861f4ca0cfac5f8cbd6ad89738b43af23774466",
+      "id": 78,
+      "description_slug": "rice-well-milled-boiled",
+      "data_source": "ph_fct",
+      "serving_size": "100.000",
+      "serving_size_unit": "g"
+    },
+    {
+      "key": "search",
+      "method": "GET",
+      "url": "https://api.juanutrisyon.info/api/foods?description=kanin&page=1",
+      "captured_at_utc": "2026-10-23T07:49:24+00:00",
+      "status": 200,
+      "response_headers": {
+        "date": "Fri, 23 Oct 2026 07:49:24 GMT",
+        "content-type": "application/json",
+        "cache-control": "no-cache, private",
+        "x-ratelimit-limit": "60",
+        "x-ratelimit-remaining": "58",
+        "access-control-allow-origin": "*",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "file": "captured/search.json",
+      "sanitized_sha256": "3876cc7e44fcdfa69f91958e8b4b3d668793e7c4258425ea63e125008b92b39c"
+    },
+    {
+      "key": "search-rice",
+      "method": "GET",
+      "url": "https://api.juanutrisyon.info/api/foods?description=rice&page=1",
+      "captured_at_utc": "2026-10-23T07:52:25+00:00",
+      "status": 200,
+      "response_headers": {
+        "date": "Fri, 23 Oct 2026 07:52:25 GMT",
+        "content-type": "application/json",
+        "cache-control": "no-cache, private",
+        "x-ratelimit-limit": "60",
+        "x-ratelimit-remaining": "58",
+        "access-control-allow-origin": "*",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "file": "captured/search-rice.json",
+      "sanitized_sha256": "9f8f3ffc150b5414a5dab2826d4ea3cbddc68ebbef7aee4b2124f7a31884cbd1"
+    },
+    {
+      "key": "not-found",
+      "method": "GET",
+      "url": "https://api.juanutrisyon.info/api/foods/visualizer-phase-1-no-such-public-food",
+      "captured_at_utc": "2026-10-23T07:54:15+00:00",
+      "status": 404,
+      "response_headers": {
+        "date": "Fri, 23 Oct 2026 07:54:15 GMT",
+        "content-type": "application/json",
+        "cache-control": "no-cache, private",
+        "x-ratelimit-limit": "60",
+        "x-ratelimit-remaining": "59",
+        "access-control-allow-origin": "*",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "file": "captured/not-found.json",
+      "sanitized_sha256": "bf483403fe8883b11264cf390142722cc1c415fd19c93c7f83cef0b73fbd7eff"
+    },
+    {
+      "key": "preflight",
+      "method": "OPTIONS",
+      "url": "https://api.juanutrisyon.info/api/foods/rice-well-milled-boiled",
+      "captured_at_utc": "2026-10-23T07:54:11+00:00",
+      "status": 204,
+      "response_headers": {
+        "date": "Fri, 23 Oct 2026 07:54:11 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "cache-control": "no-cache, private",
+        "access-control-allow-origin": "*",
+        "vary": "Access-Control-Request-Method, Access-Control-Request-Headers",
+        "access-control-allow-methods": "GET",
+        "access-control-allow-headers": "",
+        "access-control-max-age": "0",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "file": "captured/preflight.json",
+      "sanitized_sha256": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed"
+    },
+    {
+      "key": "source-rice",
+      "method": "GET",
+      "url": "https://i.fnri.dost.gov.ph/fct/library/report/2982",
+      "captured_at_utc": "2026-10-23T07:49:25+00:00",
+      "status": 503,
+      "response_headers": {
+        "date": "Fri Oct 23 07:49:25 2026 GMT",
+        "content-type": "text/html"
+      },
+      "file": "captured/source-rice.json",
+      "sanitized_sha256": "cd05a5344d5fc5d831f9285bf31e5d9fe40a777873d358e31fc1974604f6fef7",
+      "origin_header_sent": false
+    },
+    {
+      "key": "app-config",
+      "method": "GET",
+      "url": "https://app.juanutrisyon.info/food/rice-well-milled-boiled",
+      "captured_at_utc": "2026-10-23T07:52:25+00:00",
+      "status": 200,
+      "response_headers": {
+        "date": "Fri, 23 Oct 2026 07:52:25 GMT",
+        "content-type": "text/html;charset=utf-8",
+        "cf-cache-status": "MISS"
+      },
+      "file": "captured/app-config.json",
+      "sanitized_sha256": "694893e0031d33c333a4c4dcc1ea18516a4e4dfa6669449cb8dc2adbbab0b830",
+      "origin_header_sent": false
+    }
+  ]
+}

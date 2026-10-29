@@ -1,0 +1,24 @@
+{
+  "fixture_kind": "synthetic_transport_case",
+  "observed_production_429": false,
+  "status": 429,
+  "body": {
+    "message": "Too many requests."
+  },
+  "scenarios": [
+    {
+      "name": "readable_retry_after",
+      "headers": {
+        "retry-after": "60",
+        "access-control-expose-headers": "Retry-After"
+      }
+    },
+    {
+      "name": "unexposed_retry_after",
+      "headers": {
+        "retry-after": "60"
+      },
+      "browser_readable_retry_after": null
+    }
+  ]
+}

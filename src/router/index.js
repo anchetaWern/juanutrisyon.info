@@ -20,6 +20,7 @@ const HiddenSugarInCommonFilipinoFoods = () => import('../pages/blog/hidden-suga
 const BusogPeroKulang = () => import('../pages/blog/busog-pero-kulang-why-feeling-full-doesnt-mean-youre-nourished.vue');
 
 export const routes = [
+  { path: '/tools/food-visualizer', name: 'food-visualizer', component: () => import('../pages/food-visualizer.vue') },
   {
     path: '/',
     name: 'home',

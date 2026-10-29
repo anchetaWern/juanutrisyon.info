@@ -1,0 +1,122 @@
+{
+  "id": 1597,
+  "description": "Coca-cola original taste",
+  "description_slug": "coca-cola-original-taste",
+  "scientific_name": null,
+  "alternate_names": null,
+  "brand": null,
+  "is_visible": 1,
+  "data_source": "nutrition_label",
+  "custom_id": null,
+  "calories": 72,
+  "calories_unit": "kcal",
+  "serving_size": "240.000",
+  "serving_size_unit": "mL",
+  "custom_serving_size": null,
+  "servings_per_container": 8,
+  "edible_portion": null,
+  "food_type": 45,
+  "food_subtype": 49,
+  "food_state": 2,
+  "food_substate": 3,
+  "default_role": "sweetener",
+  "title_image": "http://localhost/storage/2024-07-07-1315-title-dg2me4ny8r1wmqah9f64mrq3bd8lejggxgsx8rld.jpg",
+  "nutrition_label_image": "http://localhost/storage/2024-07-07-1315-nutrilabel-dg2me4ny8r1wmqah9f64mrq3bd8lejggxgsx8rld.jpg",
+  "created_at": "2024-07-10T02:38:58.000000Z",
+  "updated_at": "2026-09-09T06:56:09.000000Z",
+  "type": {
+    "id": 45,
+    "name": "Beverages",
+    "slug": "beverages"
+  },
+  "subtype": {
+    "id": 49,
+    "name": "Carbonated Drinks",
+    "slug": "carbonated-drinks"
+  },
+  "state": {
+    "id": 2,
+    "name": "Liquids"
+  },
+  "substate": {
+    "id": 3,
+    "name": "Low Viscosity Liquids"
+  },
+  "density": null,
+  "source_metadata": {
+    "source_food_id": null,
+    "database_subset": null,
+    "source_version": null,
+    "source_url": null,
+    "source_published_at": null,
+    "source_updated_at": null,
+    "retrieved_at": null,
+    "declared_serving": null,
+    "upstream_nutrients": []
+  },
+  "nutrients": [
+    {
+      "name": "total fat",
+      "amount": "0.000",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "saturated fat",
+          "amount": "0.000",
+          "unit": "g"
+        },
+        {
+          "name": "trans fat",
+          "amount": "0.000",
+          "unit": "g"
+        },
+        {
+          "name": "cholesterol",
+          "amount": "0.000",
+          "unit": "mg"
+        }
+      ]
+    },
+    {
+      "name": "protein",
+      "amount": "0.000",
+      "unit": "g"
+    },
+    {
+      "name": "total carbohydrate",
+      "amount": "18.000",
+      "unit": "g"
+    },
+    {
+      "name": "sodium",
+      "amount": "25.000",
+      "unit": "mg"
+    },
+    {
+      "name": "food type",
+      "amount": "1.000",
+      "unit": "g"
+    },
+    {
+      "name": "total carbohydrates",
+      "amount": "18.000",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "sugar",
+          "amount": "18.000",
+          "unit": "g"
+        },
+        {
+          "name": "dietary fiber",
+          "amount": "0.000",
+          "unit": "g"
+        }
+      ]
+    }
+  ],
+  "custom_servings": null,
+  "serving_profile": null,
+  "recipe_ingredients": [],
+  "recipe": null
+}

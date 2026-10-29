@@ -1,0 +1,216 @@
+{
+  "id": 119,
+  "description": "Bread, pan de sal",
+  "description_slug": "bread-pan-de-sal",
+  "scientific_name": "N/A",
+  "alternate_names": "pandesal",
+  "brand": null,
+  "is_visible": 1,
+  "data_source": "ph_fct",
+  "custom_id": "A042",
+  "calories": 330,
+  "calories_unit": "kcal",
+  "serving_size": "100.000",
+  "serving_size_unit": "g",
+  "custom_serving_size": null,
+  "servings_per_container": null,
+  "edible_portion": 100,
+  "food_type": 30,
+  "food_subtype": 31,
+  "food_state": 1,
+  "food_substate": null,
+  "default_role": "carb",
+  "title_image": "http://localhost/storage/fnri/bread-pan-de-sal.png",
+  "nutrition_label_image": null,
+  "created_at": "2024-06-08T06:40:35.000000Z",
+  "updated_at": "2026-09-09T06:55:51.000000Z",
+  "type": {
+    "id": 30,
+    "name": "Cereals and Grains",
+    "slug": "cereals-and-grains"
+  },
+  "subtype": {
+    "id": 31,
+    "name": "Whole Grains",
+    "slug": "whole-grains"
+  },
+  "state": {
+    "id": 1,
+    "name": "Solids"
+  },
+  "substate": null,
+  "density": null,
+  "source_metadata": {
+    "source_food_id": "A042",
+    "database_subset": null,
+    "source_version": null,
+    "source_url": "https://i.fnri.dost.gov.ph/fct/library/report/3004",
+    "source_published_at": null,
+    "source_updated_at": null,
+    "retrieved_at": "2026-08-30T12:55:12+00:00",
+    "declared_serving": null,
+    "upstream_nutrients": []
+  },
+  "nutrients": [
+    {
+      "name": "water",
+      "amount": "21.600",
+      "unit": "g"
+    },
+    {
+      "name": "protein",
+      "amount": "10.100",
+      "unit": "g"
+    },
+    {
+      "name": "total fat",
+      "amount": "4.200",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "saturated fat",
+          "amount": "0.990",
+          "unit": "g"
+        },
+        {
+          "name": "cholesterol",
+          "amount": "4.000",
+          "unit": "mg"
+        },
+        {
+          "name": "unsaturated fat",
+          "amount": "2.790",
+          "unit": "g",
+          "composition": [
+            {
+              "name": "monounsaturated fat",
+              "amount": "1.010",
+              "unit": "g"
+            },
+            {
+              "name": "polyunsaturated fat",
+              "amount": "1.780",
+              "unit": "g"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "total carbohydrates",
+      "amount": "62.900",
+      "unit": "g",
+      "composition": [
+        {
+          "name": "dietary fiber",
+          "amount": "2.500",
+          "unit": "g"
+        },
+        {
+          "name": "sugar",
+          "amount": "7.600",
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "name": "total ash",
+      "amount": "1.200",
+      "unit": "g"
+    },
+    {
+      "name": "calcium",
+      "amount": "24.000",
+      "unit": "mg"
+    },
+    {
+      "name": "phosphorus",
+      "amount": "75.000",
+      "unit": "mg"
+    },
+    {
+      "name": "iron",
+      "amount": "3.000",
+      "unit": "mg"
+    },
+    {
+      "name": "sodium",
+      "amount": "596.000",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin a",
+      "amount": "0.000",
+      "unit": "µg",
+      "composition": [
+        {
+          "name": "beta-carotene",
+          "amount": "0.000",
+          "unit": "µg"
+        }
+      ]
+    },
+    {
+      "name": "retinol activity equivalent",
+      "amount": "0.000",
+      "unit": "µg"
+    },
+    {
+      "name": "vitamin b1",
+      "amount": "0.230",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin b2",
+      "amount": "0.150",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin b3",
+      "amount": "3.000",
+      "unit": "mg"
+    },
+    {
+      "name": "vitamin c",
+      "amount": "0.000",
+      "unit": "mg"
+    }
+  ],
+  "custom_servings": {
+    "id": 116,
+    "name": "Bread, pan de sal",
+    "slug": "bread-pan-de-sal",
+    "food_subtype": null,
+    "serving_units": [
+      {
+        "id": 175,
+        "name": "1 piece",
+        "long_name": null,
+        "weight": 23.33,
+        "weight_unit": "g",
+        "volume_in_ml": null
+      }
+    ]
+  },
+  "serving_profile": {
+    "id": 116,
+    "code": "legacy-profile-116",
+    "name": "Bread, pan de sal",
+    "legacy_slug": "bread-pan-de-sal",
+    "options": [
+      {
+        "id": 213,
+        "serving_profile_id": 116,
+        "label": "1 piece",
+        "gram_weight": "23.3300",
+        "milliliter_volume": null,
+        "sort_order": 0,
+        "is_default": true,
+        "source": "legacy_custom_servings",
+        "legacy_serving_unit_id": 175
+      }
+    ]
+  },
+  "recipe_ingredients": [],
+  "recipe": null
+}
