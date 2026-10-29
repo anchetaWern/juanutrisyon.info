@@ -1,3 +1,5 @@
+import { hasVisualizerSource, visualizerCatalog, visualizerCatalogVersion } from './eligibility.js'
+
 export class FoodApiError extends Error {
   constructor(code, status = 0, retryAt = null) {
     super(code); this.name = 'FoodApiError'; this.code = code; this.status = status; this.retryAt = retryAt
@@ -86,9 +88,10 @@ export function createFoodApi({ baseUrl = 'https://api.juanutrisyon.info/api',
     searchFoods({ query, page = 1, signal } = {}) {
       query = normalizeQuery(query)
       if (!query || !Number.isSafeInteger(page) || page < 1) return Promise.reject(new FoodApiError('invalid_query'))
-      const params = new URLSearchParams({ description: query, page: String(page) })
-      return request('search', `${query.toLowerCase()}:${page}`, `foods?${params}`, signal, data => {
-        if (!data || !Array.isArray(data.data) || !data.data.every(validFood) ||
+      const params = new URLSearchParams({ description: query, page: String(page), catalog: visualizerCatalog })
+      return request('search', `${visualizerCatalog}:${visualizerCatalogVersion}:${query.toLowerCase()}:${page}`, `foods?${params}`, signal, data => {
+        if (!data || data.catalog !== visualizerCatalog || data.catalog_version !== visualizerCatalogVersion ||
+          !Array.isArray(data.data) || !data.data.every(food => validFood(food) && hasVisualizerSource(food)) ||
           !['current_page', 'last_page', 'per_page', 'total'].every(key => Number.isSafeInteger(data[key])) ||
           data.current_page !== page || data.last_page < 1 || data.per_page < 1 || data.total < 0) throw new Error()
         return { items: data.data.map(food => ({ id: food.id, slug: food.description_slug,
@@ -99,7 +102,7 @@ export function createFoodApi({ baseUrl = 'https://api.juanutrisyon.info/api',
     },
     getFood({ slug, signal } = {}) {
       if (typeof slug !== 'string' || !slug.trim()) return Promise.reject(new FoodApiError('invalid_query'))
-      return request('detail', slug, `foods/${encodeURIComponent(slug)}`, signal, food => {
+      return request('detail', slug, `foods/${encodeURIComponent(slug)}?catalog=${visualizerCatalog}`, signal, food => {
         if (!validFood(food) || food.description_slug !== slug || !Array.isArray(food.nutrients)) throw new Error()
         return food // Full source/recipe/import evidence; no nutrient mapping or defaults.
       })

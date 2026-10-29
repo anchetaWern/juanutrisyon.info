@@ -1,16 +1,21 @@
-import { sugarResult, sodiumResult, saturatedFatResult, carbohydrateResult } from './lenses.js'
+import { sugarResult, sodiumResult, saltTeaspoonGrams, saturatedFatResult, carbohydrateResult } from './lenses.js'
 
 // Reuse lens presentation results; never derive nutrients or equivalents here.
 export function resultAnnouncement(lens, result, referenceState) {
  if (lens === 'sugar') {
-  const value = sugarResult(result)
+  const value = sugarResult(result, referenceState)
+  const unit = value.count === 1 ? referenceState?.singular : referenceState?.plural
+  if (referenceState?.mode === 'teaspoons') return `Total sugar: ${value.amountText}. ${value.countText === null
+   ? 'Teaspoon equivalent unavailable.' : `About ${value.countText} ${unit} of sugar by weight. One teaspoon equivalent is ${referenceState.gramsPerUnit} g of sugar; this does not estimate added sugar.`}`
   return `Total sugar: ${value.amountText}. ${value.countText === null
-   ? 'Packet equivalent unavailable.' : `${value.countText} five-gram packet equivalents by weight; not packets added.`}`
+   ? referenceState?.mode === 'cola' ? 'Cola comparison unavailable.' : 'Sugar comparison unavailable; food type is not available.'
+   : `About the same total sugar as ${value.countText} ${unit} of cola. One reference glass is 260 g; this does not estimate added sugar.`}`
  }
  if (lens === 'sodium') {
   const value = sodiumResult(result)
   return `Sodium: ${value.amountText}. ${value.saltText === null
-   ? 'Salt-equivalent weight unavailable.' : `Approximately ${value.saltText} salt-equivalent weight; not salt added.`}`
+   ? 'Salt-equivalent weight and teaspoon equivalent unavailable.'
+   : `Approximately ${value.saltText} salt-equivalent weight, or ${value.teaspoonText} ${value.teaspoons === 1 ? 'teaspoon equivalent' : 'teaspoon equivalents'} of salt; not salt added. One teaspoon equivalent is ${saltTeaspoonGrams} g salt.`}`
  }
  if (lens === 'saturated-fat') {
   const value = saturatedFatResult(result)

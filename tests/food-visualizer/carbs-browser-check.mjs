@@ -1,8 +1,9 @@
+import { makeVisualizerTestFood, visualizerSearchMeta, fulfillColaReference } from './visualizer-test-food.mjs'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import { pathToFileURL } from 'node:url'
 const {chromium}=await import(process.env.JN_PLAYWRIGHT_PATH?pathToFileURL(process.env.JN_PLAYWRIGHT_PATH).href:'playwright')
-const captured=async key=>JSON.parse(await readFile(new URL(`./fixtures/captured/${key}.json`,import.meta.url)))
+const captured=async key=>makeVisualizerTestFood(JSON.parse(await readFile(new URL(`./fixtures/captured/${key}.json`,import.meta.url))))
 const [rice,bread,coke]=await Promise.all(['rice','pandesal','coke'].map(captured))
 const browser=await chromium.launch({headless:true})
 try {
@@ -12,9 +13,10 @@ try {
   page.on('pageerror',error=>errors.push(error.message))
   let mode=initial,release
   const gate=hold?new Promise(done=>release=done):Promise.resolve()
-  await page.route('https://api.juanutrisyon.info/**',async route=>{
+  await page.route('**/api/foods**',async route=>{
    const url=new URL(route.request().url());calls.push(url.href)
-   if(url.search)return route.fulfill({json:{data:[rice,bread,coke],current_page:1,last_page:1,per_page:20,total:3}})
+   if (await fulfillColaReference(route)) return
+   if(url.pathname.endsWith('/foods'))return route.fulfill({json:{...visualizerSearchMeta,data:[rice,bread,coke],current_page:1,last_page:1,per_page:20,total:3}})
    if(url.pathname.endsWith('/'+rice.description_slug)) {
     await gate
     if(mode==='network')return route.fulfill({status:503,json:{trace:'PRIVATE_SERVER_TRACE'}})
@@ -49,13 +51,14 @@ try {
  assert((await page.locator('[data-rice-equivalent]').innerText()).includes('≈ 0.5 reference rice'))
  assert.equal(Number(await page.locator('.bowl').getAttribute('data-fill')),0.5)
  await page.getByLabel('Quantity',{exact:true}).fill('20');assert.equal(await page.locator('.bowl').count(),8)
- await page.getByRole('radio',{name:'Sugar',exact:true}).check();await page.getByRole('radio',{name:'Carbohydrates',exact:true}).check()
- assert.equal(calls.length,before)
+ await page.getByRole('radio',{name:'Sugar',exact:true}).check();await page.locator('[data-cola-equivalent]').waitFor();await page.getByRole('radio',{name:'Carbohydrates',exact:true}).check()
+ assert.equal(calls.length,before+1,'Sugar loads its independent cola reference once')
  await page.getByLabel('Quantity',{exact:true}).fill('1')
  await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'/private/tmp/jn-phase9-carbs-desktop.png',fullPage:true})
  await page.setViewportSize({width:360,height:800});await page.evaluate(()=>scrollTo(0,0))
  await page.screenshot({path:'/private/tmp/jn-phase9-carbs-mobile.png',fullPage:true})
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth))
+ await page.getByRole('button',{name:'Back to results',exact:false}).click()
  await page.locator('.result-list button').filter({hasText:coke.description}).click()
  await page.getByRole('heading',{name:coke.description,exact:true}).waitFor()
  assert.equal(await page.locator('[data-carb-result]').getAttribute('data-status'),'unavailable-food')

@@ -4,7 +4,6 @@ defineProps({ label: { type: String, required: true }, portion: String, stale: B
 <template>
   <section class="lens-result" aria-labelledby="lens-result-heading">
     <header>
-      <p class="eyebrow">{{ label }} · selected portion</p>
       <h2 id="lens-result-heading">{{ label }} in {{ portion || 'this portion' }}</h2>
       <p v-if="stale" class="stale">Showing the last valid portion while you edit the quantity.</p>
     </header>
@@ -18,15 +17,13 @@ defineProps({ label: { type: String, required: true }, portion: String, stale: B
   </section>
 </template>
 <style scoped>
-.lens-result { margin-top: var(--space-5); }
-header { margin-bottom: var(--space-4); }
-header h2 { margin-top: var(--space-2); }
-.result-columns { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-5); }
-.visual, .takeaway { padding: var(--space-6); border: 1px solid var(--border-default); border-radius: var(--radius-lg); min-width: 0; }
-.visual { background: var(--lens-background, var(--surface-subtle)); border-color: var(--lens-border, var(--border-default)); }
-.takeaway { background: var(--surface-raised); }
-h3 { margin-bottom: var(--space-4); }
+.lens-result { margin-top: 16px; padding: 20px; border: 1px solid var(--border-default); border-radius: 8px; background: var(--surface-raised); }
+header { margin-bottom: 16px; }
+header h2 { font-size: 18px; font-weight: 600; }
+.result-columns { display: grid; gap: 20px; }
+.visual, .takeaway { min-width: 0; }
+.takeaway { border-top: 1px solid var(--border-default); padding-top: 16px; font-size: 14px; }
+h3 { margin-bottom: 8px; font-size: 14px; font-weight: 600; }
 .stale { color: var(--error); font-size: .9rem; }
-@media (max-width: 800px) { .result-columns { grid-template-columns: 1fr; } }
-@media (max-width: 440px) { .visual, .takeaway { padding: var(--space-4); } }
+@media (max-width: 440px) { .lens-result { padding: 16px; } }
 </style>

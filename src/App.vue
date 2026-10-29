@@ -1,6 +1,6 @@
 <template>
   <div class="site-shell" :class="{ 'site-shell--visualizer': $route.name === 'food-visualizer' }">
-    <a v-if="$route.name === 'food-visualizer'" class="visualizer-skip" href="#food-search">Skip to food search</a>
+    <a v-if="$route.name === 'food-visualizer'" class="visualizer-skip" href="#food-visualizer" @click.prevent="requestVisualizerSearch">Skip to food search</a>
     <TopNav />
 
     <div class="site-main">
@@ -29,6 +29,7 @@ import TopNav from "@/components/TopNav.vue";
 import { useWebMcp } from "@/composables/useWebMcp";
 
 useWebMcp()
+function requestVisualizerSearch() { window.dispatchEvent(new Event('visualizer:search')) }
 </script>
 
 <style>
@@ -56,6 +57,8 @@ useWebMcp()
     radial-gradient(circle at top left, color-mix(in srgb, var(--brand-soft) 55%, transparent), transparent 34rem),
     var(--surface-page);
 }
+.site-shell.site-shell--visualizer { background: #f5f8f2; }
+.site-shell--visualizer .donation-support :is(button, .support-button, a) { box-shadow: none; }
 
 .site-main {
   width: 100%;

@@ -59,3 +59,35 @@ test('reviewed condiment identity suggests sodium; manual view persists until re
  }
  assert.equal(model.choose('unknown-lens'),false)
 })
+
+test('salt teaspoons use 5 g and preserve full and fractional amounts', () => {
+ for (const [mg,count] of [[800,.4],[1000,.5],[2000,1],[4000,2]]) {
+  const output=sodiumResult(calculateFood(food(mg),100,'g'))
+  assert.equal(output.teaspoons,count)
+  assert.equal(output.saltGrams,mg*.0025)
+  assert.equal(output.fills.length,Math.ceil(count))
+  assert.equal(output.fills.at(-1),count%1||1)
+ }
+ const normalized=sodiumResult(calculateFood(food(.8,'g'),100,'g'))
+ assert.equal(normalized.teaspoons,.4)
+})
+test('spoon zero, tiny positive and missing states remain distinct', () => {
+ const zero=sodiumResult(calculateFood(food(0),100,'g'))
+ assert.equal(zero.teaspoonText,'0');assert.equal(zero.teaspoons,0);assert.deepEqual(zero.fills,[])
+ for (const mg of [Number.MIN_VALUE,.01,1,19.99]) {
+  const value=sodiumResult(calculateFood(food(mg),100,'g'))
+  assert.equal(value.teaspoonText,'<0.01');assert(value.tiny);assert.deepEqual(value.fills,[])
+ }
+ assert.equal(sodiumResult(calculateFood(food(20),100,'g')).teaspoonText,'0.01')
+ for (const canonical of [null,calculateFood(food(null),100,'g')]) {
+  const value=sodiumResult(canonical);assert.equal(value.teaspoons,null);assert.equal(value.teaspoonText,null);assert.deepEqual(value.fills,[])
+ }
+})
+test('teaspoon drawings are bounded and huge finite amounts stay finite', () => {
+ for (const mg of [16000,16001,40000,Number.MAX_VALUE]) {
+  const value=sodiumResult(calculateFood(food(mg),100,'g'))
+  assert.equal(value.fills.length,8);assert.equal(value.teaspoons,mg*.0005);assert.equal(value.capped,mg>16000)
+  assert(Number.isFinite(value.teaspoons))
+ }
+ assert.equal(sodiumResult(calculateFood(food(40000),100,'g')).teaspoonText,'20')
+})

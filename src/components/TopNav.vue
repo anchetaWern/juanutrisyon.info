@@ -1,11 +1,26 @@
+<script setup>
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+const route = useRoute()
+const menuOpen = ref(false)
+const menuToggle = ref(null)
+function closeMenu() {
+  if (!menuOpen.value) return
+  menuOpen.value = false
+  menuToggle.value?.focus()
+}
+watch(() => route.fullPath, () => { menuOpen.value = false })
+</script>
+
 <template>
-  <header class="site-header" :class="{ 'site-header--visualizer': $route.name === 'food-visualizer' }">
+  <header class="site-header" :class="{ 'site-header--visualizer': $route.name === 'food-visualizer' }" @keydown.esc="closeMenu">
     <div class="site-header__inner">
       <RouterLink to="/" class="brand-link" aria-label="Juan Nutrisyon home">
         <img src="/logo.png" alt="Juan Nutrisyon" class="logo" width="176" height="46" />
       </RouterLink>
 
-      <nav class="header-nav" aria-label="Main navigation">
+      <button v-if="$route.name === 'food-visualizer'" ref="menuToggle" class="menu-toggle" type="button" :aria-expanded="menuOpen" aria-controls="main-navigation" @click="menuOpen = !menuOpen">{{ menuOpen ? 'Close menu' : 'Menu' }}</button>
+      <nav id="main-navigation" class="header-nav" :class="{ 'header-nav--open': menuOpen }" aria-label="Main navigation">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/tools/food-visualizer">Food Visualizer</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -41,6 +56,10 @@
 
 /* Keep the long, keyboard-driven tool clear of the shared navigation. */
 .site-header.site-header--visualizer { position: static; }
+.site-header--visualizer { background: transparent; backdrop-filter: none; box-shadow: none; border: 0; }
+.site-header--visualizer .site-header__inner { min-height: 64px; }
+.site-header--visualizer .header-nav .nav-cta { background: var(--brand-900); }
+.menu-toggle { display: none; min-height: 44px; padding: 8px 12px; border: 1px solid var(--border-default); border-radius: var(--radius-sm); color: var(--text-primary); background: var(--surface-raised); font: inherit; cursor: pointer; }
 
 .site-header__inner {
   display: flex;
@@ -106,6 +125,11 @@
 }
 
 @media (max-width: 900px) {
+  .site-header--visualizer .site-header__inner { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 0; padding: 8px 0; }
+  .site-header--visualizer .menu-toggle { display: inline-flex; align-items: center; }
+  .site-header--visualizer .header-nav { display: none; flex-basis: 100%; padding-top: 12px; }
+  .site-header--visualizer .header-nav--open { display: flex; }
+  .site-header--visualizer .header-nav a { min-height: 44px; }
   .site-header__inner {
     align-items: flex-start;
     flex-direction: column;

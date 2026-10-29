@@ -60,13 +60,13 @@ export function resolveServings(food, overrideId = null) {
     legacyId: row.legacy_serving_unit_id, label: row.label, grams: row.gram_weight, volume: row.milliliter_volume,
     source: row.source, isDefault: row.is_default === true || row.is_default === 1,
     edibleBasis: row.edible_basis, origin: 'canonical' }))
-    .filter(row => row.optionId != null && typeof row.label === 'string' && resolvePortion(food, row, 1))
+    .filter(row => row.optionId != null && typeof row.label === 'string' && row.label.trim() && resolvePortion(food, row, 1))
   const legacyOptions = (legacy, origin) => (Array.isArray(legacy?.serving_units) ? legacy.serving_units : []).map((row, index) => {
     const measure = normalizeHouseholdMeasure({ ...row, quantity: 1, density: food.density, density_unit: food.density_unit })
     return { key: `${origin}:${row.id ?? index}`, optionId: null, legacyId: row.id ?? null,
       label: row.name, grams: measure.provenance === 'supplied_gram_weight' ? measure.weight_grams : null, volume: row.volume_in_ml,
       source: origin, origin, edibleBasis: row.edible_basis }
-  }).filter(row => typeof row.label === 'string' && resolvePortion(food, row, 1))
+  }).filter(row => typeof row.label === 'string' && row.label.trim() && resolvePortion(food, row, 1))
   const specific = legacyOptions(food.custom_servings, 'legacy')
   const subtype = legacyOptions(food.custom_serving_by_subtype, 'subtype')
   const households = canonicalOptions.length ? canonicalOptions : specific.length ? specific : subtype

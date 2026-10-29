@@ -1,9 +1,10 @@
+import { makeVisualizerTestFood, visualizerSearchMeta, fulfillColaReference } from './visualizer-test-food.mjs'
 // Built assets at an intercepted HTTPS origin; all API and PostHog traffic mocked.
 import assert from 'node:assert/strict'
 import { readFile,writeFile,mkdir } from 'node:fs/promises'
 import { pathToFileURL } from 'node:url'
 const {chromium}=await import(pathToFileURL(process.env.JN_PLAYWRIGHT_PATH??'/Users/wernancheta/projects/juanutrisyon/nuxt-juanutrisyon/node_modules/playwright/index.mjs').href)
-const foods=await Promise.all(['rice','mango','gata'].map(async key=>JSON.parse(await readFile(new URL(`./fixtures/captured/${key}.json`,import.meta.url)))))
+const foods=await Promise.all(['rice','mango','gata'].map(async key=>makeVisualizerTestFood(JSON.parse(await readFile(new URL(`./fixtures/captured/${key}.json`,import.meta.url))))))
 const missing={...foods[1],id:900003,description:'Synthetic missing analytics fixture',description_slug:'synthetic-missing-analytics'}
 const rows=[...foods,missing],browser=await chromium.launch({headless:true}),errors=[],checks=[]
 const output='/private/tmp/jn-phase12';await mkdir(output,{recursive:true})
@@ -24,10 +25,11 @@ try {
    if(mode==='unconfigured'&&path.endsWith('.js'))body=Buffer.from(body.toString().replace(/phc_[\w-]+/g,''))
    await route.fulfill({body,contentType:path.endsWith('.js')?'text/javascript':path.endsWith('.css')?'text/css':'text/html'})
   })
-  await context.route('https://api.juanutrisyon.info/**',async route=>{
+  await context.route('**/api/foods**',async route=>{
    const url=new URL(route.request().url())
-   if(url.search){if(url.searchParams.get('description')==='fail')return route.fulfill({status:503,json:{trace:'PRIVATE_SERVER_TRACE'}})
-    return route.fulfill({json:{data:rows,current_page:1,last_page:1,per_page:20,total:rows.length}})}
+   if (await fulfillColaReference(route)) return
+   if(url.pathname.endsWith('/foods')){if(url.searchParams.get('description')==='fail')return route.fulfill({status:503,json:{trace:'PRIVATE_SERVER_TRACE'}})
+    return route.fulfill({json:{...visualizerSearchMeta,data:rows,current_page:1,last_page:1,per_page:20,total:rows.length}})}
    if(url.pathname.endsWith('/'+missing.description_slug))return route.fulfill({status:404,json:{trace:'PRIVATE_SERVER_TRACE'}})
    if(hold&&url.pathname.endsWith('/'+foods[2].description_slug))await new Promise(resolve=>release=resolve)
    await route.fulfill({json:foods.find(food=>url.pathname.endsWith('/'+food.description_slug))})
@@ -54,8 +56,9 @@ try {
   await page.waitForFunction(()=>document.querySelector('.search-panel'))
   return {page,context,events,requests,hold:()=>hold=true,release:()=>release?.()}
  }
- async function choose(page,food){await page.locator('.result-list button').filter({hasText:food.description}).click();await page.getByRole('heading',{name:food.description,exact:true}).waitFor()}
- async function search(page,query='PRIVATE_SEARCH_TEXT'){await page.getByLabel('Food name').fill(query);await page.getByLabel('Food name').press('Enter')}
+ async function showResults(page){if(await page.locator('.back-results').isVisible())await page.locator('.back-results').click()}
+ async function choose(page,food){await showResults(page);await page.locator('.result-list button').filter({hasText:food.description}).click();await page.getByRole('heading',{name:food.description,exact:true}).waitFor()}
+ async function search(page,query='PRIVATE_SEARCH_TEXT'){await showResults(page);await page.getByLabel('Food name').fill(query);await page.getByLabel('Food name').press('Enter')}
  const main=await open(),{page,events,context,requests}=main
  const count=suffix=>events.filter(event=>event.event.endsWith(suffix)).length
  async function expectCount(suffix,total){
@@ -85,25 +88,23 @@ try {
  await page.getByRole('button',{name:'Increase quantity by 0.5',exact:true}).click();await expectCount('portion_changed',3)
  await page.getByLabel('Serving',{exact:true}).selectOption('g');await expectCount('portion_changed',4)
  await page.getByLabel('Serving',{exact:true}).selectOption('source');await expectCount('portion_changed',5)
- for(const [name,destination]of [['Open Food Details','food_details'],['Compare in the app','comparison']]){
+ for(const [name,destination]of [['Open Food Details','food_details']]){
   const popup=context.waitForEvent('page');await page.getByRole('link',{name}).click();await(await popup).close()
   assert.equal(events.at(-1).properties.destination_type,destination)
  }
- await page.locator('.source-panel summary').click()
- const popup=context.waitForEvent('page');await page.getByRole('link',{name:'Original nutrient report'}).press('Enter');await(await popup).close()
- await expectCount('outbound_clicked',3)
+ await expectCount('outbound_clicked',1)
  await page.getByRole('link',{name:'Open Food Details'}).dispatchEvent('auxclick',{button:1})
- await expectCount('outbound_clicked',4)
- main.hold();await page.locator('.result-list button').filter({hasText:foods[2].description}).click()
+ await expectCount('outbound_clicked',2)
+ main.hold();await showResults(page);await page.locator('.result-list button').filter({hasText:foods[2].description}).click()
  await page.getByText('Loading '+foods[2].description+'…',{exact:true}).waitFor()
  await choose(page,foods[1]);main.release()
  await expectCount('food_selected',2);assert.equal(events.filter(row=>row.event.endsWith('food_selected')).at(-1).properties.food_id,foods[1].id)
- await page.locator('.result-list button').filter({hasText:missing.description}).click()
+ await showResults(page);await page.locator('.result-list button').filter({hasText:missing.description}).click()
  await page.getByText('This food is no longer available. Please choose another food.',{exact:true}).waitFor()
  await expectCount('food_selected',2)
  await choose(page,foods[0])
  await page.locator('.analytics-preferences').screenshot({path:output+'/preference-mobile.png'})
- await page.addScriptTag({path:'/private/tmp/jn-phase11-a11y/node_modules/axe-core/axe.min.js'})
+ await page.addScriptTag({path:process.env.JN_AXE_PATH ?? '/private/tmp/jn-phase11-a11y/node_modules/axe-core/axe.min.js'})
  const a11y=await page.evaluate(()=>axe.run(document.querySelector('.analytics-preferences')))
  assert.deepEqual(a11y.violations.map(row=>row.id),[])
  await opted.uncheck();const before=events.length
@@ -130,6 +131,6 @@ try {
   checks.push({scenario:mode,capturedEvents:0,calculatorUsable:true});await item.context.close()
  }
  assert.deepEqual(errors,[])
- await writeFile(new URL('../../docs/food-visualizer/phase-12-browser-evidence.json',import.meta.url),JSON.stringify({checkedAt:new Date().toISOString(),browser:browser.version(),method:'Built assets at intercepted HTTPS origin; captured food fixtures; PostHog requests intercepted, never delivered to a real project.',checks,pageErrors:errors},null,2)+'\n')
+ await writeFile(process.env.JN_ANALYTICS_EVIDENCE_PATH ?? new URL('../../docs/food-visualizer/phase-12-browser-evidence.json',import.meta.url),JSON.stringify({checkedAt:new Date().toISOString(),browser:browser.version(),method:'Built assets at intercepted HTTPS origin; captured food fixtures; PostHog requests intercepted, never delivered to a real project.',checks,pageErrors:errors},null,2)+'\n')
  console.log(JSON.stringify({passed:true,scenarios:checks.length,pageErrors:errors}))
 }finally{await browser.close()}

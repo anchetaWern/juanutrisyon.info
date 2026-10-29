@@ -3,50 +3,64 @@ import { test } from 'node:test'
 import { readFile } from 'node:fs/promises'
 import { calculateFood } from '../../src/vendor/jn-nutrition-core/index.mjs'
 import { sugarResult, foodContext, createLensState, sugarCopy, lenses } from '../../src/features/food-visualizer/lenses.js'
+import { sugarComparison } from '../../src/features/food-visualizer/sugarComparison.js'
+const prepared = { type: { slug: 'prepared-and-processed' } }
 const result = (amount, extra={}) => calculateFood({serving_size:100,serving_size_unit:'g',nutrients:[{name:'sugar',unit:'g',amount}],...extra},100,'g')
 const captured = async key => JSON.parse(await readFile(new URL(`./fixtures/captured/${key}.json`,import.meta.url)))
-test('25 g means five 5-g weight equivalents, without scaling canonical results again', () => {
- const canonical=result(25), before=structuredClone(canonical), sugar=sugarResult(canonical)
- assert.equal(sugar.grams,25);assert.equal(sugar.count,5);assert.deepEqual(sugar.fills,[1,1,1,1,1]);assert.equal(sugar.capped,false)
+// Synthetic 20-g denominator isolates the presentation math from reference loading.
+const reference = sugarComparison(prepared, { status: 'ready', reference: { sugar: 20 } })
+const sugar = value => sugarResult(value, reference)
+test('the comparison uses the supplied sugar denominator without scaling canonical results again', () => {
+ const canonical=result(25), before=structuredClone(canonical), output=sugar(canonical)
+ assert.equal(output.grams,25);assert.equal(output.count,1.25);assert.deepEqual(output.fills,[1,.25]);assert.equal(output.capped,false)
  assert.deepEqual(canonical,before)
 })
-test('fractional packets preserve full precision and render partial fills', () => {
- assert.deepEqual(sugarResult(result(2.5)).fills,[0.5]);assert.equal(sugarResult(result(2.5)).countText,'0.5')
- const sugar=sugarResult(result(6.23456789));assert.equal(sugar.count,6.23456789/5)
- assert.equal(sugar.fills.length,2);assert.equal(sugar.fills[1],sugar.count-1)
+test('fractional glasses preserve full precision and render partial fills', () => {
+ assert.deepEqual(sugar(result(10)).fills,[0.5]);assert.equal(sugar(result(10)).countText,'0.5')
+ const output=sugar(result(26.23456789));assert.equal(output.count,26.23456789/20)
+ assert.equal(output.fills.length,2);assert.equal(output.fills[1],output.count-1)
 })
 test('zero has a numeric zero equivalent, distinct from missing', () => {
- const sugar=sugarResult(result(0));assert.equal(sugar.status,'zero');assert.equal(sugar.count,0);assert.equal(sugar.countText,'0');assert.deepEqual(sugar.fills,[])
+ const output=sugar(result(0));assert.equal(output.status,'zero');assert.equal(output.count,0);assert.equal(output.countText,'0');assert.deepEqual(output.fills,[])
 })
-test('small positive values never display zero packets or a misleading minimum fill', () => {
- for(const grams of [0.000001,0.01,0.049,Number.MIN_VALUE]) {
-  const sugar=sugarResult(result(grams));assert.equal(sugar.status,'tiny');assert.equal(sugar.countText,'<0.01');assert.deepEqual(sugar.fills,[])
-  assert.notEqual(sugar.amountText,'0 g')
+test('small positive values never display zero glasses or a misleading minimum fill', () => {
+ for(const grams of [0.000001,0.01,0.199,Number.MIN_VALUE]) {
+  const output=sugar(result(grams));assert.equal(output.status,'tiny');assert.equal(output.countText,'<0.01');assert.deepEqual(output.fills,[])
+  assert.notEqual(output.amountText,'0 g')
  }
- const threshold=sugarResult(result(0.05));assert.equal(threshold.status,'positive');assert.equal(threshold.fills[0],0.01)
+ const threshold=sugar(result(0.2));assert.equal(threshold.status,'positive');assert.equal(threshold.fills[0],0.01)
 })
-test('large counts are bounded to 20 illustrations with the full total retained', () => {
- for(const grams of [100,101,1000,Number.MAX_VALUE]) {
-  const sugar=sugarResult(result(grams));assert.equal(sugar.fills.length,20);assert.equal(sugar.count,grams/5);assert.equal(sugar.capped,grams>100);if(grams>=1e6)assert(sugar.countText.includes('E'))
+test('large counts are bounded to eight glasses with the full total retained', () => {
+ for(const grams of [160,161,1000,Number.MAX_VALUE]) {
+  const output=sugar(result(grams));assert.equal(output.fills.length,8);assert.equal(output.count,grams/20);assert.equal(output.capped,grams>160);if(grams>=1e6)assert(output.countText.includes('E'))
  }
 })
 test('null, omission, malformed, trace, unsupported units and invalid states never gain a count', () => {
  for(const canonical of [null,result(null),result('bad'),result(-1),result(Infinity),
   result(1,{nutrients:[]}),result(1,{nutrients:[{name:'sugar',amount:5,unit:'unknown'}]}),
   result(1,{nutrients:[{name:'sugar',amount:5,unit:'g',qualifier:'trace'}]})]) {
-  const sugar=sugarResult(canonical);assert.equal(sugar.status,'unavailable');assert.equal(sugar.count,null);assert.deepEqual(sugar.fills,[])
+  const output=sugar(canonical);assert.equal(output.status,'unavailable');assert.equal(output.count,null);assert.deepEqual(output.fills,[])
  }
+})
+test('reference failure preserves known sugar, without inventing glasses', () => {
+ for(const state of [undefined,{status:'idle'},{status:'loading'},{status:'error'},
+  {status:'ready',reference:{sugar:0}},{status:'ready',reference:{sugar:null}},{status:'ready',reference:{sugar:Infinity}}]) {
+  const output=sugarResult(result(10),sugarComparison(prepared,state))
+  assert.equal(output.grams,10);assert.equal(output.count,null);assert.equal(output.status,'unavailable-reference')
+ }
+ const output=sugarResult(result(Number.MAX_VALUE),sugarComparison(prepared,{status:'ready',reference:{sugar:.001}}))
+ assert.equal(output.status,'unavailable-comparison');assert.equal(output.count,null);assert.deepEqual(output.fills,[])
 })
 test('captured Coke duplicates and partial recipe do not become exact sugar totals', async () => {
  for(const key of ['coke','recipe','patis']) {
-  const food=await captured(key), sugar=sugarResult(calculateFood(food,food.serving_size,food.serving_size_unit))
-  assert.equal(sugar.status,'unavailable');assert.equal(sugar.partial,key==='recipe');assert.equal(sugar.count,null)
+  const food=await captured(key), output=sugar(calculateFood(food,food.serving_size,food.serving_size_unit))
+  assert.equal(output.status,'unavailable');assert.equal(output.partial,key==='recipe');assert.equal(output.count,null)
  }
 })
 test('actual liquid and whole-fruit portions are calculated once by the core', async () => {
  for(const [key,amount,unit,expected] of [['gata',50,'mL',1.2],['mango',70,'g',13.8*(70/100)]]) {
-  const food=await captured(key),sugar=sugarResult(calculateFood(food,amount,unit))
-  assert.equal(sugar.grams,expected);assert.equal(sugar.count,expected/5)
+  const food=await captured(key),output=sugar(calculateFood(food,amount,unit))
+  assert.equal(output.grams,expected);assert.equal(output.count,expected/20)
  }
 })
 test('whole-fruit context requires all reviewed identity/preparation evidence; names alone do not classify', async () => {

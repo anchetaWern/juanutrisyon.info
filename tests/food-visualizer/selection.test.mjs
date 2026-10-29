@@ -3,8 +3,8 @@ import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import { createFoodApi } from '../../src/features/food-visualizer/foodApi.js'
 import { createFoodSelection } from '../../src/features/food-visualizer/selection.js'
-const food = (id = 1) => ({ id, description: `Food ${id}`, description_slug: `food-${id}`, nutrients: [], source_metadata: { proof: ['preserve'] } })
-const list = (ids = [1], page = 1) => ({ data: ids.map(food), current_page: page, last_page: 3, total: 5, per_page: 2 })
+const food = (id = 1) => ({ id, description: `Food ${id}`, description_slug: `food-${id}`, nutrients: [], data_source: 'ph_fct', serving_size: 100, serving_size_unit: 'g', serving_profile: { options: [{ id: 1, label: 'Piece', gram_weight: 25 }] }, source_metadata: { proof: ['preserve'] } })
+const list = (ids = [1], page = 1) => ({ catalog: 'food_visualizer', catalog_version: 1, data: ids.map(food), current_page: page, last_page: 3, total: 5, per_page: 2 })
 const response = (data, status = 200, headers = {}) => new Response(JSON.stringify(data), { status, headers })
 const deferred = () => { let resolve, reject; const promise = new Promise((a,b) => { resolve=a; reject=b }); return { promise, resolve, reject } }
 const flush = () => new Promise(resolve => setImmediate(resolve))
@@ -31,7 +31,7 @@ test('search caches are normalized, page-specific, expiring and bounded', async 
 })
 test('detail cache is independent, bounded and expires', async () => {
   let count=0,time=0
-  const api=createFoodApi({now:()=>time,detailTtl:10,detailLimit:1,fetcher:async url=>{count++;return response(food(Number(url.split('-').at(-1))))}})
+  const api=createFoodApi({now:()=>time,detailTtl:10,detailLimit:1,fetcher:async url=>{count++;return response(food(Number(new URL(url).pathname.split('-').at(-1))))}})
   await api.getFood({slug:'food-1'});await api.getFood({slug:'food-1'});assert.equal(count,1)
   await api.getFood({slug:'food-2'});await api.getFood({slug:'food-1'});assert.equal(count,3)
   time=11;await api.getFood({slug:'food-1'});assert.equal(count,4)

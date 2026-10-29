@@ -1,15 +1,17 @@
+import { makeVisualizerTestFood, visualizerSearchMeta, fulfillColaReference } from './visualizer-test-food.mjs'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import { pathToFileURL } from 'node:url'
 const { chromium }=await import(process.env.JN_PLAYWRIGHT_PATH?pathToFileURL(process.env.JN_PLAYWRIGHT_PATH).href:'playwright')
-const foods=await Promise.all(['rice','pandesal','mango','patis','coke','gata','recipe'].map(async key=>JSON.parse(await readFile(new URL(`./fixtures/captured/${key}.json`,import.meta.url)))))
+const foods=await Promise.all(['rice','pandesal','mango','patis','coke','gata','recipe'].map(async key=>makeVisualizerTestFood(JSON.parse(await readFile(new URL(`./fixtures/captured/${key}.json`,import.meta.url))))))
 const browser=await chromium.launch({headless:true})
 try {
  const page=await browser.newPage({viewport:{width:1280,height:1000}}),calls=[],errors=[]
  page.on('pageerror',error=>errors.push(error.message))
- await page.route('https://api.juanutrisyon.info/**',async route=>{
+ await page.route('**/api/foods**',async route=>{
   const url=new URL(route.request().url());calls.push(url.href)
-  if(url.search) return route.fulfill({json:{data:foods,current_page:1,last_page:1,per_page:20,total:7}})
+  if (await fulfillColaReference(route)) return
+  if(url.pathname.endsWith('/foods')) return route.fulfill({json:{...visualizerSearchMeta,data:foods,current_page:1,last_page:1,per_page:20,total:7}})
   const food=foods.find(row=>url.pathname.endsWith(`/${row.description_slug}`))
   return route.fulfill({json:food})
  })
@@ -48,6 +50,7 @@ try {
   const before=calls.length
   if(index===3) assert((await summary('sugar').innerText()).includes('Data not available'))
   if(index===4) {
+   await page.getByLabel('Serving',{exact:true}).selectOption('source')
    assert.equal(await page.getByLabel('Serving',{exact:true}).inputValue(),'source')
    assert(!(await page.getByLabel('Serving',{exact:true}).locator('option').allTextContents()).some(text=>/can|grams/i.test(text)))
    assert((await summary('saturated fat').innerText()).includes('0 g'))

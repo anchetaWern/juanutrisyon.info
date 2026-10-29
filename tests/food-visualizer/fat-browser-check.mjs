@@ -1,13 +1,14 @@
+import { makeVisualizerTestFood, visualizerSearchMeta, fulfillColaReference } from './visualizer-test-food.mjs'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import { pathToFileURL } from 'node:url'
 const {chromium}=await import(process.env.JN_PLAYWRIGHT_PATH?pathToFileURL(process.env.JN_PLAYWRIGHT_PATH).href:'playwright')
-const captured=async key=>JSON.parse(await readFile(new URL(`./fixtures/captured/${key}.json`,import.meta.url)))
+const captured=async key=>makeVisualizerTestFood(JSON.parse(await readFile(new URL(`./fixtures/captured/${key}.json`,import.meta.url))))
 // Explicitly synthetic boundary fixtures; not production suggestions or nutrition claims.
-const synthetic=(id,description,sat,total)=>({id,description,description_slug:`synthetic-${id}`,serving_size:100,serving_size_unit:'g',
+const synthetic=(id,description,sat,total)=>({id,description,description_slug:`synthetic-${id}`,data_source:'nutrition_label',custom_servings:{serving_units:[{id:900000,name:'Synthetic test portion',weight:100,weight_unit:'g'}]},serving_size:100,serving_size_unit:'g',
  nutrients:[{name:'saturated fat',amount:sat,unit:'g'},{name:'total fat',amount:total,unit:'g'}]})
 const partial={...synthetic(900008,'Synthetic partial fat fixture',0,0),data_source:'community_recipe',recipe:{final_prepared_weight_grams:200},
- recipe_ingredients:[synthetic(900009,'Synthetic ingredient A',8,10),synthetic(900010,'Synthetic ingredient B',null,2)].map(ingredient=>({serving_size:100,serving_size_unit:'g',ingredient}))}
+ recipe_ingredients:[synthetic(900009,'Synthetic ingredient A',8,10),synthetic(900010,'Synthetic ingredient B',null,2)].map(ingredient=>({data_source:'nutrition_label',custom_servings:{serving_units:[{id:900000,name:'Synthetic test portion',weight:100,weight_unit:'g'}]},serving_size:100,serving_size_unit:'g',ingredient}))}
 const foods=[await captured('gata'),await captured('coke'),synthetic(900001,'Synthetic eight of ten',8,10),synthetic(900002,'Synthetic zero of ten',0,10),
  synthetic(900003,'Synthetic two zeros',0,0),synthetic(900004,'Synthetic positive over zero',8,0),synthetic(900005,'Synthetic inconsistent pair',11,10),
  synthetic(900006,'Synthetic missing total',8,null),synthetic(900007,'Synthetic missing saturated',null,10),partial]
@@ -15,13 +16,14 @@ const browser=await chromium.launch({headless:true})
 try {
  const page=await browser.newPage({viewport:{width:1280,height:1000}}),calls=[],errors=[]
  page.on('pageerror',error=>errors.push(error.message))
- await page.route('https://api.juanutrisyon.info/**',async route=>{
+ await page.route('**/api/foods**',async route=>{
   const url=new URL(route.request().url());calls.push(url.href)
-  await route.fulfill({json:url.search?{data:foods,current_page:1,last_page:1,per_page:20,total:foods.length}:foods.find(row=>url.pathname.endsWith(`/${row.description_slug}`))})
+  if (await fulfillColaReference(route)) return
+  await route.fulfill({json:url.pathname.endsWith('/foods')?{...visualizerSearchMeta,data:foods,current_page:1,last_page:1,per_page:20,total:foods.length}:foods.find(row=>url.pathname.endsWith(`/${row.description_slug}`))})
  })
  await page.goto(process.env.JN_VISUALIZER_URL??'http://127.0.0.1:4327/tools/food-visualizer')
  await page.getByLabel('Food name').fill('test');await page.getByLabel('Food name').press('Enter')
- const choose=async index=>{await page.locator('.result-list button').filter({hasText:foods[index].description}).click();await page.getByRole('heading',{name:foods[index].description,exact:true}).waitFor()}
+ const choose=async index=>{if(await page.locator('.back-results').isVisible())await page.locator('.back-results').click();await page.locator('.result-list button').filter({hasText:foods[index].description}).click();await page.getByRole('heading',{name:foods[index].description,exact:true}).waitFor()}
  await choose(0)
  const visual=page.locator('[data-fat-result]')
  await visual.waitFor();assert.equal(await visual.getAttribute('data-status'),'valid')

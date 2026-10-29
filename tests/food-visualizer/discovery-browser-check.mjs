@@ -38,7 +38,7 @@ const record = label => evidence.checks.push(label)
 const headersOf = response => Object.fromEntries(['content-type', 'cache-control', 'cf-cache-status', 'vary', 'access-control-allow-origin', 'access-control-expose-headers', 'retry-after', 'x-ratelimit-limit', 'x-ratelimit-remaining', 'etag', 'last-modified', 'x-robots-tag'].map(key => [key, response.headers.get(key)]).filter(([, value]) => value !== null))
 try {
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } })
-  await context.route('https://api.juanutrisyon.info/**', route => route.abort())
+  await context.route('**/api/foods**', route => route.abort())
   const page = await context.newPage()
   let apiRequests = 0
   page.on('request', req => { if (req.url().includes('api.juanutrisyon.info') && ['fetch', 'xhr'].includes(req.resourceType())) apiRequests++ })
@@ -85,7 +85,7 @@ try {
   const active = await interactive.newPage()
   active.on('pageerror', error => evidence.errors.push(error.message))
   let calls = 0
-  await active.route('https://api.juanutrisyon.info/**', route => {
+  await active.route('**/api/foods**', route => {
     if (!['fetch', 'xhr'].includes(route.request().resourceType())) return route.abort()
     calls++; return route.fulfill({ status: 429, json: { message: 'synthetic test response' } })
   })

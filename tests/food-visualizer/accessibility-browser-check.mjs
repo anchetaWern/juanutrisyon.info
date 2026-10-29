@@ -1,3 +1,4 @@
+import { makeVisualizerTestFood, visualizerSearchMeta, fulfillColaReference } from './visualizer-test-food.mjs'
 // Opt-in local UI review: captured foods and explicitly synthetic error/stress cases.
 import assert from 'node:assert/strict'
 import { readFile, mkdir, writeFile } from 'node:fs/promises'
@@ -6,7 +7,7 @@ const { chromium } = await import(pathToFileURL(process.env.JN_PLAYWRIGHT_PATH ?
 const axePath = process.env.JN_AXE_PATH ?? '/private/tmp/jn-phase11-a11y/node_modules/axe-core/axe.min.js'
 const base = process.env.JN_VISUALIZER_URL ?? 'http://127.0.0.1:4327/tools/food-visualizer'
 const foods = await Promise.all(['rice','pandesal','mango','patis','coke','gata','recipe'].map(async key =>
- JSON.parse(await readFile(new URL(`./fixtures/captured/${key}.json`, import.meta.url)))))
+ makeVisualizerTestFood(JSON.parse(await readFile(new URL(`./fixtures/captured/${key}.json`, import.meta.url))))))
 const long = { ...structuredClone(foods[2]), id: 900001, description_slug: 'synthetic-accessibility-long-label',
  description: 'Synthetic accessibility stress fixture: ' + 'VeryLongFoodPreparationAndBrandLabel'.repeat(8) }
 long.serving_profile.options[0].label = 'Synthetic household measure with a long label '.repeat(5)
@@ -25,13 +26,14 @@ try {
   const page = await browser.newPage({viewport,...extra}), calls=[]
   let failDetail=true, releaseSearch, releaseDetail, holdDetail=false
   page.on('pageerror',error=>errors.push(error.message))
-  await page.route('https://api.juanutrisyon.info/**',async route=>{
+  await page.route('**/api/foods**',async route=>{
    const url=new URL(route.request().url());calls.push(url.href)
+   if (await fulfillColaReference(route)) return
    const query=url.searchParams.get('description')
    if(query==='delayed') await new Promise(resolve=>releaseSearch=resolve)
    if(query==='fail')return route.fulfill({status:503,json:{trace:'SERVER_SECRET'}})
    if(query==='limited')return route.fulfill({status:429,json:{},headers:{'Retry-After':'10','Access-Control-Expose-Headers':'Retry-After'}})
-   if(query!==null)return route.fulfill({json:{data:query==='none'?[]:rows,current_page:1,last_page:1,per_page:20,total:query==='none'?0:rows.length}})
+   if(query!==null)return route.fulfill({json:{...visualizerSearchMeta,data:query==='none'?[]:rows,current_page:1,last_page:1,per_page:20,total:query==='none'?0:rows.length}})
    if(url.pathname.endsWith('/'+missing.description_slug))return route.fulfill({status:404,json:{trace:'SERVER_SECRET'}})
    if(url.pathname.endsWith('/'+retry.description_slug)&&failDetail){failDetail=false;return route.fulfill({status:503,json:{trace:'SERVER_SECRET'}})}
    if(url.pathname.endsWith('/'+long.description_slug)&&holdDetail)await new Promise(resolve=>releaseDetail=resolve)
@@ -76,9 +78,11 @@ try {
   assert.deepEqual(clipped,[],`${state}: clipped lens labels`)
  }
  async function search(page,query='foods') {
+  if(await page.locator('.back-results').isVisible())await page.locator('.back-results').press('Enter')
   await page.getByLabel('Food name').fill(query);await page.getByLabel('Food name').press('Enter')
  }
  async function choose(page,food) {
+  if(await page.locator('.back-results').isVisible())await page.locator('.back-results').press('Enter')
   await page.locator('.result-list button').filter({hasText:food.description}).press('Enter')
   await page.getByRole('heading',{name:food.description,exact:true}).waitFor()
  }
@@ -106,7 +110,7 @@ try {
   }
   await choose(page,foods[4]);await audit(page,`${width}-unavailable`)
   await choose(page,foods[6]);await audit(page,`${width}-partial-recipe`)
-  await page.locator('.source-panel summary').press('Enter');await page.locator('.more-nutrients summary').press('Enter')
+  await page.locator('.more-nutrients summary').press('Enter')
   await audit(page,`${width}-expanded-source`);await reflow(page,`${width}-expanded-source`)
   await choose(page,long);await audit(page,`${width}-long-label`);await reflow(page,`${width}-long-label`)
   assert.equal(await page.getByLabel('Serving',{exact:true}).locator('option').first().textContent(),long.serving_profile.options[0].label)
@@ -147,8 +151,9 @@ try {
  for(const lens of ['sugar','sodium','saturated-fat','carbohydrates']) {
   await page.keyboard.press('ArrowRight');assert.equal(await page.evaluate(()=>document.activeElement.value),lens)
   await page.waitForFunction(()=>document.querySelector('.lens-mode p').textContent.includes('Your chosen view'))
+  if(lens==='sugar') await page.locator('[data-cola-equivalent]').waitFor()
  }
- assert.equal(calls.length,before)
+ assert.equal(calls.length,before+1,'Keyboard sugar selection loads the cola reference once')
  await page.keyboard.press('Tab');await page.keyboard.press('Enter')
  assert((await page.locator('.lens-mode').innerText()).includes('Suggested view: Carbohydrates'))
  assert.equal(await page.evaluate(()=>document.activeElement.textContent),'Use suggested view')
@@ -170,11 +175,13 @@ try {
  flow.releaseDetail();await page.getByRole('heading',{name:long.description,exact:true}).waitFor()
  assert.equal(await page.evaluate(()=>document.activeElement.textContent),focusName)
  // Error and retry also lead to a stable, named preview focus target.
+ await page.getByRole('button',{name:'Back to results',exact:false}).press('Enter')
  await page.locator('.result-list button').filter({hasText:retry.description}).press('Enter')
  await page.getByRole('button',{name:'Try loading again',exact:true}).waitFor()
  await page.getByRole('button',{name:'Try loading again',exact:true}).press('Enter')
  await page.getByRole('heading',{name:retry.description,exact:true}).waitFor()
  await page.waitForFunction(()=>document.activeElement?.classList.contains('preview'))
+ await page.getByRole('button',{name:'Back to results',exact:false}).press('Enter')
  await page.locator('.result-list button').filter({hasText:missing.description}).press('Enter')
  await page.getByText('This food is no longer available. Please choose another food.',{exact:true}).waitFor()
  assert.equal(await page.getByRole('button',{name:'Try loading again',exact:true}).count(),0)
@@ -183,8 +190,8 @@ try {
  await choose(page,foods[3]);assert(await page.getByRole('radio',{name:'Sugar',exact:true}).isChecked())
  await page.getByRole('button',{name:'Use suggested view',exact:true}).press('Enter')
  assert(await page.getByRole('radio',{name:'Sodium',exact:true}).isChecked())
- // Both native disclosures remain operable by keyboard.
- for(const selector of ['.more-nutrients summary','.source-panel summary']) {
+ // The remaining nutrient disclosure stays operable by keyboard.
+ for(const selector of ['.more-nutrients summary']) {
   const control=page.locator(selector);await control.press('Enter')
   assert.notEqual(await control.locator('..').getAttribute('open'),null)
   assert.equal(await control.evaluate(node=>getComputedStyle(node).outlineWidth),'3px')
@@ -192,7 +199,7 @@ try {
  assert(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches))
  assert(await page.locator('main a').evaluateAll(nodes=>nodes.every(node=>getComputedStyle(node).transitionDuration==='0s')))
  const tree=await page.locator('main').ariaSnapshot()
- assert(tree.includes('Explore a nutrient'));assert(!tree.includes('packet-label'))
+ assert(tree.includes('Explore a nutrient'));assert(!tree.includes('cola-glass'))
  await writeFile(`${output}/keyboard-aria.yml`,tree)
  checks.push({keyboard:true,asyncFocusPreserved:true,reducedMotion:true,ariaTreeReviewed:true})
  await page.close()
@@ -203,7 +210,7 @@ try {
   for(const lens of ['Sugar','Sodium','Saturated fat','Carbohydrates']) {
    await page.getByRole('radio',{name:lens,exact:true}).press('Space');await reflow(page,`${width}-${lens}`)
   }
-  await page.locator('.source-panel summary').press('Enter');await page.locator('.more-nutrients summary').press('Enter')
+  await page.locator('.more-nutrients summary').press('Enter')
   await audit(page,`${width}-reflow-expanded`);await reflow(page,`${width}-reflow-expanded`)
   await page.screenshot({path:`${output}/${width}-reflow.png`,fullPage:true})
   checks.push({viewport:width,zoomEquivalent:width===640?'200% of 1280px desktop':null,longLabels:true,completeLenses:4,noOverflow:true})
@@ -215,6 +222,6 @@ try {
   checks,audits,manualContrastReview:[...gradientReview.values()],pageErrors:errors,screenshots:output,
   limitations:['Keyboard, ARIA tree and live-region DOM semantics were checked; no claim of listening to VoiceOver/NVDA speech.',
    '200% desktop zoom is verified through equivalent CSS viewport and device scale, not browser toolbar zoom.']}
- await writeFile(keyboardOnly?`${output}/keyboard-debug-evidence.json`:new URL('../../docs/food-visualizer/phase-11-accessibility-evidence.json',import.meta.url),JSON.stringify(evidence,null,2)+'\n')
+ await writeFile(keyboardOnly?`${output}/keyboard-debug-evidence.json`:(process.env.JN_A11Y_EVIDENCE_PATH ?? new URL('../../docs/food-visualizer/phase-11-accessibility-evidence.json',import.meta.url)),JSON.stringify(evidence,null,2)+'\n')
  console.log(JSON.stringify({passed:true,audits:audits.length,checks:checks.length,pageErrors:errors,evidence:keyboardOnly?`${output}/keyboard-debug-evidence.json`:'docs/food-visualizer/phase-11-accessibility-evidence.json'}))
 } finally {await browser.close()}

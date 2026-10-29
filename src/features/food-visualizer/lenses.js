@@ -40,34 +40,46 @@ export function createLensState(available = lenses.filter(row => row.available).
 const formatEquivalent = value => value >= 1e6
   ? new Intl.NumberFormat('en', { notation: 'scientific', maximumFractionDigits: 2 }).format(value)
   : formatNutrient(value)
-export function sugarResult(result) {
+export function sugarResult(result, comparison) {
   const node = findNutrient(result?.nutrients, 'sugar')
   const grams = node?.unit === 'g' ? exactValue(node) : null
-  if (grams === null) return { status: 'unavailable', grams: null, count: null, fills: [], capped: false,
-    amountText: 'Data not available', countText: null, partial: node?.coverage === 'partial' }
-  const count = grams / 5
+  const base = { grams, count: null, fills: [], capped: false, countText: null,
+    amountText: grams === null ? 'Data not available' : `${formatEquivalent(grams)} g`, partial: node?.coverage === 'partial' }
+  if (grams === null) return { ...base, status: 'unavailable' }
+  if (!comparison?.mode) return { ...base, status: 'unavailable-classification' }
+  const denominator = comparison.gramsPerUnit
+  if (comparison.status !== 'ready' || !Number.isFinite(denominator) || denominator <= 0) return { ...base, status: 'unavailable-reference' }
+  const count = grams / denominator
+  if (!Number.isFinite(count)) return { ...base, status: 'unavailable-comparison' }
   const tiny = grams > 0 && count < 0.01
-  const capped = count > 20
-  const fills = grams === 0 || tiny ? [] : Array.from({ length: Math.min(20, Math.ceil(count)) }, (_, i) => Math.min(1, count - i))
+  const capped = count > 8
+  const fills = grams === 0 || tiny ? [] : Array.from({ length: Math.min(8, Math.ceil(count)) }, (_, i) => Math.min(1, count - i))
   return { status: grams === 0 ? 'zero' : tiny ? 'tiny' : 'positive', grams, count, fills, capped,
     amountText: `${formatEquivalent(grams)} g`, countText: tiny ? '<0.01' : formatEquivalent(count), partial: false }
 }
 export const sugarCopy = Object.freeze({
-  neutral: 'Paghahambing ito ng timbang. Ang total sugar ay maaaring natural na nasa pagkain o idinagdag; hindi nito sinasabi kung gaano karami ang added sugar.',
-  'whole-fruit': 'May natural na asukal ang buong prutas. Paghahambing lang ng timbang ang mga paketeng ito, hindi asukal na idinagdag sa prutas.',
+  neutral: 'Dami ng total sugar ang ipinapakita rito. Maaaring natural na nasa pagkain o idinagdag ang asukal; hindi nito sinusukat ang added sugar.',
+  'whole-fruit': 'May natural na asukal ang buong prutas. Ang katumbas sa larawan ay timbang ng total sugar, hindi asukal na idinagdag sa prutas.',
 })
+
+export const saltTeaspoonGrams = 5
 
 export function sodiumResult(result) {
   const node = findNutrient(result?.nutrients, 'sodium')
   const milligrams = node?.unit === 'mg' ? exactValue(node) : null
   if (milligrams === null) return { status: 'unavailable', milligrams: null, saltGrams: null,
-    amountText: 'Data not available', saltText: null, partial: node?.coverage === 'partial' }
+    amountText: 'Data not available', saltText: null, partial: node?.coverage === 'partial',
+    teaspoons: null, teaspoonText: null, fills: [], capped: false, tiny: false }
   // mg × 2.5 / 1000, combined to avoid overflowing the intermediate product.
   const salt = milligrams * 0.0025
+  const teaspoons = milligrams * (0.0025 / saltTeaspoonGrams)
+  const tiny = milligrams > 0 && teaspoons < 0.01
   return { status: milligrams === 0 ? 'zero' : 'positive', milligrams,
     saltGrams: milligrams > 0 && salt === 0 ? null : salt,
     amountText: `${formatEquivalent(milligrams)} mg`,
-    saltText: `${milligrams > 0 && salt < 0.01 ? '<0.01' : formatEquivalent(salt)} g`, partial: false }
+    saltText: `${milligrams > 0 && salt < 0.01 ? '<0.01' : formatEquivalent(salt)} g`, partial: false,
+    teaspoons, teaspoonText: tiny ? '<0.01' : formatEquivalent(teaspoons), tiny, capped: teaspoons > 8,
+    fills: milligrams === 0 || tiny ? [] : Array.from({ length: Math.min(8, Math.ceil(teaspoons)) }, (_, i) => Math.min(1, teaspoons - i)) }
 }
 
 export function saturatedFatResult(result) {

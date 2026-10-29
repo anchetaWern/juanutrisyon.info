@@ -1,5 +1,6 @@
 import { shallowReactive } from 'vue'
-import { normalizeQuery } from './foodApi.js'
+import { FoodApiError, normalizeQuery } from './foodApi.js'
+import { isVisualizerFood } from './eligibility.js'
 
 export function createFoodSelection(api) {
   const state = shallowReactive({ query: '', committedQuery: '', page: 1, lastPage: 1, total: 0,
@@ -31,6 +32,7 @@ export function createFoodSelection(api) {
       const raw = await api.getFood({ slug: food.slug, signal: detailController.signal })
       if (id !== detailId) return
       if (raw.id !== food.id) throw new Error('Selected food identity changed')
+      if (!isVisualizerFood(raw)) throw new FoodApiError('ineligible_food')
       state.selectedFood = raw; state.detailStatus = 'ready'
     } catch (error) {
       if (id !== detailId || error.name === 'AbortError') return
